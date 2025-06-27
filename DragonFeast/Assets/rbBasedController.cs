@@ -12,6 +12,10 @@ public class rbBasedController : MonoBehaviour
     public float groundDistance;
     public float groundDrag;
 
+    public GameObject canvas;
+
+    bool paused = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,6 +51,16 @@ public class rbBasedController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !paused)
+        {
+            canvas.GetComponent<UiHandlerScript>().pause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && paused)
+        {
+            canvas.GetComponent<UiHandlerScript>().resume();
+        }
     }
 
     bool IsGrounded()
