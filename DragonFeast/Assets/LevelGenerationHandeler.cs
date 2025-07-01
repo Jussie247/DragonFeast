@@ -12,15 +12,17 @@ public class LevelGenerationHandeler : MonoBehaviour
     {
         //get the start position
         Vector3 lastExit = start.position;
+        Quaternion lastRotation = start.rotation;
         //attach each room to the last ones exit
         for(int i = 0; i < RoomsPerLevel; i++)
         {
             //get a random Module from the Level Modules
             GameObject room = Modules.transform.GetChild(Random.Range(0, RoomCount)).gameObject;
             //Instance the module at the last ones Exit
-            GameObject Instance = Instantiate(room, lastExit, new Quaternion());
+            GameObject Instance = Instantiate(room, lastExit, lastRotation);
             //update the Last exit Vector
             lastExit = Instance.transform.Find("Out").position;
+            lastRotation = Instance.transform.Find("Out").localRotation;
         }
     }
 
