@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UiHandlerScript : MonoBehaviour
 {
@@ -23,5 +24,15 @@ public class UiHandlerScript : MonoBehaviour
     public void resume()
     {
         pauseScreen.SetActive(false);
+    }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
