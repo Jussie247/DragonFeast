@@ -1,3 +1,5 @@
+using System.Threading;
+using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -52,14 +54,18 @@ public class rbBasedController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !paused)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            canvas.GetComponent<UiHandlerScript>().pause();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && paused)
-        {
-            canvas.GetComponent<UiHandlerScript>().resume();
+            paused = !paused;
+            Time.timeScale = paused ? 0 : 1;
+            if (paused)
+            {
+                canvas.GetComponent<UiHandlerScript>().resume();
+            }
+            else
+            {
+                canvas.GetComponent<UiHandlerScript>().pause(); 
+            }
         }
     }
 
