@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class rbBasedController : MonoBehaviour
 {
@@ -15,8 +16,14 @@ public class rbBasedController : MonoBehaviour
     public float groundDrag;
 
     public GameObject canvas;
+    public GameObject radicle;
 
     bool paused = false;
+
+    //Vital
+    public int shield = 0;
+    public int HP = 3;
+    public float hungies = 100;
 
     void Start()
     {
@@ -67,10 +74,55 @@ public class rbBasedController : MonoBehaviour
                 canvas.GetComponent<UiHandlerScript>().pause(); 
             }
         }
+
+        if(HP <= 0)
+        {
+            hit();
+        }
+
+        //read input for attack
+        //use showRadicle() and hideRadicle() functions
     }
 
     bool IsGrounded()
     {
         return Physics.CheckSphere(groundCheck.position, groundDistance, GroundMask);
+    }
+
+    public void hit()
+    {
+        print("player got hit");
+        if(shield > 0)
+        {
+            shield--;
+        }else if(HP > 0)
+        {
+            HP--;
+        }
+        else
+        {
+            //die
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+    }
+
+    public void heal(int _ammount)
+    {
+        HP += _ammount;
+    }
+
+    public void addShield(int _ammount)
+    {
+        shield += _ammount;
+    }
+
+    void showRadicle()
+    {
+        radicle.SetActive(true);
+    }
+
+    void hideRadicle()
+    {
+        radicle.SetActive(false);
     }
 }
