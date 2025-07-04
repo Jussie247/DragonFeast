@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class UiHandlerScript : MonoBehaviour
 {
     public GameObject pauseScreen;
+    public GameObject HP;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,5 +35,18 @@ public class UiHandlerScript : MonoBehaviour
     public void mainMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    //fix this
+    public void updateHP(int _HP) {
+        print(_HP);
+        for (int i = 0; i < HP.GetComponentsInChildren<RectTransform>().Length; i++)
+        {
+            HP.GetComponentsInChildren<RectTransform>()[i].gameObject.SetActive(false);
+        }
+        for (int i = 0; i < _HP; i++)
+        {
+            HP.GetComponentsInChildren<RectTransform>()[i].gameObject.SetActive(true);
+        }
     }
 }

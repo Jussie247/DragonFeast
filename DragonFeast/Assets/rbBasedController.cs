@@ -29,6 +29,7 @@ public class rbBasedController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        updateHP();
     }
 
     void FixedUpdate()
@@ -98,10 +99,12 @@ public class rbBasedController : MonoBehaviour
         }else if(HP > 0)
         {
             HP--;
+            updateHP();
         }
         else
         {
             //die
+            updateHP();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
@@ -109,6 +112,7 @@ public class rbBasedController : MonoBehaviour
     public void heal(int _ammount)
     {
         HP += _ammount;
+        updateHP();
     }
 
     public void addShield(int _ammount)
@@ -125,4 +129,10 @@ public class rbBasedController : MonoBehaviour
     {
         radicle.SetActive(false);
     }
+
+    private void updateHP()
+    {
+        canvas.GetComponent<UiHandlerScript>().updateHP(HP);
+    }
+    
 }
