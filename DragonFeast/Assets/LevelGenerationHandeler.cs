@@ -1,3 +1,4 @@
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class LevelGenerationHandeler : MonoBehaviour
@@ -6,6 +7,8 @@ public class LevelGenerationHandeler : MonoBehaviour
     public GameObject Modules;
     public int RoomsPerLevel;
     public int RoomCount;
+
+    public GameObject NavMesh;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +27,8 @@ public class LevelGenerationHandeler : MonoBehaviour
             lastExit = Instance.transform.Find("Out").position;
             lastRotation = Instance.transform.Find("Out").localRotation;
         }
+
+        NavMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     // Update is called once per frame

@@ -1,7 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
+using FMOD;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class rbBasedController : MonoBehaviour
@@ -17,6 +19,9 @@ public class rbBasedController : MonoBehaviour
 
     public GameObject canvas;
     public GameObject radicle;
+    public float attackRange = 5;
+    public LayerMask enemy;
+    public float punchForce;
 
     bool paused = false;
 
@@ -30,6 +35,7 @@ public class rbBasedController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         updateHP();
+        hideRadicle();
     }
 
     void FixedUpdate()
@@ -52,8 +58,33 @@ public class rbBasedController : MonoBehaviour
         {
             rb.linearDamping = groundDrag;
         }
-        else {
+        else
+        {
             rb.linearDamping = 0;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            showRadicle();
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            hideRadicle();
+            print("attack enemy");
+            if (Physics.CheckSphere(transform.position, attackRange, enemy))
+            {
+                print("hit enemy");
+                Transform enemy = GetClosestEnemyByTag("enemy");
+                enemy.GetComponent<TestOpponent>().Hit();
+                //remove AI
+                Destroy(enemy.GetComponent<NavMeshAgent>());
+                //add physics
+                enemy.AddComponent<Rigidbody>();
+                Vector3 pointer = radicle.transform.position - transform.position;
+                Vector3 force = pointer * punchForce;
+                enemy.GetComponent<Rigidbody>().AddForce(force);
+            }
         }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -72,11 +103,11 @@ public class rbBasedController : MonoBehaviour
             }
             else
             {
-                canvas.GetComponent<UiHandlerScript>().pause(); 
+                canvas.GetComponent<UiHandlerScript>().pause();
             }
         }
 
-        if(HP <= 0)
+        if (HP <= 0)
         {
             hit();
         }
@@ -90,13 +121,15 @@ public class rbBasedController : MonoBehaviour
         return Physics.CheckSphere(groundCheck.position, groundDistance, GroundMask);
     }
 
+
     public void hit()
     {
         print("player got hit");
-        if(shield > 0)
+        if (shield > 0)
         {
             shield--;
-        }else if(HP > 0)
+        }
+        else if (HP > 0)
         {
             HP--;
             updateHP();
@@ -134,5 +167,31 @@ public class rbBasedController : MonoBehaviour
     {
         canvas.GetComponent<UiHandlerScript>().updateHP(HP);
     }
-    
+
+    Transform GetClosestEnemyByTag(string tag)
+    {
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
+
+        // Convert GameObjects to Transforms
+        Transform[] enemyTransforms = new Transform[enemies.Length];
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemyTransforms[i] = enemies[i].transform;
+        }
+
+        Transform tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = transform.position;
+        foreach (Transform t in enemyTransforms)
+        {
+            float dist = Vector3.Distance(t.position, currentPos);
+            if (dist < minDist)
+            {
+                tMin = t;
+                minDist = dist;
+            }
+        }
+        return tMin;
+    }
 }
