@@ -46,7 +46,7 @@ public class TestOpponent : MonoBehaviour
     {
         agent.isStopped = false;
         //print("chasing Player");
-        //agent.SetDestination(player.position);
+        agent.SetDestination(player.position);
     }
 
     private void attack()
@@ -57,7 +57,7 @@ public class TestOpponent : MonoBehaviour
         if (!attacked)
         {
             print("attacking Player");
-            //player.GetComponent<rbBasedController>().hit();
+            player.GetComponent<rbBasedController>().hit();
             attacked = true;
             Invoke(nameof(resetAttack), ATKcooldown);
         }

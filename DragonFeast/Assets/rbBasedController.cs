@@ -119,6 +119,7 @@ public class rbBasedController : MonoBehaviour
         if (HP <= 0)
         {
             hit();
+            updateHP();
         }
     }
 

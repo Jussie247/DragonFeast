@@ -14,7 +14,7 @@ public class UiHandlerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void pause()
@@ -38,15 +38,19 @@ public class UiHandlerScript : MonoBehaviour
     }
 
     //fix this
-    public void updateHP(int _HP) {
+    public void updateHP(int _HP)
+    {
         print(_HP);
         for (int i = 0; i < HP.GetComponentsInChildren<RectTransform>().Length; i++)
         {
-            HP.GetComponentsInChildren<RectTransform>()[i].gameObject.SetActive(false);
-        }
-        for (int i = 0; i < _HP; i++)
-        {
-            HP.GetComponentsInChildren<RectTransform>()[i].gameObject.SetActive(true);
+            if (i <= _HP)
+            {
+                HP.GetComponentsInChildren<RectTransform>()[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                HP.GetComponentsInChildren<RectTransform>()[i].gameObject.SetActive(false);
+            }
         }
     }
 }
