@@ -12,15 +12,13 @@ public class rbBasedController : MonoBehaviour
     public float jumpForce = 5f;
     private Rigidbody rb;
 
-    public Transform groundCheck;
-    public LayerMask GroundMask;
+    public Transform groundCheck, attackPos;
+    public LayerMask GroundMask, enemy, cage;
     public float groundDistance;
     public float groundDrag;
 
-    public GameObject canvas;
-    public GameObject radicle;
+    public GameObject canvas, radicle;
     public float attackRange = 5;
-    public LayerMask enemy;
     public float punchForce;
 
     bool paused = false;
@@ -72,18 +70,18 @@ public class rbBasedController : MonoBehaviour
         {
             hideRadicle();
             print("attack enemy");
-            if (Physics.CheckSphere(transform.position, attackRange, enemy))
+            if (Physics.CheckSphere(attackPos.transform.position, attackRange, enemy))
             {
                 print("hit enemy");
-                Transform enemy = GetClosestEnemyByTag("enemy");
+                Transform enemy = GetClosestObjectTransformByTag("enemy");
                 enemy.GetComponent<TestOpponent>().Hit();
-                //remove AI
-                Destroy(enemy.GetComponent<NavMeshAgent>());
-                //add physics
-                enemy.AddComponent<Rigidbody>();
-                Vector3 pointer = radicle.transform.position - transform.position;
-                Vector3 force = pointer * punchForce;
-                enemy.GetComponent<Rigidbody>().AddForce(force);
+                enemy.GetComponent<TestOpponent>().bounce();
+            }
+            else if(Physics.CheckSphere(attackPos.transform.position, attackRange, cage))
+            {
+                print("hit cage");
+                Transform cage = GetClosestObjectTransformByTag("cage");
+                cage.GetComponent<cageHandler>().destroy();
             }
         }
 
@@ -92,6 +90,17 @@ public class rbBasedController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            //Eat
+            print("eat enemy");
+            if (Physics.CheckSphere(attackPos.transform.position, attackRange, enemy))
+            {
+                print("hit enemy");
+                Transform enemy = GetClosestObjectTransformByTag("enemy");
+                enemy.GetComponent<TestOpponent>().eat();
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -111,9 +120,6 @@ public class rbBasedController : MonoBehaviour
         {
             hit();
         }
-
-        //read input for attack
-        //use showRadicle() and hideRadicle() functions
     }
 
     bool IsGrounded()
@@ -168,22 +174,22 @@ public class rbBasedController : MonoBehaviour
         canvas.GetComponent<UiHandlerScript>().updateHP(HP);
     }
 
-    Transform GetClosestEnemyByTag(string tag)
+    Transform GetClosestObjectTransformByTag(string tag)
     {
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
 
         // Convert GameObjects to Transforms
-        Transform[] enemyTransforms = new Transform[enemies.Length];
-        for (int i = 0; i < enemies.Length; i++)
+        Transform[] objectTransforms = new Transform[objects.Length];
+        for (int i = 0; i < objects.Length; i++)
         {
-            enemyTransforms[i] = enemies[i].transform;
+            objectTransforms[i] = objects[i].transform;
         }
 
         Transform tMin = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = transform.position;
-        foreach (Transform t in enemyTransforms)
+        foreach (Transform t in objectTransforms)
         {
             float dist = Vector3.Distance(t.position, currentPos);
             if (dist < minDist)
@@ -193,5 +199,11 @@ public class rbBasedController : MonoBehaviour
             }
         }
         return tMin;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(attackPos.transform.position, attackRange);
     }
 }
