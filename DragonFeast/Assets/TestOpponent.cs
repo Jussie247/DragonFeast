@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
@@ -7,6 +8,14 @@ using UnityEngine.AI;
 
 public class TestOpponent : MonoBehaviour
 {
+    public enum EnemyType
+    {
+        Knight,
+        Archer,
+        Lancer
+    }
+    public EnemyType enemyType;
+
     public int HP = 2;
 
     public NavMeshAgent agent;
@@ -16,8 +25,8 @@ public class TestOpponent : MonoBehaviour
     public LayerMask groundMask, playerMask, wallMask, enemyMask;
 
     public bool isBounce = false, hitWall = false;
-    public GameObject radicle;
-    public float punchForce = 1000;
+    public GameObject radicle, arrow;
+    public float punchForce = 1000, arrowSpeed = 1000;
     public int bounces = 1;
 
     //Attacking
@@ -33,6 +42,8 @@ public class TestOpponent : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("RB_Based_Controller").transform;
+        radicle = GameObject.Find("plane");
+        arrow = GameObject.Find("arrow");
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -51,15 +62,31 @@ public class TestOpponent : MonoBehaviour
 
     private void attack()
     {
+
         agent.isStopped = true;
         transform.LookAt(player);
 
         if (!attacked)
         {
-            print("attacking Player");
-            player.GetComponent<rbBasedController>().hit();
-            attacked = true;
-            Invoke(nameof(resetAttack), ATKcooldown);
+            if(enemyType == EnemyType.Knight)
+            {
+                print("attacking Player");
+                player.GetComponent<rbBasedController>().hit();
+                attacked = true;
+                Invoke(nameof(resetAttack), ATKcooldown);
+            }
+            else if (enemyType == EnemyType.Archer)
+            {
+                print("attacking Player");
+                //player.GetComponent<rbBasedController>().hit();
+                shootArrow();
+                attacked = true;
+                Invoke(nameof(resetAttack), ATKcooldown);
+            }
+            else if(enemyType == EnemyType.Lancer)
+            {
+
+            }
         }
     }
 
@@ -83,7 +110,7 @@ public class TestOpponent : MonoBehaviour
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
 
             if (playerInSightRange && playerInAttackRange) attack();
-            if (playerInSightRange && !playerInAttackRange) chase();
+            if (playerInSightRange && !playerInAttackRange && enemyType == EnemyType.Knight) chase();
             if (!playerInAttackRange && !playerInSightRange) idle();
         }
 
@@ -121,7 +148,8 @@ public class TestOpponent : MonoBehaviour
                 enemy.GetComponent<TestOpponent>().bounce();
                 bounces--;
             }
-        }else if(isBounce && bounces <= 0)
+        }
+        else if (isBounce && bounces <= 0)
         {
             Hit();
         }
@@ -183,6 +211,14 @@ public class TestOpponent : MonoBehaviour
             }
         }
         return tMin;
+    }
+
+    void shootArrow()
+    {
+        //play arrowshooting animation
+        GameObject awwow = Instantiate(arrow, transform.position + transform.forward + new Vector3(0,2,0), Quaternion.LookRotation(transform.forward));
+        awwow.AddComponent<Rigidbody>();
+        awwow.GetComponent<Rigidbody>().AddForce(transform.forward * arrowSpeed);
     }
 
     private void OnDrawGizmosSelected()

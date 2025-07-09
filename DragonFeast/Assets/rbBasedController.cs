@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FMOD;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -27,6 +28,11 @@ public class rbBasedController : MonoBehaviour
     public int shield = 0;
     public int HP = 3;
     public float hungies = 100;
+    public float hungerLoss = 1;
+
+    public bool attacked, ate;
+    public float ATKcooldown = 0.2f, eatCooldown = 0.2f;
+
 
     void Start()
     {
@@ -38,7 +44,7 @@ public class rbBasedController : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        // get movement input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -52,6 +58,7 @@ public class rbBasedController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //adjust damping on surface and air
         if (IsGrounded())
         {
             rb.linearDamping = groundDrag;
@@ -60,28 +67,36 @@ public class rbBasedController : MonoBehaviour
         {
             rb.linearDamping = 0;
         }
-
+        //charge attack
         if (Input.GetMouseButtonDown(0))
         {
-            showRadicle();
+            if (!attacked)
+            {
+                showRadicle();
+            }
         }
-
+        //attack
         if (Input.GetMouseButtonUp(0))
         {
-            hideRadicle();
-            print("attack enemy");
-            if (Physics.CheckSphere(attackPos.transform.position, attackRange, enemy))
+            if (!attacked)
             {
-                print("hit enemy");
-                Transform enemy = GetClosestObjectTransformByTag("enemy");
-                enemy.GetComponent<TestOpponent>().Hit();
-                enemy.GetComponent<TestOpponent>().bounce();
-            }
-            else if(Physics.CheckSphere(attackPos.transform.position, attackRange, cage))
-            {
-                print("hit cage");
-                Transform cage = GetClosestObjectTransformByTag("cage");
-                cage.GetComponent<cageHandler>().destroy();
+                hideRadicle();
+                print("attack enemy");
+                if (Physics.CheckSphere(attackPos.transform.position, attackRange, enemy))
+                {
+                    print("hit enemy");
+                    Transform enemy = GetClosestObjectTransformByTag("enemy");
+                    enemy.GetComponent<TestOpponent>().Hit();
+                    enemy.GetComponent<TestOpponent>().bounce();
+                }
+                else if (Physics.CheckSphere(attackPos.transform.position, attackRange, cage))
+                {
+                    print("hit cage");
+                    Transform cage = GetClosestObjectTransformByTag("cage");
+                    cage.GetComponent<cageHandler>().destroy();
+                }
+                attacked = true;
+                Invoke(nameof(resetAttack), ATKcooldown);
             }
         }
 
@@ -89,19 +104,31 @@ public class rbBasedController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-
+        //eat
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //Eat
-            print("eat enemy");
-            if (Physics.CheckSphere(attackPos.transform.position, attackRange, enemy))
+            if (!ate)
             {
-                print("hit enemy");
-                Transform enemy = GetClosestObjectTransformByTag("enemy");
-                enemy.GetComponent<TestOpponent>().eat();
+                print("eat enemy");
+                if (Physics.CheckSphere(attackPos.transform.position, attackRange, enemy))
+                {
+                    print("hit enemy");
+                    Transform enemy = GetClosestObjectTransformByTag("enemy");
+                    enemy.GetComponent<TestOpponent>().eat();
+                    if (hungies + 50 >= 100)
+                    {
+                        hungies = 100;
+                    }
+                    else
+                    {
+                        hungies += 50;
+                    }
+                }
+                ate = true;
+                Invoke(nameof(resetEat), eatCooldown);
             }
         }
-
+        // pause menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             paused = !paused;
@@ -115,12 +142,29 @@ public class rbBasedController : MonoBehaviour
                 canvas.GetComponent<UiHandlerScript>().pause();
             }
         }
-
+        //check if player died
         if (HP <= 0)
         {
             hit();
             updateHP();
         }
+        //check if player has hunger
+        if(hungies <= 0)
+        {
+            hit();
+        }
+        //update hungies
+        canvas.GetComponent<UiHandlerScript>().updateHungerBar(hungies * 0.01f);
+        hungies = hungies - hungerLoss * Time.deltaTime;
+    }
+    //reset attacks
+    void resetAttack()
+    {
+        attacked = false;
+    }
+    void resetEat()
+    {
+        ate = false;
     }
 
     bool IsGrounded()
@@ -128,7 +172,7 @@ public class rbBasedController : MonoBehaviour
         return Physics.CheckSphere(groundCheck.position, groundDistance, GroundMask);
     }
 
-
+    //handle hits
     public void hit()
     {
         print("player got hit");
@@ -148,33 +192,32 @@ public class rbBasedController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
-
+    //heal player
     public void heal(int _ammount)
     {
         HP += _ammount;
         updateHP();
     }
-
+    //add shield to the player
     public void addShield(int _ammount)
     {
         shield += _ammount;
     }
-
+    //handle radicle visibility
     void showRadicle()
     {
         radicle.SetActive(true);
     }
-
     void hideRadicle()
     {
         radicle.SetActive(false);
     }
-
+    //update the HP on the UI
     private void updateHP()
     {
         canvas.GetComponent<UiHandlerScript>().updateHP(HP);
     }
-
+    // get closest Transform
     Transform GetClosestObjectTransformByTag(string tag)
     {
 
@@ -201,7 +244,7 @@ public class rbBasedController : MonoBehaviour
         }
         return tMin;
     }
-
+    //show gizmos to see attack range in preview
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

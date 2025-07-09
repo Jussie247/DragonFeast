@@ -1,10 +1,13 @@
+using FMOD;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UiHandlerScript : MonoBehaviour
 {
     public GameObject pauseScreen;
     public GameObject HP;
+    public GameObject hungerSlider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,5 +55,10 @@ public class UiHandlerScript : MonoBehaviour
                 HP.GetComponentsInChildren<RectTransform>()[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    public void updateHungerBar(float _hunger)
+    {
+        hungerSlider.GetComponent<Slider>().value = _hunger;
     }
 }
