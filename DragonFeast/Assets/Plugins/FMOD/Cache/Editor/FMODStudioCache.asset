@@ -1,5 +1,295 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8229774803785650688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Death/Knight_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Death/Knight_Death
+  Guid:
+    Data1: -1912613822
+    Data2: 1120520427
+    Data3: 737868960
+    Data4: 883417006
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1071
+--- !u!114 &-7709548440230959844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638877453427106590
+  FileSizes:
+  - Name: Desktop
+    Value: 2653440
+  Exists: 1
+--- !u!114 &-7296703509414783951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Reward Stingers/Dragon_Freed/Dragon_Freed
+  m_EditorClassIdentifier: 
+  Path: event:/Reward Stingers/Dragon_Freed/Dragon_Freed
+  Guid:
+    Data1: 1275499601
+    Data2: 1075427862
+    Data3: 1706106500
+    Data4: -1066353128
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6908558291931708013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Shop_and_Menu Theme/Shop_and_Menu_Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Shop_and_Menu Theme/Shop_and_Menu_Theme
+  Guid:
+    Data1: -1213699468
+    Data2: 1076123462
+    Data3: 333698470
+    Data4: 1557061082
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6248316627069305717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Attack/Attack_Player
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Attack/Attack_Player
+  Guid:
+    Data1: -1205800651
+    Data2: 1121954308
+    Data3: 246693790
+    Data4: -10283368
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 528
+--- !u!114 &-5386147343873469420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Boss Theme/Boss_Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Boss Theme/Boss_Theme
+  Guid:
+    Data1: -492717929
+    Data2: 1108953603
+    Data3: -1945547130
+    Data4: 1457292946
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5228526863418881477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Death/Lancer_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Death/Lancer_Death
+  Guid:
+    Data1: 1226641986
+    Data2: 1130221745
+    Data3: 2065276863
+    Data4: 1953705706
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5013893764637966301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Death/Archer_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Death/Archer_Death
+  Guid:
+    Data1: -498686461
+    Data2: 1132356485
+    Data3: 72095141
+    Data4: 17752166
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4555792230355597605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Reward Stingers/Level_Cleared/Level_Cleared
+  m_EditorClassIdentifier: 
+  Path: event:/Reward Stingers/Level_Cleared/Level_Cleared
+  Guid:
+    Data1: -1463784867
+    Data2: 1233107882
+    Data3: -1833951068
+    Data4: -64696973
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1606402891834330523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Combat Theme/Combat_Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Combat Theme/Combat_Theme
+  Guid:
+    Data1: 2083324260
+    Data2: 1235302242
+    Data3: 1534221458
+    Data4: -879644119
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-960297406374126118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Reward Stingers/Egg_Collect/Egg_Collect
+  m_EditorClassIdentifier: 
+  Path: event:/Reward Stingers/Egg_Collect/Egg_Collect
+  Guid:
+    Data1: 1560483777
+    Data2: 1100838864
+    Data3: 395255201
+    Data4: 1195603444
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,11 +302,245 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: 7632452734052637521}
+  - {fileID: -7709548440230959844}
+  EditorEvents:
+  - {fileID: -5013893764637966301}
+  - {fileID: 3019039789912657326}
+  - {fileID: -6248316627069305717}
+  - {fileID: 8166996153836855893}
+  - {fileID: -5228526863418881477}
+  - {fileID: -8229774803785650688}
+  - {fileID: -7296703509414783951}
+  - {fileID: 336420646109560750}
+  - {fileID: -4555792230355597605}
+  - {fileID: -1606402891834330523}
+  - {fileID: -6908558291931708013}
+  - {fileID: 1577314679841993578}
+  - {fileID: 1296545298038669575}
+  - {fileID: -5386147343873469420}
+  - {fileID: -960297406374126118}
+  - {fileID: 7365115443696212149}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
+  MasterBanks:
+  - {fileID: -7709548440230959844}
+  StringsBanks:
+  - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 0
-  SerializableEventsDict: []
+  cacheTime: 638877453427116586
+  SerializableEventsDict:
+  - key: event:/Enemies/Death/Archer_Death
+    index: 0
+  - key: event:/Enemies/Footsteps/Footsteps_Enemy
+    index: 1
+  - key: event:/Player/Attack/Attack_Player
+    index: 2
+  - key: event:/Enemies/Attack/Knight_Attack
+    index: 3
+  - key: event:/Enemies/Death/Lancer_Death
+    index: 4
+  - key: event:/Enemies/Death/Knight_Death
+    index: 5
+  - key: event:/Reward Stingers/Dragon_Freed/Dragon_Freed
+    index: 6
+  - key: event:/Player/Special_Ability/Special_Ability
+    index: 7
+  - key: event:/Reward Stingers/Level_Cleared/Level_Cleared
+    index: 8
+  - key: event:/Music/Combat Theme/Combat_Theme
+    index: 9
+  - key: event:/Music/Shop_and_Menu Theme/Shop_and_Menu_Theme
+    index: 10
+  - key: event:/Player/Death/Death_Player
+    index: 11
+  - key: event:/Music/Main Theme/Main_Theme
+    index: 12
+  - key: event:/Music/Boss Theme/Boss_Theme
+    index: 13
+  - key: event:/Reward Stingers/Egg_Collect/Egg_Collect
+    index: 14
+  - key: event:/Player/Footsteps/Footsteps_Player
+    index: 15
+--- !u!114 &336420646109560750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Special_Ability/Special_Ability
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Special_Ability/Special_Ability
+  Guid:
+    Data1: 2031207767
+    Data2: 1170178916
+    Data3: -1827463539
+    Data4: -1110348737
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7560
+--- !u!114 &1296545298038669575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Main Theme/Main_Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Main Theme/Main_Theme
+  Guid:
+    Data1: -318920310
+    Data2: 1132713913
+    Data3: -1635594870
+    Data4: -1765481312
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 168724
+--- !u!114 &1577314679841993578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Death/Death_Player
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Death/Death_Player
+  Guid:
+    Data1: 1547978614
+    Data2: 1179274346
+    Data3: -1506387555
+    Data4: -1114690916
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3019039789912657326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Footsteps/Footsteps_Enemy
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Footsteps/Footsteps_Enemy
+  Guid:
+    Data1: 1058897932
+    Data2: 1255682537
+    Data3: -848452465
+    Data4: 990443947
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 700
+--- !u!114 &7365115443696212149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Footsteps/Footsteps_Player
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Footsteps/Footsteps_Player
+  Guid:
+    Data1: 376671210
+    Data2: 1074856195
+    Data3: 506282370
+    Data4: 1679767210
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7632452734052637521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638877453427116586
+  FileSizes:
+  - Name: Desktop
+    Value: 1698
+  Exists: 1
+--- !u!114 &8166996153836855893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Attack/Knight_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Attack/Knight_Attack
+  Guid:
+    Data1: 1783568699
+    Data2: 1205761150
+    Data3: -671302745
+    Data4: -1593004433
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 666
