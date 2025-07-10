@@ -26,6 +26,7 @@ public class LevelGenerationHandeler : MonoBehaviour
             //update the Last exit Vector
             lastExit = Instance.transform.Find("Out").position;
             lastRotation = Instance.transform.Find("Out").localRotation;
+            Instance.transform.parent = transform;
         }
 
         NavMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
