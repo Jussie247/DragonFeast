@@ -27,6 +27,6 @@ public class radicleHandler : MonoBehaviour
         yRotation += mouseX;
 
         playerBody.rotation = Quaternion.Euler(0, yRotation, 0);
-        transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        //transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }

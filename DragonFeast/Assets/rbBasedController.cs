@@ -93,7 +93,7 @@ public class rbBasedController : MonoBehaviour
                 {
                     print("hit cage");
                     Transform cage = GetClosestObjectTransformByTag("cage");
-                    cage.GetComponent<cageHandler>().destroy();
+                    cage.GetComponent<cageHandler>().hitCage();
                 }
                 attacked = true;
                 Invoke(nameof(resetAttack), ATKcooldown);

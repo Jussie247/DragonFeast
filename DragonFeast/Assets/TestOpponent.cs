@@ -216,7 +216,7 @@ public class TestOpponent : MonoBehaviour
     void shootArrow()
     {
         //play arrowshooting animation
-        GameObject awwow = Instantiate(arrow, transform.position + transform.forward + new Vector3(0,2,0), Quaternion.LookRotation(transform.forward));
+        GameObject awwow = Instantiate(arrow, transform.position + transform.forward + new Vector3(0,1,0), Quaternion.LookRotation(transform.forward));
         awwow.AddComponent<Rigidbody>();
         awwow.GetComponent<Rigidbody>().AddForce(transform.forward * arrowSpeed);
     }
