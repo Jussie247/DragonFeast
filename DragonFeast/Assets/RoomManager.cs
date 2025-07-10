@@ -1,30 +1,32 @@
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
     // all rooms have to be children of this object
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Transform[] rooms;
+    int current = 0;
     void Start()
     {
-        
+        rooms = transform.GetComponentsInChildren<Transform>()
+                         .Where(t => t != transform) // drop parent
+                         .ToArray();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Transform[] childs = transform.GetComponentsInChildren<Transform>();
+        if (current >= rooms.Length) return; // all done
 
-        //iterate through all rooms
-        for (int i = 0; i < childs.Length;)
+        Transform room = rooms[current];
+        Transform spawns = room.Find("Spawns");
+
+        if (spawns != null && spawns.childCount == 0)
         {
-            //check if all enemies got defeated
-            if (childs[i].transform.Find("Spawns").childCount == 0)
-            {
-                //destroy the door
-                Destroy(childs[i].transform.Find("door"));
-                i++;
-            }
+            Transform door = room.Find("door");
+            if (door != null) Destroy(door.gameObject);
+
+            current++;
         }
     }
 }
