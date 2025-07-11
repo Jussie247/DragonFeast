@@ -41,7 +41,7 @@ public class rbBasedController : MonoBehaviour
         rb.freezeRotation = true;
         updateHP();
         hideRadicle();
-        animator = GetComponent<Animator>("Assets/Animation/DragonAnimController.controller");
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -60,6 +60,7 @@ public class rbBasedController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //adjust damping on surface and air
         if (IsGrounded())
         {
@@ -81,6 +82,7 @@ public class rbBasedController : MonoBehaviour
         //attack
         if (Input.GetMouseButtonUp(0))
         {
+            animator.SetBool("startAttack", false);
             if (!attacked)
             {
                 hideRadicle();
@@ -110,6 +112,7 @@ public class rbBasedController : MonoBehaviour
         //eat
         if (Input.GetKeyDown(KeyCode.F))
         {
+            animator.SetBool("eating", true);
             if (!ate)
             {
                 print("eat enemy");
@@ -131,6 +134,13 @@ public class rbBasedController : MonoBehaviour
                 Invoke(nameof(resetEat), eatCooldown);
             }
         }
+
+        // eating released to stop the animation/bad?/
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            animator.SetBool("eating", false);
+                }
+
         // pause menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
