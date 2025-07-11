@@ -33,6 +33,7 @@ public class rbBasedController : MonoBehaviour
     public bool attacked, ate;
     public float ATKcooldown = 0.2f, eatCooldown = 0.2f;
 
+    Animator animator;
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class rbBasedController : MonoBehaviour
         rb.freezeRotation = true;
         updateHP();
         hideRadicle();
+        animator = GetComponent<Animator>("Assets/Animation/DragonAnimController.controller");
     }
 
     void FixedUpdate()
@@ -70,6 +72,7 @@ public class rbBasedController : MonoBehaviour
         //charge attack
         if (Input.GetMouseButtonDown(0))
         {
+            animator.SetBool("startAttack", true);
             if (!attacked)
             {
                 showRadicle();
