@@ -60,7 +60,17 @@ public class rbBasedController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Look for Keyinputs for walkanimation
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        {
+            animator.SetBool("walking", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            animator.SetBool("walking", false);
+        }
+
         //adjust damping on surface and air
         if (IsGrounded())
         {
