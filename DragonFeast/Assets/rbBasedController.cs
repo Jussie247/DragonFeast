@@ -149,7 +149,7 @@ public class rbBasedController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F))
         {
             animator.SetBool("eating", false);
-                }
+        }
 
         // pause menu
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -172,7 +172,7 @@ public class rbBasedController : MonoBehaviour
             updateHP();
         }
         //check if player has hunger
-        if(hungies <= 0)
+        if (hungies <= 0)
         {
             hit();
         }
