@@ -55,20 +55,19 @@ public class rbBasedController : MonoBehaviour
         {
             //walk
             rb.AddForce(movement * moveSpeed);
-
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         //Look for Keyinputs for walkanimation
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetAxis("Horizontal")!=0 || Input.GetAxis("Vertical")!=0)
         {
             animator.SetBool("walking", true);
         }
-
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        else
         {
             animator.SetBool("walking", false);
         }
