@@ -2631,18 +2631,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043a2ceb21065d8458d4cba94e55a0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playbackSpeed: 0
+  player: {fileID: 103782959}
+  playbackSpeed: 1
   playbackRate: 0.75
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 1973022555}
   groundDistance: 0.4
   StoneStepAud:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 376671210
+      Data2: 1074856195
+      Data3: 506282370
+      Data4: 1679767210
+    Path: event:/Player/Footsteps/Footsteps_Player
 --- !u!1 &1147972465
 GameObject:
   m_ObjectHideFlags: 0
@@ -4774,6 +4774,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940162306}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1973022555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7000637125683043491, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
+  m_PrefabInstance: {fileID: 103782958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1993317116
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class playerFootsteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        isStone = true;
     }
 
     void CallFootSteps()

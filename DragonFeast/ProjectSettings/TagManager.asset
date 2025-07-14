@@ -7,6 +7,7 @@ TagManager:
   - enemy
   - cage
   - bounce
+  - stone
   layers:
   - Default
   - TransparentFX

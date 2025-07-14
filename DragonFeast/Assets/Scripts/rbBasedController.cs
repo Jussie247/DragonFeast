@@ -53,7 +53,9 @@ public class rbBasedController : MonoBehaviour
         Vector3 movement = transform.right * x + transform.forward * z;
         if (IsGrounded())
         {
+            //walk
             rb.AddForce(movement * moveSpeed);
+
         }
     }
 
