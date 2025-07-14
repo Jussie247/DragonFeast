@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3610477399142871014}
   - component: {fileID: 9135482213501856946}
   - component: {fileID: 4477391298415388692}
+  - component: {fileID: 4536672272434451937}
   m_Layer: 8
   m_Name: TestKnight
   m_TagString: enemy
@@ -98,6 +99,29 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4536672272434451937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268565589334037565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc302677e109ce46b0a9fd748451640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playbackSpeed: 3
+  positionOffset: 0.75
+  groundCheck: {fileID: 4581736056436649605}
+  groundDistance: 0.4
+  EntityStoneStepAud:
+    Guid:
+      Data1: 1058897932
+      Data2: 1255682537
+      Data3: -848452465
+      Data4: 990443947
+    Path: event:/Enemies/Footsteps/Footsteps_Enemy
 --- !u!1 &2772861572060749417
 GameObject:
   m_ObjectHideFlags: 0
