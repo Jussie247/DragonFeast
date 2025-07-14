@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{8200f4c4-3c9d-417a-a1a2-45e832a90765}">
+	<object class="AudioFile" id="{aab99de9-7508-463c-b3fa-339c20210c90}">
 		<property name="assetPath">
-			<value>Enemies/Attack/Knight/Knight_Attack.wav</value>
+			<value>Enemies/Attack/Archer/arrow-twang_01-306041(1).mp3</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.66629166666666662</value>
+			<value>1.4367346938775509</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a9ccb88d-c9e1-48db-ba38-71d4f5d10f64}</destination>
