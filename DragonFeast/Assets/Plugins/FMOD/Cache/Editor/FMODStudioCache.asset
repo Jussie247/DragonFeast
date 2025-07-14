@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638880853032001862
+  lastModified: 638880916839680157
   FileSizes:
   - Name: Desktop
-    Value: 2738624
+    Value: 2732032
   Exists: 1
 --- !u!114 &-7296703509414783951
 MonoBehaviour:
@@ -73,7 +73,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 2115
 --- !u!114 &-6908558291931708013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +182,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5128887268716041178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Hover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Hover
+  Guid:
+    Data1: 1398411748
+    Data2: 1285640823
+    Data3: 1913477026
+    Data4: 121284244
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 170
 --- !u!114 &-5013893764637966301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,33 +227,6 @@ MonoBehaviour:
     Data2: 1132356485
     Data3: 72095141
     Data4: 17752166
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4555792230355597605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Reward Stingers/Level_Cleared/Level_Cleared
-  m_EditorClassIdentifier: 
-  Path: event:/Reward Stingers/Level_Cleared/Level_Cleared
-  Guid:
-    Data1: -1463784867
-    Data2: 1233107882
-    Data3: -1833951068
-    Data4: -64696973
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 2115
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +314,6 @@ MonoBehaviour:
   - {fileID: -8229774803785650688}
   - {fileID: -7296703509414783951}
   - {fileID: 336420646109560750}
-  - {fileID: -4555792230355597605}
   - {fileID: -1606402891834330523}
   - {fileID: -6908558291931708013}
   - {fileID: 1577314679841993578}
@@ -322,13 +321,16 @@ MonoBehaviour:
   - {fileID: -5386147343873469420}
   - {fileID: -960297406374126118}
   - {fileID: 7365115443696212149}
+  - {fileID: 8466415470069867792}
+  - {fileID: 556950710355922155}
+  - {fileID: -5128887268716041178}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7709548440230959844}
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638880853032012130
+  cacheTime: 638880916839690147
   SerializableEventsDict:
   - key: event:/Enemies/Death/Archer_Death
     index: 0
@@ -346,22 +348,26 @@ MonoBehaviour:
     index: 6
   - key: event:/Player/Special_Ability/Special_Ability
     index: 7
-  - key: event:/Reward Stingers/Level_Cleared/Level_Cleared
-    index: 8
   - key: event:/Music/Combat Theme/Combat_Theme
-    index: 9
+    index: 8
   - key: event:/Music/Shop_and_Menu Theme/Shop_and_Menu_Theme
-    index: 10
+    index: 9
   - key: event:/Player/Death/Death_Player
-    index: 11
+    index: 10
   - key: event:/Music/Main Theme/Main_Theme
-    index: 12
+    index: 11
   - key: event:/Music/Boss Theme/Boss_Theme
-    index: 13
+    index: 12
   - key: event:/Reward Stingers/Egg_Collect/Egg_Collect
-    index: 14
+    index: 13
   - key: event:/Player/Footsteps/Footsteps_Player
+    index: 14
+  - key: event:/Enemies/Attack/ArcherHit
     index: 15
+  - key: event:/UI/Click
+    index: 16
+  - key: event:/UI/Hover
+    index: 17
 --- !u!114 &336420646109560750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +395,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7560
+--- !u!114 &556950710355922155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Click
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Click
+  Guid:
+    Data1: 1957019830
+    Data2: 1305742473
+    Data3: 1882505645
+    Data4: -1234805140
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 202
 --- !u!114 &1296545298038669575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,11 +498,11 @@ MonoBehaviour:
   - {fileID: -7709548440230959844}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 700
+  Length: 290
 --- !u!114 &7365115443696212149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,7 +529,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6948
+  Length: 300
 --- !u!114 &7632452734052637521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,10 +545,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638880853032012130
+  lastModified: 638880916839690147
   FileSizes:
   - Name: Desktop
-    Value: 1698
+    Value: 1780
   Exists: 1
 --- !u!114 &8166996153836855893
 MonoBehaviour:
@@ -544,3 +577,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 666
+--- !u!114 &8466415470069867792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Attack/ArcherHit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Attack/ArcherHit
+  Guid:
+    Data1: 1879919395
+    Data2: 1336084538
+    Data3: -1721429335
+    Data4: 1209808378
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1436
