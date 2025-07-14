@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638880916839680157
+  lastModified: 638880968092155706
   FileSizes:
   - Name: Desktop
-    Value: 2732032
+    Value: 2740224
   Exists: 1
 --- !u!114 &-7296703509414783951
 MonoBehaviour:
@@ -330,7 +330,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638880916839690147
+  cacheTime: 638880968092168812
   SerializableEventsDict:
   - key: event:/Enemies/Death/Archer_Death
     index: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638880916839690147
+  lastModified: 638880968092168812
   FileSizes:
   - Name: Desktop
     Value: 1780
@@ -603,4 +603,4 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1436
+  Length: 860
