@@ -160,10 +160,12 @@ public class rbBasedController : MonoBehaviour
             if (paused)
             {
                 canvas.GetComponent<UiHandlerScript>().resume();
+                Cursor.visible = false;
             }
             else
             {
                 canvas.GetComponent<UiHandlerScript>().pause();
+                Cursor.visible = true;
             }
         }
         //check if player died

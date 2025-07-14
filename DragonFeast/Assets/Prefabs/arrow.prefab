@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -2.42, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,6 +123,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 1
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  player: {fileID: 0}
 --- !u!114 &7179858328687624465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,3 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a934d1208538f440a2347b787d5d77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ArrowHitAud:
+    Guid:
+      Data1: 1879919395
+      Data2: 1336084538
+      Data3: -1721429335
+      Data4: 1209808378
+    Path: event:/Enemies/Attack/ArcherHit

@@ -17,7 +17,7 @@ public class playCollectSound : MonoBehaviour
 
     public void playCollect()
     {
-        print("collected an egg");
+        //print("collected an egg");
         FMODUnity.RuntimeManager.PlayOneShot(CollectEggAud);
     }
 }
