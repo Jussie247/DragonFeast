@@ -9,30 +9,31 @@ using UnityEngine.SceneManagement;
 
 public class rbBasedController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 5f;
+    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float jumpForce = 5f;
     private Rigidbody rb;
 
-    public Transform groundCheck, attackPos;
-    public LayerMask GroundMask, enemy, cage;
-    public float groundDistance;
-    public float groundDrag;
+    [SerializeField] Transform groundCheck, attackPos;
+    [SerializeField] LayerMask GroundMask, enemy, cage;
+    [SerializeField] float groundDistance;
+    [SerializeField] float groundDrag;
 
-    public GameObject canvas, radicle;
-    public float attackRange = 5;
-    public float punchForce;
+    [SerializeField] GameObject canvas, radicle;
+    [SerializeField] float attackRange = 5;
+    [SerializeField] float punchForce;
 
     bool paused = false;
 
     //Vital
-    public int shield = 0;
-    public int HP = 3;
-    public float hungies = 100;
-    public float hungerLoss = 1;
+    [SerializeField] int shield = 0;
+    [SerializeField] int HP = 3;
+    [SerializeField] float hungies = 100;
+    [SerializeField] float hungerLoss = 1;
 
-    public bool attacked, ate;
-    public float ATKcooldown = 0.2f, eatCooldown = 0.2f;
+    [SerializeField] bool attacked, ate;
+    [SerializeField] float ATKcooldown = 0.2f, eatCooldown = 0.2f;
 
+    [SerializeField] float animationSpeedFactor = 0.083f;
     Animator animator;
 
     void Start()
@@ -66,10 +67,13 @@ public class rbBasedController : MonoBehaviour
         if (Input.GetAxis("Horizontal")!=0 || Input.GetAxis("Vertical")!=0)
         {
             animator.SetBool("walking", true);
+            animator.speed = rb.linearVelocity.magnitude * animationSpeedFactor;
+            //print(rb.linearVelocity.magnitude * animationSpeedFactor);
         }
         else
         {
             animator.SetBool("walking", false);
+            animator.speed = 1;
         }
 
         //adjust damping on surface and air
@@ -159,13 +163,13 @@ public class rbBasedController : MonoBehaviour
             Time.timeScale = paused ? 0 : 1;
             if (paused)
             {
-                canvas.GetComponent<UiHandlerScript>().resume();
-                Cursor.visible = false;
+                canvas.GetComponent<UiHandlerScript>().pause();
+                Cursor.visible = true;
             }
             else
             {
-                canvas.GetComponent<UiHandlerScript>().pause();
-                Cursor.visible = true;
+                canvas.GetComponent<UiHandlerScript>().resume();
+                Cursor.visible = false;
             }
         }
         //check if player died

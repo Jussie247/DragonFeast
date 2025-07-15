@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: attackRange
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
+      propertyPath: animationSpeedFactor
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6454963590321664155, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
