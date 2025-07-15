@@ -9,7 +9,9 @@ public class UiHandlerScript : MonoBehaviour
     [SerializeField] GameObject pauseScreen;
     [SerializeField] GameObject HP;
     [SerializeField] GameObject hungerSlider;
+    [SerializeField] GameObject sensitivitySlider;
 
+    public static float sensitivity = 0.5f;
     public static bool paused;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +23,7 @@ public class UiHandlerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void pause()
@@ -70,5 +72,10 @@ public class UiHandlerScript : MonoBehaviour
     public void updateHungerBar(float _hunger)
     {
         hungerSlider.GetComponent<Slider>().value = _hunger;
+    }
+
+    public void updateSensitivity()
+    {
+        sensitivity = sensitivitySlider.GetComponent<Slider>().value;
     }
 }

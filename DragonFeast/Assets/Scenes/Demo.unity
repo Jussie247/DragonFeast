@@ -419,6 +419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RB_Based_Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 6395745776637579291, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
+      propertyPath: mouseSensitivityMultiplier
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: HP
       value: 100
@@ -3121,6 +3125,7 @@ MonoBehaviour:
   pauseScreen: {fileID: 1798521987}
   HP: {fileID: 417191108}
   hungerSlider: {fileID: 10781051}
+  sensitivitySlider: {fileID: 2078696215}
 --- !u!114 &1138086520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7693,10 +7698,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1138086519}
+        m_TargetAssemblyTypeName: UiHandlerScript, Assembly-CSharp
+        m_MethodName: updateSensitivity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

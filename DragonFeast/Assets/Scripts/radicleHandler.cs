@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class radicleHandler : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;
+    [SerializeField] float mouseSensitivityMultiplier = 200f;
 
     public Transform playerBody;
 
@@ -18,7 +18,7 @@ public class radicleHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivityMultiplier * UiHandlerScript.sensitivity * Time.deltaTime;
         //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         //xRotation -= mouseY;
