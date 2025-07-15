@@ -1,17 +1,21 @@
 using FMOD;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UiHandlerScript : MonoBehaviour
 {
-    public GameObject pauseScreen;
-    public GameObject HP;
-    public GameObject hungerSlider;
+    [SerializeField] GameObject pauseScreen;
+    [SerializeField] GameObject HP;
+    [SerializeField] GameObject hungerSlider;
+
+    public static bool paused;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pauseScreen.SetActive(false);
+        paused = false;
     }
 
     // Update is called once per frame
@@ -22,12 +26,18 @@ public class UiHandlerScript : MonoBehaviour
 
     public void pause()
     {
+        paused = true;
+        Time.timeScale = 0;
         pauseScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void resume()
     {
+        paused=false;
+        Time.timeScale = 1;
         pauseScreen.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void quit()

@@ -37,7 +37,7 @@ public class TestOpponent : MonoBehaviour
     //Attacking
     [SerializeField] bool attacked;
     //startup is the time between attacking and hitting the player
-    [SerializeField] float attackSpeed = 0.1f, startup = 0.2f, ATKcooldown = 200;
+    [SerializeField] float attackSpeed = 0.1f, startup = 0.625f, ATKcooldown = 200;
 
     //States
     [SerializeField] float sightRange, attackRange;

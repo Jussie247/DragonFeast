@@ -22,8 +22,6 @@ public class rbBasedController : MonoBehaviour
     [SerializeField] float attackRange = 5;
     [SerializeField] float punchForce;
 
-    bool paused = false;
-
     //Vital
     [SerializeField] int shield = 0;
     [SerializeField] int HP = 3;
@@ -86,7 +84,7 @@ public class rbBasedController : MonoBehaviour
             rb.linearDamping = 0;
         }
         //charge attack
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !UiHandlerScript.paused)
         {
             animator.SetBool("startAttack", true);
             if (!attacked)
@@ -95,7 +93,7 @@ public class rbBasedController : MonoBehaviour
             }
         }
         //attack
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !UiHandlerScript.paused)
         {
             animator.SetBool("startAttack", false);
             if (!attacked)
@@ -120,12 +118,12 @@ public class rbBasedController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded() && !UiHandlerScript.paused)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
         //eat
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && !UiHandlerScript.paused)
         {
             animator.SetBool("eating", true);
             if (!ate)
@@ -151,7 +149,7 @@ public class rbBasedController : MonoBehaviour
         }
 
         // eating released to stop the animation/bad?/
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.F) && !UiHandlerScript.paused)
         {
             animator.SetBool("eating", false);
         }
@@ -159,17 +157,17 @@ public class rbBasedController : MonoBehaviour
         // pause menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            paused = !paused;
-            Time.timeScale = paused ? 0 : 1;
-            if (paused)
+            if (!UiHandlerScript.paused)
             {
                 canvas.GetComponent<UiHandlerScript>().pause();
-                Cursor.visible = true;
+                //Cursor.visible = true;
+                
             }
             else
             {
                 canvas.GetComponent<UiHandlerScript>().resume();
-                Cursor.visible = false;
+                //Cursor.visible = false;
+                
             }
         }
         //check if player died
