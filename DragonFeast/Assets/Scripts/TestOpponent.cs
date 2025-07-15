@@ -69,7 +69,7 @@ public class TestOpponent : MonoBehaviour
 
     private void idle()
     {
-
+        animator.SetBool("knightwalk", false);
     }
 
     private void chase()
@@ -77,6 +77,7 @@ public class TestOpponent : MonoBehaviour
         agent.isStopped = false;
         //print("chasing Player");
         agent.SetDestination(player.position);
+        animator.SetBool("knightwalk", true);
     }
 
     private void attack()
@@ -92,7 +93,6 @@ public class TestOpponent : MonoBehaviour
                 playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
                 if (playerInAttackRange)
                 {
-                    animator.SetBool("knightattack", true);
                     print("attacking Player");
                     player.GetComponent<rbBasedController>().hit();
                     attacked = true;
@@ -100,7 +100,7 @@ public class TestOpponent : MonoBehaviour
                 }
                 else
                 {
-                    animator.SetBool("knightattack", false);
+                    Invoke(nameof(resetAttack), ATKcooldown);
                 }
             }
             else if (enemyType == EnemyType.Archer)
@@ -118,9 +118,17 @@ public class TestOpponent : MonoBehaviour
         }
     }
 
+    private void startupAttack()
+    {
+        animator.SetBool("knightwalk", false);
+        animator.SetBool("knightattack", true);
+        Invoke(nameof(attack), startup);
+    }
+
     private void resetAttack()
     {
         attacked = false;
+        animator.SetBool("knightattack", false);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -137,7 +145,7 @@ public class TestOpponent : MonoBehaviour
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
 
-            if (playerInSightRange && playerInAttackRange) Invoke(nameof(attack), startup);
+            if (playerInSightRange && playerInAttackRange) startupAttack();
             if (playerInSightRange && !playerInAttackRange && enemyType == EnemyType.Knight) chase();
             if (!playerInAttackRange && !playerInSightRange) idle();
         }
