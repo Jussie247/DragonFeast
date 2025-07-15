@@ -44,7 +44,7 @@ public class TestOpponent : MonoBehaviour
     [SerializeField] bool playerInSightRange, playerInAttackRange;
 
     private void Awake()
-    {
+    {   
         player = GameObject.Find("RB_Based_Controller").transform;
         radicle = GameObject.Find("plane");
         arrow = GameObject.Find("arrow");
@@ -54,6 +54,8 @@ public class TestOpponent : MonoBehaviour
         if (enemyType == EnemyType.Knight)
         {
             animator.avatar = avatarKnight;
+            animator.Rebind();
+            animator.WriteDefaultValues();
         }
         //else if (enemyType == EnemyType.Archer)
         //{
