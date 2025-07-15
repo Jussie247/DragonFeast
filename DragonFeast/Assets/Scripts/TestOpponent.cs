@@ -21,6 +21,8 @@ public class TestOpponent : MonoBehaviour
 
     [SerializeField] NavMeshAgent agent;
 
+    [SerializeField] Avatar avatarKnight, avatarArcher, avatarLancer;
+
     [SerializeField] Transform player;
 
     [SerializeField] LayerMask groundMask, playerMask, wallMask, enemyMask;
@@ -45,6 +47,20 @@ public class TestOpponent : MonoBehaviour
         radicle = GameObject.Find("plane");
         arrow = GameObject.Find("arrow");
         agent = GetComponent<NavMeshAgent>();
+
+        //if (enemyType == EnemyType.Knight)
+        //{
+        //    GetComponent<Animator>().avatar = avatarKnight;
+        //}
+        //else if (enemyType == EnemyType.Archer)
+        //{
+        //    GetComponent<Animator>().avatar = avatarArcher;
+        //}
+        //else if (enemyType == EnemyType.Lancer)
+        //{
+        //    GetComponent<Animator>().avatar = avatarLancer;
+        //}
+        
     }
 
 

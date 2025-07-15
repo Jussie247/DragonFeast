@@ -1879,6 +1879,14 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 9135482213501856946, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      propertyPath: avatarArcher
+      value: 
+      objectReference: {fileID: 9000000, guid: e382ae1ade53a0f4f9864e62c64a2f26, type: 3}
+    - target: {fileID: 9135482213501856946, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      propertyPath: avatarKnight
+      value: 
+      objectReference: {fileID: 9000000, guid: e382ae1ade53a0f4f9864e62c64a2f26, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
