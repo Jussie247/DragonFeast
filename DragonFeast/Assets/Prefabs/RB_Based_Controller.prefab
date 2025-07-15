@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 8985589504419181218}
   - component: {fileID: 2460212048341339258}
   - component: {fileID: 2533130719514005338}
+  - component: {fileID: -8764868097902183615}
   m_Layer: 7
   m_Name: RB_Based_Controller
   m_TagString: Untagged
@@ -234,6 +235,18 @@ MonoBehaviour:
       Data3: 395255201
       Data4: 1195603444
     Path: event:/Reward Stingers/Egg_Collect/Egg_Collect
+--- !u!114 &-8764868097902183615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225205341800332472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78a9a1c576a3a84f8eafd466de4e7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4601516155172360565
 GameObject:
   m_ObjectHideFlags: 0
