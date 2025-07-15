@@ -92,9 +92,9 @@ Transform:
   m_GameObject: {fileID: 4225205341800332472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 1, z: 0.29}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0, y: 3, z: 0.29}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1208723498853994853}
   - {fileID: 7000637125683043491}
@@ -158,7 +158,7 @@ MonoBehaviour:
   groundDrag: 15
   canvas: {fileID: 0}
   radicle: {fileID: 4601516155172360565}
-  attackRange: 1.5
+  attackRange: 3
   punchForce: 10000
   shield: 0
   HP: 2
@@ -168,6 +168,7 @@ MonoBehaviour:
   ate: 0
   ATKcooldown: 0.2
   eatCooldown: 0.2
+  animationSpeedFactor: 0.083
 --- !u!95 &8985589504419181218
 Animator:
   serializedVersion: 7
@@ -396,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61bdec2cc11168544862e54d1a9d7c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 500
+  mouseSensitivityMultiplier: 200
   playerBody: {fileID: 6454963590321664155}
 --- !u!1001 &1678865071731734158
 PrefabInstance:
