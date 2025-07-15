@@ -32,6 +32,8 @@ public class TestOpponent : MonoBehaviour
     [SerializeField] float punchForce = 1000, arrowSpeed = 1000;
     [SerializeField] int bounces = 1;
 
+    Animator animator;
+
     //Attacking
     [SerializeField] bool attacked;
     //startup is the time between attacking and hitting the player
@@ -48,10 +50,11 @@ public class TestOpponent : MonoBehaviour
         arrow = GameObject.Find("arrow");
         agent = GetComponent<NavMeshAgent>();
 
-        //if (enemyType == EnemyType.Knight)
-        //{
-        //    GetComponent<Animator>().avatar = avatarKnight;
-        //}
+        animator = GetComponent<Animator>();
+        if (enemyType == EnemyType.Knight)
+        {
+            animator.avatar = avatarKnight;
+        }
         //else if (enemyType == EnemyType.Archer)
         //{
         //    GetComponent<Animator>().avatar = avatarArcher;
@@ -60,7 +63,7 @@ public class TestOpponent : MonoBehaviour
         //{
         //    GetComponent<Animator>().avatar = avatarLancer;
         //}
-        
+
     }
 
 
@@ -89,10 +92,15 @@ public class TestOpponent : MonoBehaviour
                 playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
                 if (playerInAttackRange)
                 {
+                    animator.SetBool("knightattack", true);
                     print("attacking Player");
                     player.GetComponent<rbBasedController>().hit();
                     attacked = true;
                     Invoke(nameof(resetAttack), ATKcooldown);
+                }
+                else
+                {
+                    animator.SetBool("knightattack", false);
                 }
             }
             else if (enemyType == EnemyType.Archer)

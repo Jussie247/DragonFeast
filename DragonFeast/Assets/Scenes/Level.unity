@@ -1267,6 +1267,9 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 196339425}
+  avatarKnight: {fileID: 0}
+  avatarArcher: {fileID: 0}
+  avatarLancer: {fileID: 0}
   player: {fileID: 349584994}
   groundMask:
     serializedVersion: 2
@@ -1287,9 +1290,10 @@ MonoBehaviour:
   punchForce: 1000
   arrowSpeed: 1000
   bounces: 1
-  ATKcooldown: 5
   attacked: 0
   attackSpeed: 100
+  startup: 0.2
+  ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
@@ -4944,6 +4948,7 @@ GameObject:
   - component: {fileID: 1111366010}
   - component: {fileID: 1111366012}
   - component: {fileID: 1111366011}
+  - component: {fileID: 1111366013}
   m_Layer: 8
   m_Name: TestKnight
   m_TagString: enemy
@@ -5004,6 +5009,9 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 1111366011}
+  avatarKnight: {fileID: 0}
+  avatarArcher: {fileID: 0}
+  avatarLancer: {fileID: 0}
   player: {fileID: 349584994}
   groundMask:
     serializedVersion: 2
@@ -5024,13 +5032,36 @@ MonoBehaviour:
   punchForce: 1000
   arrowSpeed: 1000
   bounces: 1
-  ATKcooldown: 5
   attacked: 0
   attackSpeed: 100
+  startup: 0.2
+  ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
+--- !u!95 &1111366013
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111366009}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d069c2f64b2a86f43aebf60754456aef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1114411758
 GameObject:
   m_ObjectHideFlags: 0
@@ -7117,6 +7148,9 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 1523832411}
+  avatarKnight: {fileID: 0}
+  avatarArcher: {fileID: 0}
+  avatarLancer: {fileID: 0}
   player: {fileID: 349584994}
   groundMask:
     serializedVersion: 2
@@ -7137,9 +7171,10 @@ MonoBehaviour:
   punchForce: 1000
   arrowSpeed: 1000
   bounces: 1
-  ATKcooldown: 5
   attacked: 0
   attackSpeed: 100
+  startup: 0.2
+  ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
@@ -9865,6 +9900,9 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 2032864257}
+  avatarKnight: {fileID: 0}
+  avatarArcher: {fileID: 0}
+  avatarLancer: {fileID: 0}
   player: {fileID: 349584994}
   groundMask:
     serializedVersion: 2
@@ -9885,9 +9923,10 @@ MonoBehaviour:
   punchForce: 1000
   arrowSpeed: 1000
   bounces: 1
-  ATKcooldown: 5
   attacked: 0
   attackSpeed: 100
+  startup: 0.2
+  ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
@@ -10637,11 +10676,129 @@ PrefabInstance:
       propertyPath: radicle
       value: 
       objectReference: {fileID: 1805639693}
+    - target: {fileID: 9135482213501856946, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      propertyPath: avatarKnight
+      value: 
+      objectReference: {fileID: 9000000, guid: 695c57f5aefbb2f49a5714d44daa6c95, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2268565589334037565, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2326368021743793821}
+    - targetCorrespondingSourceObject: {fileID: 2268565589334037565, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2326368021743793827}
+    - targetCorrespondingSourceObject: {fileID: 2268565589334037565, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2326368021743793826}
+    - targetCorrespondingSourceObject: {fileID: 2268565589334037565, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2326368021743793825}
   m_SourcePrefab: {fileID: 100100000, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+--- !u!1 &2326368021743793820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2268565589334037565, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+  m_PrefabInstance: {fileID: 2326368021743793819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2326368021743793821
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326368021743793820}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d069c2f64b2a86f43aebf60754456aef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &2326368021743793825
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326368021743793820}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8319465574948283117, guid: 695c57f5aefbb2f49a5714d44daa6c95, type: 3}
+--- !u!23 &2326368021743793826
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326368021743793820}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2326368021743793827
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326368021743793820}
+  m_Mesh: {fileID: -8319465574948283117, guid: 695c57f5aefbb2f49a5714d44daa6c95, type: 3}
 --- !u!1001 &6275873785091404239
 PrefabInstance:
   m_ObjectHideFlags: 0

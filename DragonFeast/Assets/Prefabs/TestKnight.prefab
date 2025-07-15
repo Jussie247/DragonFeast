@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9135482213501856946}
   - component: {fileID: 4477391298415388692}
   - component: {fileID: 4536672272434451937}
+  - component: {fileID: 1104071696419921002}
   m_Layer: 8
   m_Name: TestKnight
   m_TagString: enemy
@@ -50,6 +51,9 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 4477391298415388692}
+  avatarKnight: {fileID: 0}
+  avatarArcher: {fileID: 0}
+  avatarLancer: {fileID: 0}
   player: {fileID: 0}
   groundMask:
     serializedVersion: 2
@@ -70,9 +74,10 @@ MonoBehaviour:
   punchForce: 1000
   arrowSpeed: 1000
   bounces: 1
-  ATKcooldown: 5
   attacked: 0
   attackSpeed: 100
+  startup: 0.2
+  ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
@@ -122,6 +127,28 @@ MonoBehaviour:
       Data3: -848452465
       Data4: 990443947
     Path: event:/Enemies/Footsteps/Footsteps_Enemy
+--- !u!95 &1104071696419921002
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268565589334037565}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d069c2f64b2a86f43aebf60754456aef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2772861572060749417
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +160,8 @@ GameObject:
   - component: {fileID: 4581736056436649605}
   - component: {fileID: 7886381648786011586}
   - component: {fileID: 8128761795308651538}
-  - component: {fileID: 1467628067386694175}
+  - component: {fileID: 7805975355195193074}
+  - component: {fileID: 4147952898434148579}
   m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
@@ -149,13 +177,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2772861572060749417}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0, y: -0.31, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3610477399142871014}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!33 &7886381648786011586
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -163,7 +191,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2772861572060749417}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -8319465574948283117, guid: 695c57f5aefbb2f49a5714d44daa6c95, type: 3}
 --- !u!23 &8128761795308651538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -209,8 +237,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1467628067386694175
-CapsuleCollider:
+--- !u!64 &7805975355195193074
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,8 +255,29 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8319465574948283117, guid: 695c57f5aefbb2f49a5714d44daa6c95, type: 3}
+--- !u!95 &4147952898434148579
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2772861572060749417}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d069c2f64b2a86f43aebf60754456aef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
