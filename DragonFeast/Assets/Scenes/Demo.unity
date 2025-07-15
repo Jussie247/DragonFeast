@@ -1871,6 +1871,14 @@ PrefabInstance:
       propertyPath: radicle
       value: 
       objectReference: {fileID: 103782960}
+    - target: {fileID: 9135482213501856946, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      propertyPath: startup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135482213501856946, guid: 6aaf725b4ab7ea247a8d88f22414cf2b, type: 3}
+      propertyPath: attackSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

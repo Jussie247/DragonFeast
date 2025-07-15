@@ -8,36 +8,36 @@ using UnityEngine.AI;
 
 public class TestOpponent : MonoBehaviour
 {
-    public enum EnemyType
+    [SerializeField]
+    enum EnemyType
     {
         Knight,
         Archer,
         Lancer
     }
-    public EnemyType enemyType;
+    [SerializeField] EnemyType enemyType;
 
-    public int HP = 2;
+    [SerializeField] int HP = 2;
 
-    public NavMeshAgent agent;
+    [SerializeField] NavMeshAgent agent;
 
-    public Transform player;
+    [SerializeField] Transform player;
 
-    public LayerMask groundMask, playerMask, wallMask, enemyMask;
+    [SerializeField] LayerMask groundMask, playerMask, wallMask, enemyMask;
 
-    public bool isBounce = false, hitWall = false;
-    public GameObject radicle, arrow;
-    public float punchForce = 1000, arrowSpeed = 1000;
-    public int bounces = 1;
+    [SerializeField] bool isBounce = false, hitWall = false;
+    [SerializeField] GameObject radicle, arrow;
+    [SerializeField] float punchForce = 1000, arrowSpeed = 1000;
+    [SerializeField] int bounces = 1;
 
     //Attacking
-    public float ATKcooldown = 200;
-    public bool attacked;
-    //TODO: make the enemy attack with a delay then check if the player is still in range, if he is, hit the player.
-    public float attackSpeed;
+    [SerializeField] bool attacked;
+    //startup is the time between attacking and hitting the player
+    [SerializeField] float attackSpeed = 0.1f, startup = 0.2f, ATKcooldown = 200;
 
     //States
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    [SerializeField] float sightRange, attackRange;
+    [SerializeField] bool playerInSightRange, playerInAttackRange;
 
     private void Awake()
     {
@@ -70,10 +70,14 @@ public class TestOpponent : MonoBehaviour
         {
             if(enemyType == EnemyType.Knight)
             {
-                print("attacking Player");
-                player.GetComponent<rbBasedController>().hit();
-                attacked = true;
-                Invoke(nameof(resetAttack), ATKcooldown);
+                playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
+                if (playerInAttackRange)
+                {
+                    print("attacking Player");
+                    player.GetComponent<rbBasedController>().hit();
+                    attacked = true;
+                    Invoke(nameof(resetAttack), ATKcooldown);
+                }
             }
             else if (enemyType == EnemyType.Archer)
             {
@@ -109,7 +113,7 @@ public class TestOpponent : MonoBehaviour
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
 
-            if (playerInSightRange && playerInAttackRange) attack();
+            if (playerInSightRange && playerInAttackRange) Invoke(nameof(attack), startup);
             if (playerInSightRange && !playerInAttackRange && enemyType == EnemyType.Knight) chase();
             if (!playerInAttackRange && !playerInSightRange) idle();
         }
