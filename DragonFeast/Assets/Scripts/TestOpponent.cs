@@ -22,6 +22,7 @@ public class TestOpponent : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
 
     [SerializeField] Avatar avatarKnight, avatarArcher, avatarLancer;
+    public RuntimeAnimatorController controllerKnight, controllerArcher, controllerLancer;
 
     [SerializeField] Transform player;
 
@@ -50,17 +51,20 @@ public class TestOpponent : MonoBehaviour
         arrow = GameObject.Find("arrow");
         agent = GetComponent<NavMeshAgent>();
 
-        animator = GetComponent<Animator>();
         if (enemyType == EnemyType.Knight)
         {
+            //animator.runtimeAnimatorController = controllerKnight;
             animator.avatar = avatarKnight;
             animator.Rebind();
             animator.WriteDefaultValues();
         }
-        //else if (enemyType == EnemyType.Archer)
-        //{
-        //    GetComponent<Animator>().avatar = avatarArcher;
-        //}
+        else if (enemyType == EnemyType.Archer)
+        {
+            //animator = controllerArcher;
+            animator.avatar = avatarArcher;
+            animator.Rebind();
+            animator.WriteDefaultValues();
+        }
         //else if (enemyType == EnemyType.Lancer)
         //{
         //    GetComponent<Animator>().avatar = avatarLancer;
@@ -71,7 +75,7 @@ public class TestOpponent : MonoBehaviour
 
     private void idle()
     {
-        animator.SetBool("knightwalk", false);
+       
     }
 
     private void chase()
@@ -79,7 +83,20 @@ public class TestOpponent : MonoBehaviour
         agent.isStopped = false;
         //print("chasing Player");
         agent.SetDestination(player.position);
-        animator.SetBool("knightwalk", true);
+        if (enemyType == EnemyType.Knight)
+        {
+            animator.SetBool("knightwalk", true);
+        }
+        else if (enemyType == EnemyType.Archer)
+        {
+            
+
+        }
+        else if (enemyType == EnemyType.Lancer)
+        {
+            
+        }
+
     }
 
     private void attack()
@@ -122,8 +139,20 @@ public class TestOpponent : MonoBehaviour
 
     private void startupAttack()
     {
-        animator.SetBool("knightwalk", false);
-        animator.SetBool("knightattack", true);
+        if (enemyType == EnemyType.Knight)
+        {
+            animator.SetBool("knightwalk", false);
+            animator.SetBool("knightattack", true);
+        }
+        else if (enemyType == EnemyType.Archer)
+        {
+            animator.SetBool("archerattack", true);
+        }
+        else if (enemyType == EnemyType.Lancer)
+        {
+
+        }
+        
         Invoke(nameof(attack), startup);
     }
 

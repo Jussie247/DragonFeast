@@ -999,6 +999,18 @@ PrefabInstance:
       propertyPath: ATKcooldown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 937039571396907624, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
+      propertyPath: avatarArcher
+      value: 
+      objectReference: {fileID: 9000000, guid: c657835e6ee7c9c4e8de47c42439ef16, type: 3}
+    - target: {fileID: 937039571396907624, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
+      propertyPath: avatarKnight
+      value: 
+      objectReference: {fileID: 9000000, guid: 695c57f5aefbb2f49a5714d44daa6c95, type: 3}
+    - target: {fileID: 937039571396907624, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
+      propertyPath: controllerKnight
+      value: 
+      objectReference: {fileID: 801605628}
     - target: {fileID: 4922577898532574891, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.46113
@@ -1130,11 +1142,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4922577898532574891, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
   m_PrefabInstance: {fileID: 187371865}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &187371867 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7948563334529119097, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
-  m_PrefabInstance: {fileID: 187371865}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &187371868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 738976532821280392, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
@@ -1154,7 +1161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playbackSpeed: 3
   positionOffset: 0.75
-  groundCheck: {fileID: 187371867}
+  groundCheck: {fileID: 0}
   groundDistance: 0.6
   EntityStoneStepAud:
     Guid:
@@ -2280,6 +2287,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!95 &801605628 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7661208205451699456, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
+  m_PrefabInstance: {fileID: 187371865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804287330 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1182117822803537456, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
@@ -5974,11 +5986,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4922577898532574891, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
   m_PrefabInstance: {fileID: 1844065733}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1844065735 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7948563334529119097, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
-  m_PrefabInstance: {fileID: 1844065733}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1844065736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 738976532821280392, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
@@ -5998,7 +6005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playbackSpeed: 3
   positionOffset: 0.75
-  groundCheck: {fileID: 1844065735}
+  groundCheck: {fileID: 0}
   groundDistance: 0.6
   EntityStoneStepAud:
     Guid:
