@@ -34,7 +34,7 @@ public class TestOpponent : MonoBehaviour
     //Attacking
     [SerializeField] bool attacked;
     //startup is the time between attacking and hitting the player
-    [SerializeField] float attackSpeed = 0.1f, startup = 0.625f, ATKcooldown = 200;
+    [SerializeField] float startup = 0.625f, ATKcooldown = 200;
 
     //States
     [SerializeField] float sightRange, attackRange;
@@ -45,7 +45,7 @@ public class TestOpponent : MonoBehaviour
     Transform animationHandler;
 
     private void Awake()
-    {   
+    {
         player = GameObject.Find("RB_Based_Controller").transform;
         radicle = GameObject.Find("plane");
         arrow = GameObject.Find("arrow");
@@ -68,7 +68,7 @@ public class TestOpponent : MonoBehaviour
 
     private void idle()
     {
-       
+
     }
 
     private void chase()
@@ -85,49 +85,50 @@ public class TestOpponent : MonoBehaviour
         agent.isStopped = true;
         transform.LookAt(player);
 
-        if (!attacked)
+        if (enemyType == EnemyType.Knight)
         {
-            if(enemyType == EnemyType.Knight)
-            {
-                playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
-                if (playerInAttackRange)
-                {
-                    print("attacking Player");
-                    player.GetComponent<rbBasedController>().hit();
-                    attacked = true;
-                    Invoke(nameof(resetAttack), ATKcooldown);
-                }
-                else
-                {
-                    Invoke(nameof(resetAttack), ATKcooldown);
-                }
-            }
-            else if (enemyType == EnemyType.Archer)
+            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
+            if (playerInAttackRange)
             {
                 print("attacking Player");
-                //player.GetComponent<rbBasedController>().hit();
-                shootArrow();
-                attacked = true;
+                player.GetComponent<rbBasedController>().hit();
+                animationHandler.GetComponent<enemyAnimationHandler>().endAttackAnim();
                 Invoke(nameof(resetAttack), ATKcooldown);
             }
-            else if(enemyType == EnemyType.Lancer)
+            else
             {
-
+                animationHandler.GetComponent<enemyAnimationHandler>().endAttackAnim();
+                Invoke(nameof(resetAttack), ATKcooldown);
             }
+        }
+        else if (enemyType == EnemyType.Archer)
+        {
+            print("attacking Player");
+            //player.GetComponent<rbBasedController>().hit();
+            shootArrow();
+            animationHandler.GetComponent<enemyAnimationHandler>().endAttackAnim();
+            Invoke(nameof(resetAttack), ATKcooldown);
+        }
+        else if (enemyType == EnemyType.Lancer)
+        {
+
         }
     }
 
     private void startupAttack()
     {
-        animationHandler.GetComponent<enemyAnimationHandler>().endWalkAnim();
-        animationHandler.GetComponent<enemyAnimationHandler>().attackAnim();
-        Invoke(nameof(attack), startup);
+        if (!attacked)
+        {
+            attacked = true;
+            animationHandler.GetComponent<enemyAnimationHandler>().endWalkAnim();
+            animationHandler.GetComponent<enemyAnimationHandler>().attackAnim();
+            Invoke(nameof(attack), startup);
+        }
     }
 
     private void resetAttack()
     {
         attacked = false;
-        animationHandler.GetComponent<enemyAnimationHandler>().endAttackAnim();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -251,7 +252,7 @@ public class TestOpponent : MonoBehaviour
     void shootArrow()
     {
         //play arrowshooting animation
-        GameObject awwow = Instantiate(arrow, transform.position + transform.forward + new Vector3(0,1,0), Quaternion.LookRotation(transform.forward));
+        GameObject awwow = Instantiate(arrow, transform.position + transform.forward + new Vector3(0, 1, 0), Quaternion.LookRotation(transform.forward));
         awwow.AddComponent<Rigidbody>();
         awwow.GetComponent<Rigidbody>().AddForce(transform.forward * arrowSpeed);
     }

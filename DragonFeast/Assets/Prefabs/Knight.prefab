@@ -93,9 +93,8 @@ MonoBehaviour:
   arrowSpeed: 1000
   bounces: 1
   attacked: 0
-  attackSpeed: 1000
   startup: 0.625
-  ATKcooldown: 0.1
+  ATKcooldown: 1
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
