@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 2946534596830978053, guid: c657835e6ee7c9c4e8de47c42439ef16, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ca585f24896f3cf4db20628cf45923c7, type: 2}
+    - target: {fileID: 2946534596830978053, guid: c657835e6ee7c9c4e8de47c42439ef16, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c840fc94d40da224bb597f72376dd972, type: 2}
     - target: {fileID: 5866666021909216657, guid: c657835e6ee7c9c4e8de47c42439ef16, type: 3}
       propertyPath: m_Controller
       value: 
