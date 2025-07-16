@@ -563,7 +563,7 @@ Transform:
   m_GameObject: {fileID: 84607188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 173.09999, y: 0, z: 82.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1267,9 +1267,6 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 196339425}
-  avatarKnight: {fileID: 0}
-  avatarArcher: {fileID: 0}
-  avatarLancer: {fileID: 0}
   player: {fileID: 349584994}
   groundMask:
     serializedVersion: 2
@@ -1291,13 +1288,15 @@ MonoBehaviour:
   arrowSpeed: 1000
   bounces: 1
   attacked: 0
-  attackSpeed: 100
   startup: 0.2
   ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
+  knighPrefab: {fileID: 0}
+  archerPrefab: {fileID: 0}
+  lancerPrefab: {fileID: 0}
 --- !u!1 &214130390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c05ac3b2ed97b374bbe50c94bc4925e8, type: 3}
@@ -3654,7 +3653,7 @@ Transform:
   m_GameObject: {fileID: 796288952}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 305, y: 0, z: 82.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4741,7 +4740,7 @@ Transform:
   m_GameObject: {fileID: 1029710160}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 229.8, y: 0, z: 82.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5009,9 +5008,6 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 1111366011}
-  avatarKnight: {fileID: 0}
-  avatarArcher: {fileID: 0}
-  avatarLancer: {fileID: 0}
   player: {fileID: 349584994}
   groundMask:
     serializedVersion: 2
@@ -5033,13 +5029,15 @@ MonoBehaviour:
   arrowSpeed: 1000
   bounces: 1
   attacked: 0
-  attackSpeed: 100
   startup: 0.2
   ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
+  knighPrefab: {fileID: 0}
+  archerPrefab: {fileID: 0}
+  lancerPrefab: {fileID: 0}
 --- !u!95 &1111366013
 Animator:
   serializedVersion: 7
@@ -5289,6 +5287,7 @@ MonoBehaviour:
   pauseScreen: {fileID: 1798521987}
   HP: {fileID: 417191108}
   hungerSlider: {fileID: 10781051}
+  sensitivitySlider: {fileID: 0}
 --- !u!1 &1147972465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5574,7 +5573,7 @@ Transform:
   m_GameObject: {fileID: 1236051686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 255.49998, y: 0, z: 82.1}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6957,7 +6956,7 @@ Transform:
   m_GameObject: {fileID: 1479988233}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 95.2, y: 0, z: 59.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7148,9 +7147,6 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 1523832411}
-  avatarKnight: {fileID: 0}
-  avatarArcher: {fileID: 0}
-  avatarLancer: {fileID: 0}
   player: {fileID: 349584994}
   groundMask:
     serializedVersion: 2
@@ -7172,13 +7168,15 @@ MonoBehaviour:
   arrowSpeed: 1000
   bounces: 1
   attacked: 0
-  attackSpeed: 100
   startup: 0.2
   ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
+  knighPrefab: {fileID: 0}
+  archerPrefab: {fileID: 0}
+  lancerPrefab: {fileID: 0}
 --- !u!1 &1541370980
 GameObject:
   m_ObjectHideFlags: 0
@@ -9770,7 +9768,7 @@ Transform:
   m_GameObject: {fileID: 2003413918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 139.5, y: 0, z: 82.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9900,9 +9898,6 @@ MonoBehaviour:
   enemyType: 0
   HP: 2
   agent: {fileID: 2032864257}
-  avatarKnight: {fileID: 0}
-  avatarArcher: {fileID: 0}
-  avatarLancer: {fileID: 0}
   player: {fileID: 349584994}
   groundMask:
     serializedVersion: 2
@@ -9924,13 +9919,15 @@ MonoBehaviour:
   arrowSpeed: 1000
   bounces: 1
   attacked: 0
-  attackSpeed: 100
   startup: 0.2
   ATKcooldown: 5
   sightRange: 25
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
+  knighPrefab: {fileID: 0}
+  archerPrefab: {fileID: 0}
+  lancerPrefab: {fileID: 0}
 --- !u!1 &2033370255
 GameObject:
   m_ObjectHideFlags: 0
@@ -10006,6 +10003,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033370255}
   m_CullTransparentMesh: 1
+--- !u!1 &2055645329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055645330}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055645330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055645329}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 70.71963, y: -0, z: -40.44574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056592020
 GameObject:
   m_ObjectHideFlags: 0
@@ -11008,3 +11036,4 @@ SceneRoots:
   - {fileID: 1862241093}
   - {fileID: 1469875967509655719}
   - {fileID: 708720758}
+  - {fileID: 2055645330}
