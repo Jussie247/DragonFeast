@@ -161,7 +161,8 @@ MonoBehaviour:
   radicle: {fileID: 4601516155172360565}
   attackRange: 3
   punchForce: 10000
-  shield: 0
+  shield: 3
+  shieldAsset: {fileID: 4633952910923860006, guid: df6dc21a374e3fe4eadf6721e7329396, type: 3}
   HP: 2
   hungies: 100
   hungerLoss: 1

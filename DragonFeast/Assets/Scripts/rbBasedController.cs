@@ -24,6 +24,8 @@ public class rbBasedController : MonoBehaviour
 
     //Vital
     [SerializeField] int shield = 0;
+    [SerializeField] GameObject shieldAsset;
+    GameObject shieldInstance;
     [SerializeField] int HP = 3;
     [SerializeField] float hungies = 100;
     [SerializeField] float hungerLoss = 1;
@@ -41,6 +43,8 @@ public class rbBasedController : MonoBehaviour
         updateHP();
         hideRadicle();
         animator = GetComponent<Animator>();
+        shieldInstance = Instantiate(shieldAsset);
+        shieldInstance.SetActive(false);
     }
 
     void FixedUpdate()
@@ -181,8 +185,16 @@ public class rbBasedController : MonoBehaviour
         {
             hit();
         }
-        //update hungies
-        canvas.GetComponent<UiHandlerScript>().updateHungerBar(hungies * 0.01f);
+        if(shield > 0)
+        {
+            shieldInstance.SetActive(true);
+        }
+        else
+        {
+            shieldInstance.SetActive(false);
+        }
+            //update hungies
+            canvas.GetComponent<UiHandlerScript>().updateHungerBar(hungies * 0.01f);
         hungies = hungies - hungerLoss * Time.deltaTime;
     }
     //reset attacks
