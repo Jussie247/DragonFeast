@@ -6,23 +6,21 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
+[SerializeField]
+public enum EnemyType
+{
+    Knight,
+    Archer,
+    Lancer
+}
+
 public class TestOpponent : MonoBehaviour
 {
-    [SerializeField]
-    enum EnemyType
-    {
-        Knight,
-        Archer,
-        Lancer
-    }
-    [SerializeField] EnemyType enemyType;
+    [SerializeField] public EnemyType enemyType;
 
     [SerializeField] int HP = 2;
 
     [SerializeField] NavMeshAgent agent;
-
-    [SerializeField] Avatar avatarKnight, avatarArcher, avatarLancer;
-    public RuntimeAnimatorController controllerKnight, controllerArcher, controllerLancer;
 
     [SerializeField] Transform player;
 
@@ -33,8 +31,6 @@ public class TestOpponent : MonoBehaviour
     [SerializeField] float punchForce = 1000, arrowSpeed = 1000;
     [SerializeField] int bounces = 1;
 
-    Animator animator;
-
     //Attacking
     [SerializeField] bool attacked;
     //startup is the time between attacking and hitting the player
@@ -43,6 +39,10 @@ public class TestOpponent : MonoBehaviour
     //States
     [SerializeField] float sightRange, attackRange;
     [SerializeField] bool playerInSightRange, playerInAttackRange;
+
+    [SerializeField] GameObject knighPrefab, archerPrefab, lancerPrefab;
+
+    Transform animationHandler;
 
     private void Awake()
     {   
@@ -53,25 +53,18 @@ public class TestOpponent : MonoBehaviour
 
         if (enemyType == EnemyType.Knight)
         {
-            //animator.runtimeAnimatorController = controllerKnight;
-            animator.avatar = avatarKnight;
-            animator.Rebind();
-            animator.WriteDefaultValues();
+            Instantiate(knighPrefab, transform.position, transform.rotation, transform);
         }
         else if (enemyType == EnemyType.Archer)
         {
-            //animator = controllerArcher;
-            animator.avatar = avatarArcher;
-            animator.Rebind();
-            animator.WriteDefaultValues();
+            Instantiate(archerPrefab, transform.position, transform.rotation, transform);
         }
-        //else if (enemyType == EnemyType.Lancer)
-        //{
-        //    GetComponent<Animator>().avatar = avatarLancer;
-        //}
-
+        else if (enemyType == EnemyType.Lancer)
+        {
+            Instantiate(lancerPrefab, transform.position, transform.rotation, transform);
+        }
+        animationHandler = transform.GetChild(0);
     }
-
 
     private void idle()
     {
@@ -83,20 +76,7 @@ public class TestOpponent : MonoBehaviour
         agent.isStopped = false;
         //print("chasing Player");
         agent.SetDestination(player.position);
-        if (enemyType == EnemyType.Knight)
-        {
-            animator.SetBool("knightwalk", true);
-        }
-        else if (enemyType == EnemyType.Archer)
-        {
-            
-
-        }
-        else if (enemyType == EnemyType.Lancer)
-        {
-            
-        }
-
+        animationHandler.GetComponent<enemyAnimationHandler>().walkAnim();
     }
 
     private void attack()
@@ -139,27 +119,15 @@ public class TestOpponent : MonoBehaviour
 
     private void startupAttack()
     {
-        if (enemyType == EnemyType.Knight)
-        {
-            animator.SetBool("knightwalk", false);
-            animator.SetBool("knightattack", true);
-        }
-        else if (enemyType == EnemyType.Archer)
-        {
-            animator.SetBool("archerattack", true);
-        }
-        else if (enemyType == EnemyType.Lancer)
-        {
-
-        }
-        
+        animationHandler.GetComponent<enemyAnimationHandler>().endWalkAnim();
+        animationHandler.GetComponent<enemyAnimationHandler>().attackAnim();
         Invoke(nameof(attack), startup);
     }
 
     private void resetAttack()
     {
         attacked = false;
-        animator.SetBool("knightattack", false);
+        animationHandler.GetComponent<enemyAnimationHandler>().endAttackAnim();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
