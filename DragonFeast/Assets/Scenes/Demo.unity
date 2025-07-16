@@ -1021,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 937039571396907624, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
       propertyPath: ATKcooldown
-      value: 1
+      value: 2.03
       objectReference: {fileID: 0}
     - target: {fileID: 937039571396907624, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
       propertyPath: avatarArcher

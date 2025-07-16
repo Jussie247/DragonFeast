@@ -4,6 +4,7 @@ public class enemyAnimationHandler : MonoBehaviour
 {
     EnemyType enemyType;
 
+    public GameObject bow;
     Animator animator;
     // Awake is called when the object gets instantiated
     void Awake()
@@ -58,7 +59,7 @@ public class enemyAnimationHandler : MonoBehaviour
         else if (enemyType == EnemyType.Archer)
         {
             animator.SetBool("archerattack", true);
-            transform.GetChild(0).GetComponent<Animator>().SetBool("drawbow", true);
+            bow.GetComponent<Animator>().SetBool("drawbow", true);
         }
         else if (enemyType == EnemyType.Lancer)
         {
@@ -75,7 +76,7 @@ public class enemyAnimationHandler : MonoBehaviour
         else if (enemyType == EnemyType.Archer)
         {
             animator.SetBool("archerattack", false);
-            transform.GetChild(0).GetComponent<Animator>().SetBool("drawbow", false);
+            bow.GetComponent<Animator>().SetBool("drawbow", false);
         }
         else if (enemyType == EnemyType.Lancer)
         {
