@@ -1,6 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum DragonType
+{
+    Heal,
+    Attack,
+    Kamikaze
+}
+
 public class babyDragonHandler : MonoBehaviour
 {
     public int HP = 2;
