@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d22056c8fbbc8949973e1121454ec7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  babyDragon: {fileID: 0}
+  babyDragon: {fileID: 4975113724233399845, guid: 160f05495eb7b514ab26387eb51f7869, type: 3}
   instancePos: {fileID: 1512713514569555228}
   wallMask:
     serializedVersion: 2

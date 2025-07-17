@@ -1,5 +1,8 @@
+using UnityEditor.TestTools.CodeCoverage;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
 
 public enum DragonType
 {
@@ -10,44 +13,93 @@ public enum DragonType
 
 public class babyDragonHandler : MonoBehaviour
 {
-    public int HP = 2;
+    [SerializeField] int HP = 2;
 
-    public NavMeshAgent agent;
+    [SerializeField] NavMeshAgent agent;
 
-    public Transform player;
+    [SerializeField] Transform player;
 
-    public LayerMask groundMask, playerMask, enemyMask;
+    [SerializeField] LayerMask groundMask, playerMask, enemyMask;
+
+    [SerializeField] GameObject healDragon, attackDragon, kamikazeDragon;
+
+    public DragonType dragonType;
+    GameObject levelGenerator;
 
     //Attacking
-    public float ATKcooldown;
-    public bool attacked;
-    //TODO: make the enemy attack with a delay then check if the player is still in range, if he is, hit the player.
-    public float attackSpeed;
+    [SerializeField] float ATKcooldown;
+    [SerializeField] bool attacked;
+    [SerializeField] float attackSpeed;
+    [SerializeField] float attackStartupTime, healStartupTime, kamikazeStartupTime;
 
     //States
-    public float sightRange, attackRange;
-    public bool playerInSightRange;
-    public bool isBoss;
-    public bool enemyInSightRange, enemyInAttackRange;
+    [SerializeField] float sightRange, attackRange;
+    [SerializeField] bool playerInSightRange;
+    [SerializeField] bool isBoss;
+    [SerializeField] bool enemyInSightRange, enemyInAttackRange;
 
     private void Awake()
     {
+        levelGenerator = GameObject.Find("LevelGenerator");
         player = GameObject.Find("RB_Based_Controller").transform;
         agent = GetComponent<NavMeshAgent>();
+
+        //get possible dragon types, pick a random one and instance it as a child of this
+        var dragonTypes = levelGenerator.GetComponent<LevelGenerationHandeler>().dragonTypes;
+        // Pick a random dragon type
+        int rand = UnityEngine.Random.Range(0, dragonTypes.Count);
+        dragonType = dragonTypes[rand]; // cleaner and correct
+
+        // Instantiate based on the type
+        switch (dragonType)
+        {
+            case DragonType.Attack:
+                Instantiate(attackDragon, transform);
+                break;
+            case DragonType.Heal:
+                Instantiate(healDragon, transform);
+                break;
+            case DragonType.Kamikaze:
+                Instantiate(kamikazeDragon, transform);
+                break;
+            default:
+                Debug.LogWarning("Unhandled dragon type: " + dragonType);
+                break;
+        }
     }
 
+    //dragon patrols when he is not near an enemy to target to in the boss room
     public void patrol()
     {
-
+        //transform.GetChild(0).GetComponent<babyDragonAnimationHandler>().idle();
     }
 
+    //dragon chases either player or enemys in the boss room
     private void chase(Transform _transform)
     {
+        //set the correct animation
+        //transform.GetChild(0).GetComponent<babyDragonAnimationHandler>().idle();
+
         agent.isStopped = false;
         //print("chasing Player");
         agent.SetDestination(_transform.position);
+
+        //change chase speed based of dragon type, kamikaze goes fast when locked on to an enemy
+        if (dragonType == DragonType.Heal)
+        {
+            
+        }
+        else if (dragonType == DragonType.Attack)
+        {
+            
+        }
+        else if (dragonType == DragonType.Kamikaze)
+        {
+            
+        }
     }
 
+    //dragon attack enemy
     private void attack()
     {
         agent.isStopped = true;
@@ -56,7 +108,8 @@ public class babyDragonHandler : MonoBehaviour
         if (!attacked)
         {
             print("attacking Player");
-            //player.GetComponent<rbBasedController>().hit();
+            //Check if enemy is still in attack range, the hit the enemy otherwise do no dmg
+
             attacked = true;
             Invoke(nameof(resetAttack), ATKcooldown);
         }
@@ -65,6 +118,30 @@ public class babyDragonHandler : MonoBehaviour
     private void resetAttack()
     {
         attacked = false;
+    }
+
+    private void startup()
+    {
+        //play the correct attack animation
+        //transform.GetChild(0).GetComponent<babyDragonAnimationHandler>().idle();
+        //set the right startup time based of the dragon type
+        float startupTime = 1;
+        if (dragonType == DragonType.Heal)
+        {
+            startupTime = healStartupTime;
+        }else if (dragonType == DragonType.Attack)
+        {
+            startupTime = attackStartupTime;
+        }else if (dragonType == DragonType.Kamikaze)
+        {
+            startupTime = kamikazeStartupTime;
+        }
+        else
+        {
+            startupTime = attackStartupTime;
+        }
+        //call the attack method with startupTime as delay
+        Invoke(nameof(attack), startupTime);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -81,7 +158,7 @@ public class babyDragonHandler : MonoBehaviour
             //Check for sight and attack range
             enemyInSightRange = Physics.CheckSphere(transform.position, sightRange, enemyMask);
             enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, enemyMask);
-            if (enemyInSightRange && enemyInAttackRange) attack();
+            if (enemyInSightRange && enemyInAttackRange) attack();//only attack if the type is attack dragon
             if (enemyInSightRange && !enemyInAttackRange)
             {
                 Transform enemy = GetClosestObjectTransformByTag("enemy");
@@ -95,7 +172,7 @@ public class babyDragonHandler : MonoBehaviour
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
             if(playerInSightRange)
             {
-                chase(player.transform);
+                chase(player.transform);// maybe add random healing to player if hes in range
             }
         }
 

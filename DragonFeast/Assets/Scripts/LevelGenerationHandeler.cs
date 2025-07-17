@@ -1,14 +1,36 @@
+using System;
+using System.Collections.Generic;
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
+
+public enum Difficulty
+{
+    Easy,
+    Normal,
+    Hard
+}
+
+public enum BossType
+{
+    Ballista,
+    Knight,
+    Lancer,
+    Random
+}
 
 public class LevelGenerationHandeler : MonoBehaviour
 {
-    public Transform start;
-    public GameObject Modules;
-    public int RoomsPerLevel;
-    public int RoomCount;
+    [SerializeField] Transform start;
+    [SerializeField] GameObject Modules;
+    [SerializeField] int RoomsPerLevel;
+    [SerializeField] int RoomCount;
 
-    public GameObject NavMesh;
+    [SerializeField] GameObject NavMesh;
+    [SerializeField] public Difficulty difficulty;
+    [SerializeField] public BossType bossType;
+
+    public List<DragonType> dragonTypes;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +42,7 @@ public class LevelGenerationHandeler : MonoBehaviour
         for(int i = 0; i < RoomsPerLevel; i++)
         {
             //get a random Module from the Level Modules
-            GameObject room = Modules.transform.GetChild(Random.Range(0, RoomCount)).gameObject;
+            GameObject room = Modules.transform.GetChild(UnityEngine.Random.Range(0, RoomCount)).gameObject;
             //Instance the module at the last ones Exit
             GameObject Instance = Instantiate(room, lastExit, lastRotation);
             //update the Last exit Vector
@@ -30,11 +52,37 @@ public class LevelGenerationHandeler : MonoBehaviour
         }
 
         NavMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
+        //if boss type ist set to random it will pick a random one
+        if (bossType == BossType.Random)
+        {
+            bossType = GetRandomEnumValue<BossType>();
+        }
+
+        // make a List with the possible dragon types for this level
+        if (bossType == BossType.Ballista)
+        {
+            dragonTypes = new List<DragonType> { DragonType.Kamikaze };
+        }
+        else if (bossType == BossType.Knight)
+        {
+            dragonTypes = new List<DragonType> { DragonType.Heal, DragonType.Attack };
+        }
+        else if (bossType == BossType.Lancer)
+        {
+            dragonTypes = new List<DragonType> { DragonType.Heal, DragonType.Attack };
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public static T GetRandomEnumValue<T>() where T : Enum
+    {
+        var values = Enum.GetValues(typeof(T));
+        int randomIndex = UnityEngine.Random.Range(0, values.Length-1);
+        return (T)values.GetValue(randomIndex);
     }
 }
