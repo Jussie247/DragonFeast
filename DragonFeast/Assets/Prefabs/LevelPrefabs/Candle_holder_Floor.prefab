@@ -64,8 +64,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle_holder_Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c0810aba7479c54d83a3ca574ff70bf, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c0810aba7479c54d83a3ca574ff70bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4208244182312650926}
   m_SourcePrefab: {fileID: 100100000, guid: 6c0810aba7479c54d83a3ca574ff70bf, type: 3}
+--- !u!1 &2145461782592609311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c0810aba7479c54d83a3ca574ff70bf, type: 3}
+  m_PrefabInstance: {fileID: 1227054762429964622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4208244182312650926
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145461782592609311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01419672, y: 0.014196715, z: 0.017998237}
+  m_Center: {x: 0, y: -6.984918e-10, z: -0.007280213}
