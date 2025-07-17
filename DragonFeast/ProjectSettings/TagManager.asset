@@ -9,6 +9,7 @@ TagManager:
   - bounce
   - stone
   - BabyDragon
+  - room
   layers:
   - Default
   - TransparentFX

@@ -1021,7 +1021,7 @@ GameObject:
   - component: {fileID: 84607189}
   m_Layer: 0
   m_Name: MaidRoom
-  m_TagString: Untagged
+  m_TagString: room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8018,6 +8018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f535ef0806e72b245a56bd0793f03f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
 --- !u!1 &796288952
 GameObject:
   m_ObjectHideFlags: 0
@@ -8029,7 +8030,7 @@ GameObject:
   - component: {fileID: 796288953}
   m_Layer: 0
   m_Name: FountainBlockout
-  m_TagString: Untagged
+  m_TagString: room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10473,7 +10474,7 @@ GameObject:
   - component: {fileID: 1029710161}
   m_Layer: 0
   m_Name: GardenBlockout
-  m_TagString: Untagged
+  m_TagString: room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11976,7 +11977,7 @@ GameObject:
   - component: {fileID: 1236051687}
   m_Layer: 0
   m_Name: CathedralBlockout
-  m_TagString: Untagged
+  m_TagString: room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14888,7 +14889,7 @@ GameObject:
   - component: {fileID: 1479988234}
   m_Layer: 0
   m_Name: LookoutBlockout
-  m_TagString: Untagged
+  m_TagString: room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19932,7 +19933,7 @@ GameObject:
   - component: {fileID: 2003413919}
   m_Layer: 0
   m_Name: LibraryBlockout
-  m_TagString: Untagged
+  m_TagString: room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -41,7 +41,7 @@ public class babyDragonHandler : MonoBehaviour
     //States
     [SerializeField] float sightRange, attackRange;
     bool playerInSightRange;
-    bool isBoss;
+    bool isBoss = false;
     bool enemyInSightRange, enemyInAttackRange;
     bool healPlayer = true, healDragons = false;
 
@@ -215,6 +215,8 @@ public class babyDragonHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isBoss = levelGenerator.GetComponent<RoomManager>().isBoss;
+
         if(isBoss)
         {
             //Check for sight and attack range

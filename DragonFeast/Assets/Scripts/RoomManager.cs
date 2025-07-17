@@ -1,32 +1,54 @@
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
-    // all rooms have to be children of this object
-    Transform[] rooms;
-    int current = 0;
+    
+    public bool isBoss = false;
+    int clearCount = 0;
+    GameObject[] Rooms;
+    GameObject bossRoom;
+
     void Start()
     {
-        rooms = transform.GetComponentsInChildren<Transform>()
-                         .Where(t => t != transform) // drop parent
-                         .ToArray();
+        //get all rooms
+        Rooms = GameObject.FindGameObjectsWithTag("room");
+        bossRoom = GameObject.FindGameObjectWithTag("bossRoom");
     }
 
     void Update()
     {
-        if (current >= rooms.Length) return; // all done
-
-        Transform room = rooms[current];
-        Transform spawns = room.Find("Spawns");
-
-        if (spawns != null && spawns.childCount == 0)
+        for(int i = 0; i < Rooms.Length; i++)
         {
-            Transform door = room.Find("door");
-            if (door != null) Destroy(door.gameObject);
+            Transform door;
+            if (door = Rooms[i].transform.Find("door"))
+            {
+                if (Rooms[i].transform.Find("Spawns").childCount == 0)
+                {
+                    //room is cleared, open door
+                    Destroy(door.gameObject);
+                }
+            }
+            else
+            {
+                //room is already cleared
+                clearCount++;
+            }
+        }
+        //check if all rooms are cleared
+        if(clearCount == Rooms.Length)
+        {
+            isBoss = true;
+        }
 
-            current++;
+        //check if boss room is cleared
+        if(bossRoom.transform.Find("Spawns").childCount < 0)
+        {
+            //player won, load main menu
+            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
         }
     }
 }
