@@ -1384,6 +1384,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 937039571396907624, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
+      propertyPath: knighPrefab
+      value: 
+      objectReference: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}
+    - target: {fileID: 937039571396907624, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
+      propertyPath: archerPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4922577898532574891, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 92.5204
@@ -1711,6 +1719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 937039571396907624, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
+      propertyPath: knighPrefab
+      value: 
+      objectReference: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}
     - target: {fileID: 4922577898532574891, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 119.805756
@@ -1768,6 +1780,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 738976532821280392, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 738976532821280392, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 937039571396907624, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
+      propertyPath: knighPrefab
+      value: 
+      objectReference: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}
     - target: {fileID: 4922577898532574891, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.389584
@@ -1809,7 +1833,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5042726232341920972, guid: 94644e78266bed3429918bba39248105, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
@@ -4881,6 +4906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 937039571396907624, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
+      propertyPath: knighPrefab
+      value: 
+      objectReference: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}
     - target: {fileID: 4922577898532574891, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 90.882225
@@ -6468,6 +6497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 937039571396907624, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
+      propertyPath: knighPrefab
+      value: 
+      objectReference: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}
     - target: {fileID: 4922577898532574891, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 116.861
