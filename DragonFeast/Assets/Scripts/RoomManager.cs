@@ -8,7 +8,9 @@ public class RoomManager : MonoBehaviour
 {
     
     public bool isBoss = false;
-    int clearCount = 0;
+    int clearedRoomsCount = 0;
+    int spawnCount = 0;
+    int clearedSpawnsCount = 0;
     GameObject[] Rooms;
     GameObject bossRoom;
 
@@ -21,25 +23,47 @@ public class RoomManager : MonoBehaviour
 
     void Update()
     {
+        // iterate through all rooms and check if they are cleared to open their door
         for(int i = 0; i < Rooms.Length; i++)
         {
             Transform door;
             if (door = Rooms[i].transform.Find("door"))
             {
-                if (Rooms[i].transform.Find("Spawns").childCount == 0)
+                //reset counters
+                spawnCount = 0;
+                clearedSpawnsCount = 0;
+
+                // find all Spawns and check if they got cleared
+                Transform[] transforms = GetComponentsInChildren<Transform>();
+                foreach (Transform t in transforms)
                 {
-                    //room is cleared, open door
+                    if (t.name == "Spawn")
+                    {
+                        spawnCount++;
+                        if (t.childCount == 0)
+                        {
+                            //spawn is cleared
+                            
+                            clearedSpawnsCount++;
+                        }
+                    }
+                }
+                //check if all spawns have been cleared
+                if(spawnCount == clearedSpawnsCount)
+                {
+                    //all spawns cleared, open door
                     Destroy(door.gameObject);
                 }
             }
             else
             {
                 //room is already cleared
-                clearCount++;
+                clearedRoomsCount++;
             }
         }
+
         //check if all rooms are cleared
-        if(clearCount == Rooms.Length)
+        if(clearedRoomsCount == Rooms.Length)
         {
             isBoss = true;
         }
