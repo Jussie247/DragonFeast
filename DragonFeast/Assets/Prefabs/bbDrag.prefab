@@ -101,6 +101,7 @@ MonoBehaviour:
   followPlayerSpeed: 15
   chaseEnemySpeed: 25
   kamikazeSpeed: 50
+  patrolRange: 25
   player: {fileID: 0}
   groundMask:
     serializedVersion: 2
@@ -111,9 +112,9 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 256
-  healDragon: {fileID: 3147747789551837234, guid: 90bd274fb077b674da4f5105424191b4, type: 3}
-  attackDragon: {fileID: 3147747789551837234, guid: 7e20e918de782da4b8e6740bf305880f, type: 3}
-  kamikazeDragon: {fileID: 3147747789551837234, guid: e7af4df761c7fa7409c0c72be4ba687b, type: 3}
+  healDragon: {fileID: 8024832166488341010, guid: 90bd274fb077b674da4f5105424191b4, type: 3}
+  attackDragon: {fileID: 8024832166488341010, guid: e6ea7f8c6f8bf7e4584abbad3c463dd7, type: 3}
+  kamikazeDragon: {fileID: 8024832166488341010, guid: 04f3fed646d38424c8ed9c40c59a7291, type: 3}
   dragonType: 0
   ATKcooldown: 100
   explosionForce: 10

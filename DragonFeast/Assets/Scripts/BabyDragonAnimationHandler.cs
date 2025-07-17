@@ -32,49 +32,4 @@ public class BabyDragonAnimationHandler : MonoBehaviour
             animator.SetBool("attack", true);
         }
     }
-    public void stopAttackAnim()
-    {
-        if (dragonType == DragonType.Attack)
-        {
-            animator.SetBool("attack", false);
-        }
-        else if (dragonType == DragonType.Heal)
-        {
-            animator.SetBool("heal", false);
-        }
-        else if (dragonType == DragonType.Kamikaze)
-        {
-            animator.SetBool("attack", false);
-        }
-    }
-    public void playIdleAnim()
-    {
-        if (dragonType == DragonType.Attack)
-        {
-            animator.SetBool("idle", true);
-        }
-        else if (dragonType == DragonType.Heal)
-        {
-            animator.SetBool("idle", true);
-        }
-        else if (dragonType == DragonType.Kamikaze)
-        {
-            animator.SetBool("idle", true);
-        }
-    }
-    public void stopIdleAnim()
-    {
-        if (dragonType == DragonType.Attack)
-        {
-            animator.SetBool("idle", false);
-        }
-        else if (dragonType == DragonType.Heal)
-        {
-            animator.SetBool("idle", false);
-        }
-        else if (dragonType == DragonType.Kamikaze)
-        {
-            animator.SetBool("idle", false);
-        }
-    }
 }

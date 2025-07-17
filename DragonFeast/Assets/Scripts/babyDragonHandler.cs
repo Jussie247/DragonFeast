@@ -18,7 +18,10 @@ public class babyDragonHandler : MonoBehaviour
     [SerializeField] int HP = 2;
     //AI
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] float followPlayerSpeed = 15, chaseEnemySpeed = 20, kamikazeSpeed = 50;
+    [SerializeField] float followPlayerSpeed = 15, chaseEnemySpeed = 20, kamikazeSpeed = 50, patrolRange = 25;
+
+    bool walkPointSet = false;
+    Vector3 walkPoint = new Vector3();
 
     [SerializeField] Transform player;
 
@@ -75,16 +78,39 @@ public class babyDragonHandler : MonoBehaviour
     //dragon patrols when he is not near an enemy to target to in the boss room
     public void patrol()
     {
-        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().playIdleAnim();
-        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().stopAttackAnim();
+        if (!walkPointSet) SearchWalkPoint();
+
+        if (walkPointSet)
+        {
+            agent.SetDestination(walkPoint);
+        }
+
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+        if(distanceToWalkPoint.magnitude < 1f)
+        {
+            walkPointSet = false;
+        }
+        
+    }
+
+    private void SearchWalkPoint()
+    {
+        float randomZ = Random.Range(-patrolRange, patrolRange);
+        float randomX = Random.Range(-patrolRange, patrolRange);
+
+        walkPoint = new Vector3 (transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        if (Physics.Raycast(walkPoint, -transform.up, groundMask))
+        {
+            walkPointSet = true;
+        }
     }
 
     //dragon chases either player or enemys in the boss room
     private void chase(Transform _transform)
     {
         //set the correct animation
-        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().playIdleAnim();
-        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().stopAttackAnim();
 
         agent.isStopped = false;
         //print("chasing Enemy");
@@ -160,7 +186,6 @@ public class babyDragonHandler : MonoBehaviour
     private void startup()
     {
         //play the correct attack animation
-        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().stopIdleAnim();
         transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().playAttackAnim();
         //set the right startup time based of the dragon type
         float startupTime = 1;
