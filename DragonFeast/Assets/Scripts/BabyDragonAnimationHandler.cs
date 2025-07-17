@@ -25,7 +25,7 @@ public class BabyDragonAnimationHandler : MonoBehaviour
         }
         else if (dragonType == DragonType.Heal)
         {
-            animator.SetBool("attack", true);
+            animator.SetBool("heal", true);
         }
         else if (dragonType == DragonType.Kamikaze)
         {
@@ -40,7 +40,7 @@ public class BabyDragonAnimationHandler : MonoBehaviour
         }
         else if (dragonType == DragonType.Heal)
         {
-            animator.SetBool("attack", false);
+            animator.SetBool("heal", false);
         }
         else if (dragonType == DragonType.Kamikaze)
         {

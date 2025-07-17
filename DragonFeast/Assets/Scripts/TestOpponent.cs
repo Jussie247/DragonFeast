@@ -190,12 +190,18 @@ public class TestOpponent : MonoBehaviour
             Hit();
         }
     }
-
     public void Hit()
     {
         HP--;
     }
-
+    public void explosionKill()
+    {
+        Invoke(nameof(instaKill), 1);
+    }
+    void instaKill()
+    {
+        HP = 0;
+    }
     public void bounce()
     {
         //set to a different layer so it does not "self collide"
@@ -215,12 +221,10 @@ public class TestOpponent : MonoBehaviour
         playerInAttackRange = false;
         playerInSightRange = false;
     }
-
     public void eat()
     {
         HP = 0;
     }
-
     Transform GetClosestObjectTransformByTag(string tag)
     {
 
@@ -248,7 +252,6 @@ public class TestOpponent : MonoBehaviour
         }
         return tMin;
     }
-
     void shootArrow()
     {
         //play arrowshooting animation
@@ -256,7 +259,6 @@ public class TestOpponent : MonoBehaviour
         awwow.AddComponent<Rigidbody>();
         awwow.GetComponent<Rigidbody>().AddForce(transform.forward * arrowSpeed);
     }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

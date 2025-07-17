@@ -8,6 +8,7 @@ TagManager:
   - cage
   - bounce
   - stone
+  - BabyDragon
   layers:
   - Default
   - TransparentFX

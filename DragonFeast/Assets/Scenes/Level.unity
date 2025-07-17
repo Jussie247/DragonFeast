@@ -2874,7 +2874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61adc404a0e09144d8fe1f87b3126b45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 20.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61adc404a0e09144d8fe1f87b3126b45, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3608,7 +3608,7 @@ MonoBehaviour:
   RoomCount: 6
   NavMesh: {fileID: 708720756}
   difficulty: 0
-  bossType: 0
+  bossType: 1
   dragonTypes: 
 --- !u!4 &757643928
 Transform:
@@ -4088,7 +4088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61adc404a0e09144d8fe1f87b3126b45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 10.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61adc404a0e09144d8fe1f87b3126b45, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7195,7 +7195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61adc404a0e09144d8fe1f87b3126b45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 31.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61adc404a0e09144d8fe1f87b3126b45, type: 3}
       propertyPath: m_LocalPosition.z

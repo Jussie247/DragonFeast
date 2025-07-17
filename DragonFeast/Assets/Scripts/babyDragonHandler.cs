@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
+using Unity.VisualScripting;
+using FMOD;
 
 public enum DragonType
 {
@@ -14,8 +16,9 @@ public enum DragonType
 public class babyDragonHandler : MonoBehaviour
 {
     [SerializeField] int HP = 2;
-
+    //AI
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] float followPlayerSpeed = 15, chaseEnemySpeed = 20, kamikazeSpeed = 50;
 
     [SerializeField] Transform player;
 
@@ -27,16 +30,17 @@ public class babyDragonHandler : MonoBehaviour
     GameObject levelGenerator;
 
     //Attacking
-    [SerializeField] float ATKcooldown;
-    [SerializeField] bool attacked;
+    [SerializeField] float ATKcooldown, explosionForce = 10;
+    bool attacked;
     [SerializeField] float attackSpeed;
     [SerializeField] float attackStartupTime, healStartupTime, kamikazeStartupTime;
 
     //States
     [SerializeField] float sightRange, attackRange;
-    [SerializeField] bool playerInSightRange;
-    [SerializeField] bool isBoss;
-    [SerializeField] bool enemyInSightRange, enemyInAttackRange;
+    bool playerInSightRange;
+    bool isBoss;
+    bool enemyInSightRange, enemyInAttackRange;
+    bool healPlayer = true, healDragons = false;
 
     private void Awake()
     {
@@ -63,7 +67,7 @@ public class babyDragonHandler : MonoBehaviour
                 Instantiate(kamikazeDragon, transform);
                 break;
             default:
-                Debug.LogWarning("Unhandled dragon type: " + dragonType);
+                print("Unhandled dragon type: " + dragonType);
                 break;
         }
     }
@@ -71,32 +75,42 @@ public class babyDragonHandler : MonoBehaviour
     //dragon patrols when he is not near an enemy to target to in the boss room
     public void patrol()
     {
-        //transform.GetChild(0).GetComponent<babyDragonAnimationHandler>().idle();
+        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().playIdleAnim();
+        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().stopAttackAnim();
     }
 
     //dragon chases either player or enemys in the boss room
     private void chase(Transform _transform)
     {
         //set the correct animation
-        //transform.GetChild(0).GetComponent<babyDragonAnimationHandler>().idle();
+        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().playIdleAnim();
+        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().stopAttackAnim();
 
         agent.isStopped = false;
-        //print("chasing Player");
+        //print("chasing Enemy");
         agent.SetDestination(_transform.position);
 
         //change chase speed based of dragon type, kamikaze goes fast when locked on to an enemy
         if (dragonType == DragonType.Heal)
         {
-            
+            agent.speed = followPlayerSpeed;
         }
         else if (dragonType == DragonType.Attack)
         {
-            
+            agent.speed = chaseEnemySpeed;
         }
         else if (dragonType == DragonType.Kamikaze)
         {
-            
+            agent.speed = kamikazeSpeed;   
         }
+    }
+
+    private void followPlayer(Transform _transform)
+    {
+        agent.isStopped = false;
+        //print("follow Player");
+        agent.SetDestination(_transform.position);
+        agent.speed = followPlayerSpeed;
     }
 
     //dragon attack enemy
@@ -107,7 +121,30 @@ public class babyDragonHandler : MonoBehaviour
 
         if (!attacked)
         {
-            print("attacking Player");
+            if (dragonType == DragonType.Heal)
+            {
+                healCompanions();
+            }
+            else if (dragonType == DragonType.Attack)
+            {
+                enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, enemyMask);
+                if (enemyInAttackRange)
+                {
+                    GetClosestObjectTransformByTag("enemy").GetComponent<TestOpponent>().Hit();
+                }
+            }
+            else if (dragonType == DragonType.Kamikaze)
+            {
+                enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, enemyMask);
+                if (enemyInAttackRange)
+                {
+                    Transform enemy = GetClosestObjectTransformByTag("enemy");
+                    Destroy(enemy.GetComponent<NavMeshAgent>());
+                    Rigidbody rb = enemy.AddComponent<Rigidbody>();
+                    rb.AddForce(enemy.position - transform.position * explosionForce);
+                    enemy.GetComponent<TestOpponent>().explosionKill();
+                }
+            }
             //Check if enemy is still in attack range, the hit the enemy otherwise do no dmg
 
             attacked = true;
@@ -123,7 +160,8 @@ public class babyDragonHandler : MonoBehaviour
     private void startup()
     {
         //play the correct attack animation
-        //transform.GetChild(0).GetComponent<babyDragonAnimationHandler>().idle();
+        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().stopIdleAnim();
+        transform.GetChild(0).GetComponent<BabyDragonAnimationHandler>().playAttackAnim();
         //set the right startup time based of the dragon type
         float startupTime = 1;
         if (dragonType == DragonType.Heal)
@@ -144,7 +182,6 @@ public class babyDragonHandler : MonoBehaviour
         Invoke(nameof(attack), startupTime);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
@@ -158,13 +195,38 @@ public class babyDragonHandler : MonoBehaviour
             //Check for sight and attack range
             enemyInSightRange = Physics.CheckSphere(transform.position, sightRange, enemyMask);
             enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, enemyMask);
-            if (enemyInSightRange && enemyInAttackRange) attack();//only attack if the type is attack dragon
-            if (enemyInSightRange && !enemyInAttackRange)
+            //different fight behavior based of dragon type
+            if (dragonType == DragonType.Heal)
             {
-                Transform enemy = GetClosestObjectTransformByTag("enemy");
-                chase(enemy);
+                //check if Player is in sight
+                playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
+                if (playerInSightRange)
+                {
+                    followPlayer(player.transform);
+                    //random healing to player or other babydragons if they are in range
+                    startup();
+                }
             }
-            if (!enemyInAttackRange && !enemyInSightRange) patrol();
+            else if (dragonType == DragonType.Attack)
+            {
+                if (enemyInSightRange && enemyInAttackRange) startup();
+                if (enemyInSightRange && !enemyInAttackRange)
+                {
+                    Transform enemy = GetClosestObjectTransformByTag("enemy");
+                    chase(enemy);
+                }
+                if (!enemyInAttackRange && !enemyInSightRange) patrol();
+            }
+            else if (dragonType == DragonType.Kamikaze)
+            {
+                if (enemyInSightRange && enemyInAttackRange) startup();
+                if (enemyInSightRange && !enemyInAttackRange)
+                {
+                    Transform enemy = GetClosestObjectTransformByTag("enemy");
+                    chase(enemy);
+                }
+                if (!enemyInAttackRange && !enemyInSightRange) patrol();
+            }
         }
         else
         {
@@ -172,7 +234,12 @@ public class babyDragonHandler : MonoBehaviour
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
             if(playerInSightRange)
             {
-                chase(player.transform);// maybe add random healing to player if hes in range
+                followPlayer(player.transform);
+                //TODO: make delta time dependant, heal after random ammount of time has passed
+                if (dragonType == DragonType.Heal)
+                {
+                    startup();
+                }
             }
         }
 
@@ -186,6 +253,41 @@ public class babyDragonHandler : MonoBehaviour
     public void Hit()
     {
         HP--;
+    }
+
+    public void heal()
+    {
+        HP++;
+    }
+
+    void healCompanions()
+    {
+        if (healPlayer && healDragon)
+        {
+            //TODO: make delta time dependant, heal after random ammount of time has passed
+            int rand = Random.Range(0, 100);
+            if (rand == 0)
+            {
+                player.GetComponent<rbBasedController>().heal(1);
+                print("heal player");
+            }
+            else if (rand == 1)
+            {
+                GameObject[] objects = GameObject.FindGameObjectsWithTag("BabyDragon");
+                objects[Random.Range(0, objects.Length)].GetComponent<babyDragonHandler>().heal();
+                print("heal enemy");
+            }
+        }
+        else if (healPlayer)
+        {
+            //TODO: make delta time dependant, heal after random ammount of time has passed
+            int rand = Random.Range(0, 100);
+            if (rand == 0)
+            {
+                player.GetComponent<rbBasedController>().heal(1);
+                print("heal player");
+            }
+        }
     }
 
     Transform GetClosestObjectTransformByTag(string tag)

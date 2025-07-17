@@ -98,6 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 1
   agent: {fileID: 3144094640853274221}
+  followPlayerSpeed: 15
+  chaseEnemySpeed: 25
+  kamikazeSpeed: 50
   player: {fileID: 0}
   groundMask:
     serializedVersion: 2
@@ -113,17 +116,13 @@ MonoBehaviour:
   kamikazeDragon: {fileID: 3147747789551837234, guid: e7af4df761c7fa7409c0c72be4ba687b, type: 3}
   dragonType: 0
   ATKcooldown: 100
-  attacked: 0
+  explosionForce: 10
   attackSpeed: 1
   attackStartupTime: 0
   healStartupTime: 0
   kamikazeStartupTime: 0
   sightRange: 25
   attackRange: 4
-  playerInSightRange: 0
-  isBoss: 0
-  enemyInSightRange: 0
-  enemyInAttackRange: 0
 --- !u!64 &886772500702709761
 MeshCollider:
   m_ObjectHideFlags: 0

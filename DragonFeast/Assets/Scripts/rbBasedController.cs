@@ -27,6 +27,7 @@ public class rbBasedController : MonoBehaviour
     [SerializeField] GameObject shieldAsset;
     GameObject shieldInstance;
     [SerializeField] int HP = 3;
+    [SerializeField] int maxHP = 3;
     [SerializeField] float hungies = 100;
     [SerializeField] float hungerLoss = 1;
 
@@ -235,8 +236,11 @@ public class rbBasedController : MonoBehaviour
     //heal player
     public void heal(int _ammount)
     {
-        HP += _ammount;
-        updateHP();
+        if (HP < maxHP)
+        {
+            HP += _ammount;
+            updateHP();
+        }
     }
     //add shield to the player
     public void addShield(int _ammount)
