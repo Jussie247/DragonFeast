@@ -23,6 +23,7 @@ public class LevelGenerationHandeler : MonoBehaviour
 {
     [SerializeField] Transform start;
     [SerializeField] int RoomsPerLevel;
+    [SerializeField] GameObject modules;
 
     [SerializeField] GameObject NavMesh;
     [SerializeField] public Difficulty difficulty;
@@ -35,6 +36,14 @@ public class LevelGenerationHandeler : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //get all rooms
+        GameObject[] rooms = GameObject.FindGameObjectsWithTag("room");
+        //GameObject[] bossRooms = GameObject.FindGameObjectsWithTag("bossRoom");
+        foreach (GameObject o in rooms)
+        {
+            Rooms.Add(o);
+        }
+
         //get the start position
         Vector3 lastExit = start.position;
         Quaternion lastRotation = start.rotation;
@@ -50,6 +59,8 @@ public class LevelGenerationHandeler : MonoBehaviour
             lastExit = Instance.transform.Find("Out").position;
             lastRotation = Instance.transform.Find("Out").localRotation;
             Instance.transform.parent = transform;
+            //spawn the enemies
+            spawnEnemis(Instance);
         }
         //instance the boss room
         switch (bossType)
@@ -60,6 +71,8 @@ public class LevelGenerationHandeler : MonoBehaviour
                 //Instance the module at the last ones Exit
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;
+                //spawn the enemies
+                spawnEnemis(Instance);
                 break;
             case BossType.Knight:
                 //get a random Module from the Level Modules
@@ -67,6 +80,8 @@ public class LevelGenerationHandeler : MonoBehaviour
                 //Instance the module at the last ones Exit
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;
+                //spawn the enemies
+                spawnEnemis(Instance);
                 break;
             case BossType.Lancer:
                 //get a random Module from the Level Modules
@@ -74,6 +89,8 @@ public class LevelGenerationHandeler : MonoBehaviour
                 //Instance the module at the last ones Exit
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;
+                //spawn the enemies
+                spawnEnemis(Instance);
                 break;
 
         }
@@ -111,7 +128,14 @@ public class LevelGenerationHandeler : MonoBehaviour
     {
         
     }
-
+    private void spawnEnemis(GameObject instance)
+    {
+        EnemySpawnerManager[] spawners = instance.transform.GetComponentsInChildren<EnemySpawnerManager>();
+        foreach (EnemySpawnerManager spawner in spawners)
+        {
+            spawner.spawnEnemy();
+        }
+    }
     public static T GetRandomEnumValue<T>() where T : Enum
     {
         var values = Enum.GetValues(typeof(T));
