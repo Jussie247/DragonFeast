@@ -21,7 +21,7 @@ public class EnemySpawnerManager : MonoBehaviour
         
     }
 
-    void Awake()
+    public void spawnEnemy()
     {
         difficulty = GameObject.Find("LevelGenerator").GetComponent<LevelGenerationHandeler>().difficulty;
         //set the spawn count based of the level difficulty
@@ -45,7 +45,7 @@ public class EnemySpawnerManager : MonoBehaviour
             for (int i = 0; i < spawnCount; i++)
             {
                 enemy = Instantiate(knightPrefab, transform);
-                enemy.transform.position = transform.position + new Vector3 (0,i*2,0);
+                enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
             }
         }
         if (enemyType == EnemyType.Archer)

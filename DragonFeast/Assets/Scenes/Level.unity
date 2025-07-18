@@ -7737,12 +7737,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {fileID: 1606539033}
   RoomsPerLevel: 5
+  modules: {fileID: 1998756203}
   NavMesh: {fileID: 708720756}
   difficulty: 0
   bossType: 1
   dragonTypes: 
-  Rooms:
-  - {fileID: 3537966803951827979, guid: 6caa566625e1c2c44aa64e0751425561, type: 3}
+  Rooms: []
   BossRooms:
   - {fileID: 7315033413352699871, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
 --- !u!4 &757643928
