@@ -38,26 +38,30 @@ public class EnemySpawnerManager : MonoBehaviour
             spawnCount = 3;
         }
 
+        GameObject enemy = new GameObject();
         //instance the correct amount of the desired enemy
         if (enemyType == EnemyType.Knight)
         {
             for (int i = 0; i < spawnCount; i++)
             {
-                Instantiate(knightPrefab, transform);
+                enemy = Instantiate(knightPrefab, transform);
+                enemy.transform.position = transform.position + new Vector3 (0,i*2,0);
             }
         }
         if (enemyType == EnemyType.Archer)
         {
             for (int i = 0; i < spawnCount; i++)
             {
-                Instantiate(archerPrefab, transform);
+                enemy = Instantiate(archerPrefab, transform);
+                enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
             }
         }
         if (enemyType == EnemyType.Lancer)
         {
             for (int i = 0; i < spawnCount; i++)
             {
-                Instantiate(lancerPrefab, transform);
+                enemy = Instantiate(lancerPrefab, transform);
+                enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
             }
         }
     }

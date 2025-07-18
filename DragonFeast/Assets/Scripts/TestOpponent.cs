@@ -47,7 +47,7 @@ public class TestOpponent : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("RB_Based_Controller").transform;
-        radicle = GameObject.Find("plane");
+        radicle = GameObject.Find("attackPos");
         arrow = GameObject.Find("arrow");
         agent = GetComponent<NavMeshAgent>();
 
@@ -155,13 +155,6 @@ public class TestOpponent : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        //check for bounce collisions 
-        if (isBounce && hitWall)
-        {
-            //bounce
-            HP--;
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -175,6 +168,7 @@ public class TestOpponent : MonoBehaviour
                 print("hit a wall");
                 hitWall = true;
                 bounces--;
+                HP--;
             }
             if ((enemyMask.value & (1 << collision.gameObject.layer)) != 0)
             {
@@ -183,6 +177,7 @@ public class TestOpponent : MonoBehaviour
                 enemy.GetComponent<TestOpponent>().Hit();
                 enemy.GetComponent<TestOpponent>().bounce();
                 bounces--;
+                HP--;
             }
         }
         else if (isBounce && bounces <= 0)

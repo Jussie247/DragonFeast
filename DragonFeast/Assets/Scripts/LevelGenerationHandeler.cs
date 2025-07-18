@@ -22,15 +22,15 @@ public enum BossType
 public class LevelGenerationHandeler : MonoBehaviour
 {
     [SerializeField] Transform start;
-    [SerializeField] GameObject Modules;
     [SerializeField] int RoomsPerLevel;
-    [SerializeField] int RoomCount;
 
     [SerializeField] GameObject NavMesh;
     [SerializeField] public Difficulty difficulty;
     [SerializeField] public BossType bossType;
 
     public List<DragonType> dragonTypes;
+    public List<GameObject> Rooms;
+    public List<GameObject> BossRooms;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,19 +39,47 @@ public class LevelGenerationHandeler : MonoBehaviour
         Vector3 lastExit = start.position;
         Quaternion lastRotation = start.rotation;
         //attach each room to the last ones exit
-        for(int i = 0; i < RoomsPerLevel; i++)
+        GameObject Instance = new GameObject();
+        for (int i = 0; i < RoomsPerLevel; i++)
         {
             //get a random Module from the Level Modules
-            GameObject room = Modules.transform.GetChild(UnityEngine.Random.Range(0, RoomCount)).gameObject;
+            GameObject room = Rooms[(UnityEngine.Random.Range(0, Rooms.Count))];
             //Instance the module at the last ones Exit
-            GameObject Instance = Instantiate(room, lastExit, lastRotation);
+            Instance = Instantiate(room, lastExit, lastRotation);
             //update the Last exit Vector
             lastExit = Instance.transform.Find("Out").position;
             lastRotation = Instance.transform.Find("Out").localRotation;
             Instance.transform.parent = transform;
         }
+        //instance the boss room
+        switch (bossType)
+        {
+            case BossType.Ballista:
+                //get a random Module from the Level Modules
+                GameObject room = BossRooms[0];
+                //Instance the module at the last ones Exit
+                Instance = Instantiate(room, lastExit, lastRotation);
+                Instance.transform.parent = transform;
+                break;
+            case BossType.Knight:
+                //get a random Module from the Level Modules
+                room = BossRooms[1];
+                //Instance the module at the last ones Exit
+                Instance = Instantiate(room, lastExit, lastRotation);
+                Instance.transform.parent = transform;
+                break;
+            case BossType.Lancer:
+                //get a random Module from the Level Modules
+                room = BossRooms[2];
+                //Instance the module at the last ones Exit
+                Instance = Instantiate(room, lastExit, lastRotation);
+                Instance.transform.parent = transform;
+                break;
 
-        NavMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
+        }
+
+        Invoke(nameof(bakeNavMesh), 1);
+
         //if boss type ist set to random it will pick a random one
         if (bossType == BossType.Random)
         {
@@ -71,6 +99,11 @@ public class LevelGenerationHandeler : MonoBehaviour
         {
             dragonTypes = new List<DragonType> { DragonType.Heal, DragonType.Attack };
         }
+    }
+
+    private void bakeNavMesh()
+    {
+        NavMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     // Update is called once per frame

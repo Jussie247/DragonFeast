@@ -99,7 +99,7 @@ MonoBehaviour:
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
-  knighPrefab: {fileID: 4394569743136297281, guid: 7c5a9223662312949a35d498a54a561a, type: 3}
+  knighPrefab: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}
   archerPrefab: {fileID: 2723814166539590773, guid: a9178b77f8da34544b3bea6d19393000, type: 3}
   lancerPrefab: {fileID: 0}
 --- !u!114 &5717044649145433668

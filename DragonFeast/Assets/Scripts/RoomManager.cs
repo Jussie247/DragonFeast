@@ -23,8 +23,11 @@ public class RoomManager : MonoBehaviour
 
     void Update()
     {
+        //reset so it can be counted up again
+        clearedRoomsCount = 0;
+
         // iterate through all rooms and check if they are cleared to open their door
-        for(int i = 0; i < Rooms.Length; i++)
+        for (int i = 0; i < Rooms.Length; i++)
         {
             Transform door;
             if (door = Rooms[i].transform.Find("door"))
@@ -33,17 +36,16 @@ public class RoomManager : MonoBehaviour
                 spawnCount = 0;
                 clearedSpawnsCount = 0;
 
-                // find all Spawns and check if they got cleared
-                Transform[] transforms = GetComponentsInChildren<Transform>();
+                // find all Spawns in the current room and check if they got cleared
+                Transform[] transforms = Rooms[i].GetComponentsInChildren<Transform>();
                 foreach (Transform t in transforms)
                 {
-                    if (t.name == "Spawn")
-                    {
+                    if (t.name.Contains("Spawn"))
+                        {
                         spawnCount++;
                         if (t.childCount == 0)
                         {
                             //spawn is cleared
-                            
                             clearedSpawnsCount++;
                         }
                     }
@@ -69,7 +71,7 @@ public class RoomManager : MonoBehaviour
         }
 
         //check if boss room is cleared
-        if(bossRoom.transform.Find("Spawns").childCount < 0)
+        if(bossRoom.transform.Find("Spawns").childCount == 0)
         {
             //player won, load main menu
             SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
