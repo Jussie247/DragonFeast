@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2178723891564953623, guid: 72883c050f1b11f4194a5aae8be16be8, type: 3}
       propertyPath: m_Name
-      value: Door (1)
+      value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13793,7 +13793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1413167180}
   m_Layer: 0
-  m_Name: Out (1)
+  m_Name: Out
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18598,7 +18598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921105631}
   m_Layer: 0
-  m_Name: Spawns (1)
+  m_Name: 'Spawns '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
