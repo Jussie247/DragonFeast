@@ -24,35 +24,36 @@ public class LevelGenerationHandeler : MonoBehaviour
     [SerializeField] Transform start;
     [SerializeField] int RoomsPerLevel;
     [SerializeField] GameObject modules;
+    [SerializeField] GameObject bossRoom;
+    [SerializeField] GameObject bossRooms;
 
     [SerializeField] GameObject NavMesh;
     [SerializeField] public Difficulty difficulty;
     [SerializeField] public BossType bossType;
 
     public List<DragonType> dragonTypes;
-    public List<GameObject> Rooms;
-    public List<GameObject> BossRooms;
+    //public List<GameObject> Rooms;
+    //public List<GameObject> BossRooms;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //get all rooms
         GameObject[] rooms = GameObject.FindGameObjectsWithTag("room");
-        //GameObject[] bossRooms = GameObject.FindGameObjectsWithTag("bossRoom");
-        foreach (GameObject o in rooms)
-        {
-            Rooms.Add(o);
-        }
+        float RoomCount = rooms.Length;
+
+        //get the first BossRoom
+        bossRooms.transform.GetChild(0);
 
         //get the start position
         Vector3 lastExit = start.position;
         Quaternion lastRotation = start.rotation;
-        //attach each room to the last ones exit
         GameObject Instance = new GameObject();
+        //attach each room to the last ones exit
         for (int i = 0; i < RoomsPerLevel; i++)
         {
             //get a random Module from the Level Modules
-            GameObject room = Rooms[(UnityEngine.Random.Range(0, Rooms.Count))];
+            GameObject room = modules.transform.GetChild((int)UnityEngine.Random.Range(0, RoomCount)).gameObject;
             //Instance the module at the last ones Exit
             Instance = Instantiate(room, lastExit, lastRotation);
             //update the Last exit Vector
@@ -62,12 +63,26 @@ public class LevelGenerationHandeler : MonoBehaviour
             //spawn the enemies
             spawnEnemis(Instance);
         }
+
+        //for (int i = 0; i < RoomsPerLevel; i++)
+        //{
+        //    //get a random Module from the Level Modules
+        //    GameObject room = Rooms[(UnityEngine.Random.Range(0, Rooms.Count))];
+        //    //Instance the module at the last ones Exit
+        //    Instance = Instantiate(room, lastExit, lastRotation);
+        //    //update the Last exit Vector
+        //    lastExit = Instance.transform.Find("Out").position;
+        //    lastRotation = Instance.transform.Find("Out").localRotation;
+        //    Instance.transform.parent = transform;
+        //    //spawn the enemies
+        //    spawnEnemis(Instance);
+        //}
         //instance the boss room
         switch (bossType)
         {
             case BossType.Ballista:
                 //get a random Module from the Level Modules
-                GameObject room = BossRooms[0];
+                GameObject room = bossRoom;//BossRooms[0];
                 //Instance the module at the last ones Exit
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;
@@ -76,7 +91,7 @@ public class LevelGenerationHandeler : MonoBehaviour
                 break;
             case BossType.Knight:
                 //get a random Module from the Level Modules
-                room = BossRooms[1];
+                room = bossRoom; //BossRooms[1];
                 //Instance the module at the last ones Exit
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;
@@ -85,7 +100,7 @@ public class LevelGenerationHandeler : MonoBehaviour
                 break;
             case BossType.Lancer:
                 //get a random Module from the Level Modules
-                room = BossRooms[2];
+                room = bossRoom; //BossRooms[2];
                 //Instance the module at the last ones Exit
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;

@@ -11626,13 +11626,12 @@ MonoBehaviour:
   start: {fileID: 1606539033}
   RoomsPerLevel: 5
   modules: {fileID: 1998756203}
+  bossRoom: {fileID: 0}
+  bossRooms: {fileID: 1903207551}
   NavMesh: {fileID: 708720756}
   difficulty: 0
   bossType: 1
   dragonTypes: 
-  Rooms: []
-  BossRooms:
-  - {fileID: 7315033413352699871, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
 --- !u!4 &757643928
 Transform:
   m_ObjectHideFlags: 0
@@ -13931,6 +13930,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1561960983959262654, guid: 73a8e0846a6cbfc4183a95e1787da90a, type: 3}
   m_PrefabInstance: {fileID: 927747455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &932779751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1903207552}
+    m_Modifications:
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315033413352699871, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+      propertyPath: m_Name
+      value: BossRoom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+--- !u!4 &932779752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7268278423695610299, guid: 7533214634089134eb1cfcec9cdb91b4, type: 3}
+  m_PrefabInstance: {fileID: 932779751}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &936371640
 PrefabInstance:
@@ -27555,6 +27616,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901753726}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1903207551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903207552}
+  m_Layer: 0
+  m_Name: BossRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1903207552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903207551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -84, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 932779752}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1918177713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30649,3 +30742,4 @@ SceneRoots:
   - {fileID: 1413261206}
   - {fileID: 2010895327}
   - {fileID: 190990979}
+  - {fileID: 1903207552}
