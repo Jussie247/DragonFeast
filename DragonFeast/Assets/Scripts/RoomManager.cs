@@ -61,7 +61,8 @@ public class RoomManager : MonoBehaviour
                     //all spawns cleared, open door
                     //door.gameObject.GetComponent<doorManager>().openDoor();
                     //print("openDoor");
-                    Destroy(door.gameObject);
+                    //Destroy(door.gameObject);
+                    door.GetComponent<doorManager>().openDoor();
                 }
             }
             else

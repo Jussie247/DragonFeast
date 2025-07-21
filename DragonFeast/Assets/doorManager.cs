@@ -6,6 +6,7 @@ public class doorManager : MonoBehaviour
 
     Quaternion targetRotation;
     private bool shouldRotate = false;
+    float rotationSpeed = 45f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +31,7 @@ public class doorManager : MonoBehaviour
 
     public void openDoor()
     {
-        //transform.gameObject.name = "openDoor";
+        transform.gameObject.name = "openDoor";
 
         //// Set new target rotation (add 90 degrees to Y)
         //targetRotation = Quaternion.Euler(0, transform.eulerAngles.y + 90, 0);
@@ -38,6 +39,16 @@ public class doorManager : MonoBehaviour
         //// Start rotation
         //shouldRotate = true;
         ////FMODUnity.RuntimeManager.PlayOneShotAttached(OpenDoorSound, transform.gameObject);
-        Destroy(gameObject);
+        ///
+        print("open Door");
+
+        targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + 90, transform.eulerAngles.z);
+
+        while (transform.rotation.y <= targetRotation.y)
+        {
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + rotationSpeed * Time.deltaTime, transform.eulerAngles.z);
+        }
+        
+        //Destroy(gameObject);
     }
 }
