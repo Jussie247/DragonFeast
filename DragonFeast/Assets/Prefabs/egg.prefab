@@ -109,5 +109,5 @@ MonoBehaviour:
   collectDistance: 1.5
   playerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   player: {fileID: 0}
