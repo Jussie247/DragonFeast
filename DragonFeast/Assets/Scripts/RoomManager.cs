@@ -59,6 +59,8 @@ public class RoomManager : MonoBehaviour
                 if(spawnCount == clearedSpawnsCount)
                 {
                     //all spawns cleared, open door
+                    //door.gameObject.GetComponent<doorManager>().openDoor();
+                    //print("openDoor");
                     Destroy(door.gameObject);
                 }
             }
