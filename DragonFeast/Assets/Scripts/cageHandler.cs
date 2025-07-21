@@ -14,7 +14,7 @@ public class cageHandler : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("RB_Based_Controller").transform;
-        radicle = GameObject.Find("plane").transform;
+        radicle = GameObject.Find("attackPos").transform;
     }
 
     // Update is called once per frame

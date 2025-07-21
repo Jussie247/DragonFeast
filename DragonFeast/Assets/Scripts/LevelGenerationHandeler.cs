@@ -38,9 +38,30 @@ public class LevelGenerationHandeler : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //if boss type ist set to random it will pick a random one
+        if (bossType == BossType.Random)
+        {
+            bossType = GetRandomEnumValue<BossType>();
+        }
+
+        // make a List with the possible dragon types for this level
+        if (bossType == BossType.Ballista)
+        {
+            dragonTypes = new List<DragonType> { DragonType.Kamikaze };
+        }
+        else if (bossType == BossType.Knight)
+        {
+            dragonTypes = new List<DragonType> { DragonType.Heal, DragonType.Attack };
+        }
+        else if (bossType == BossType.Lancer)
+        {
+            dragonTypes = new List<DragonType> { DragonType.Heal, DragonType.Attack };
+        }
+
+        //--------------------------------------------------------------------------------World Generation
         //get all rooms
-        GameObject[] rooms = GameObject.FindGameObjectsWithTag("room");
-        float RoomCount = rooms.Length;
+        //GameObject[] rooms = GameObject.FindGameObjectsWithTag("room");
+        float RoomCount = modules.transform.childCount; //rooms.Length;
 
         //get the first BossRoom
         bossRooms.transform.GetChild(0);
@@ -61,8 +82,11 @@ public class LevelGenerationHandeler : MonoBehaviour
             lastRotation = Instance.transform.Find("Out").localRotation;
             Instance.transform.parent = transform;
             //spawn the enemies
-            spawnEnemis(Instance);
+            spawnEnemies(Instance);
         }
+
+        //Invoke(nameof(bakeNavMesh), 1);
+        bakeNavMesh();
 
         //for (int i = 0; i < RoomsPerLevel; i++)
         //{
@@ -87,7 +111,7 @@ public class LevelGenerationHandeler : MonoBehaviour
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;
                 //spawn the enemies
-                spawnEnemis(Instance);
+                spawnEnemies(Instance);
                 break;
             case BossType.Knight:
                 //get a random Module from the Level Modules
@@ -96,7 +120,7 @@ public class LevelGenerationHandeler : MonoBehaviour
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;
                 //spawn the enemies
-                spawnEnemis(Instance);
+                spawnEnemies(Instance);
                 break;
             case BossType.Lancer:
                 //get a random Module from the Level Modules
@@ -105,32 +129,12 @@ public class LevelGenerationHandeler : MonoBehaviour
                 Instance = Instantiate(room, lastExit, lastRotation);
                 Instance.transform.parent = transform;
                 //spawn the enemies
-                spawnEnemis(Instance);
+                spawnEnemies(Instance);
                 break;
 
         }
 
-        Invoke(nameof(bakeNavMesh), 1);
-
-        //if boss type ist set to random it will pick a random one
-        if (bossType == BossType.Random)
-        {
-            bossType = GetRandomEnumValue<BossType>();
-        }
-
-        // make a List with the possible dragon types for this level
-        if (bossType == BossType.Ballista)
-        {
-            dragonTypes = new List<DragonType> { DragonType.Kamikaze };
-        }
-        else if (bossType == BossType.Knight)
-        {
-            dragonTypes = new List<DragonType> { DragonType.Heal, DragonType.Attack };
-        }
-        else if (bossType == BossType.Lancer)
-        {
-            dragonTypes = new List<DragonType> { DragonType.Heal, DragonType.Attack };
-        }
+        transform.AddComponent<RoomManager>();
     }
 
     private void bakeNavMesh()
@@ -143,7 +147,7 @@ public class LevelGenerationHandeler : MonoBehaviour
     {
         
     }
-    private void spawnEnemis(GameObject instance)
+    private void spawnEnemies(GameObject instance)
     {
         EnemySpawnerManager[] spawners = instance.transform.GetComponentsInChildren<EnemySpawnerManager>();
         foreach (EnemySpawnerManager spawner in spawners)

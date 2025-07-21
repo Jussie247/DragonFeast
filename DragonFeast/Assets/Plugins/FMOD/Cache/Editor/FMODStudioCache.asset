@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638877453427106590
+  lastModified: 638880973665200406
   FileSizes:
   - Name: Desktop
-    Value: 2653440
+    Value: 2740224
   Exists: 1
 --- !u!114 &-7296703509414783951
 MonoBehaviour:
@@ -73,7 +73,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 2115
 --- !u!114 &-6908558291931708013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 2115
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,14 +294,16 @@ MonoBehaviour:
   - {fileID: -5386147343873469420}
   - {fileID: -960297406374126118}
   - {fileID: 7365115443696212149}
-  - {fileID: 4242601626658960707}
+  - {fileID: 4854890394773629842}
+  - {fileID: 3307415903458493380}
+  - {fileID: 1245135225179348988}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7709548440230959844}
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638877453427116586
+  cacheTime: 638880973665200406
   SerializableEventsDict:
   - key: event:/Enemies/Death/Archer_Death
     index: 0
@@ -333,8 +335,12 @@ MonoBehaviour:
     index: 13
   - key: event:/Player/Footsteps/Footsteps_Player
     index: 14
-  - key: event:/Reward Stingers/Level_Cleared/Level_Cleared
+  - key: event:/Enemies/Attack/ArcherHit
     index: 15
+  - key: event:/UI/Click
+    index: 16
+  - key: event:/UI/Hover
+    index: 17
 --- !u!114 &336420646109560750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +368,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7560
+--- !u!114 &1245135225179348988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Hover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Hover
+  Guid:
+    Data1: 1398411748
+    Data2: 1285640823
+    Data3: 1913477026
+    Data4: 121284244
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 170
 --- !u!114 &1296545298038669575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,12 +471,12 @@ MonoBehaviour:
   - {fileID: -7709548440230959844}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 700
---- !u!114 &4242601626658960707
+  Length: 290
+--- !u!114 &3307415903458493380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,14 +486,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Reward Stingers/Level_Cleared/Level_Cleared
+  m_Name: event:/UI/Click
   m_EditorClassIdentifier: 
-  Path: event:/Reward Stingers/Level_Cleared/Level_Cleared
+  Path: event:/UI/Click
   Guid:
-    Data1: -1463784867
-    Data2: 1233107882
-    Data3: -1833951068
-    Data4: -64696973
+    Data1: 1957019830
+    Data2: 1305742473
+    Data3: 1882505645
+    Data4: -1234805140
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
@@ -469,7 +502,34 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 202
+--- !u!114 &4854890394773629842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Attack/ArcherHit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Attack/ArcherHit
+  Guid:
+    Data1: 1879919395
+    Data2: 1336084538
+    Data3: -1721429335
+    Data4: 1209808378
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 860
 --- !u!114 &7365115443696212149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,7 +556,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 300
 --- !u!114 &7632452734052637521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,10 +572,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638877453427116586
+  lastModified: 638880973665200406
   FileSizes:
   - Name: Desktop
-    Value: 1698
+    Value: 1780
   Exists: 1
 --- !u!114 &8166996153836855893
 MonoBehaviour:

@@ -14,6 +14,11 @@ public class RoomManager : MonoBehaviour
     GameObject[] Rooms;
     GameObject bossRoom;
 
+    void Awake()
+    {
+
+    }
+
     void Start()
     {
         //get all rooms
