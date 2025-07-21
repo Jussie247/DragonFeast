@@ -20,11 +20,10 @@ public class CameraCollision : MonoBehaviour
     {
         Vector3 desiredCameraPos = cameraPivot.position - cameraPivot.forward * distance;
 
-        // Raycast to detect collision
-        if (Physics.Raycast(cameraPivot.position, -cameraPivot.forward, out RaycastHit hit, distance, collisionMask))
+        float sphereRadius = 0.3f;
+        if (Physics.SphereCast(cameraPivot.position, sphereRadius, -cameraPivot.forward, out RaycastHit hit, distance, collisionMask))
         {
-            // If something is hit, move the camera to the hit point (with a small offset)
-            desiredCameraPos = hit.point + cameraPivot.forward * 0.2f;  // Prevent clipping into the wall
+            desiredCameraPos = cameraPivot.position - cameraPivot.forward * (hit.distance - 0.1f); // maintain a little distance
         }
 
         // Smoothly move the camera
