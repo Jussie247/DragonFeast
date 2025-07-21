@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{353becd9-2c31-466a-9134-9274c7db4bed}">
 		<property name="assetPath">
-			<value>BabyDragonAttack.wav</value>
+			<value>BabyDragon/SFX/BabyDragonAttack.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

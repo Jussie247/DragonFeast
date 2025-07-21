@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{e879b7ea-5095-483e-81d9-da13e84e9b40}">
 		<property name="assetPath">
-			<value>cartoon-shark-bite-fx.wav</value>
+			<value>BabyDragon/SFX/cartoon-shark-bite-fx.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>22.0499992</value>
