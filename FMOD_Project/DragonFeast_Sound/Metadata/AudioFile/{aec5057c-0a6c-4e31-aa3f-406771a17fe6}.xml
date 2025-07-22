@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{aec5057c-0a6c-4e31-aa3f-406771a17fe6}">
+		<property name="assetPath">
+			<value>Player/Death/DragonDeath.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.0500453514739228</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a9ccb88d-c9e1-48db-ba38-71d4f5d10f64}</destination>
+		</relationship>
+	</object>
+</objects>
