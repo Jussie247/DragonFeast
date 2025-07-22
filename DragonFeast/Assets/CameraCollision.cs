@@ -28,6 +28,6 @@ public class CameraCollision : MonoBehaviour
 
         // Smoothly move the camera
         transform.position = Vector3.SmoothDamp(transform.position, desiredCameraPos, ref currentVelocity, 0.05f);
-        transform.LookAt(cameraPivot.position);
+        transform.rotation = Quaternion.Euler(26.61f, 0, 0);
     }
 }

@@ -61,8 +61,8 @@ public class RoomManager : MonoBehaviour
                     //all spawns cleared, open door
                     //door.gameObject.GetComponent<doorManager>().openDoor();
                     //print("openDoor");
-                    //Destroy(door.gameObject);
-                    door.GetComponent<doorManager>().openDoor();
+                    Destroy(door.gameObject);
+                    //door.GetComponent<doorManager>().openDoor();
                 }
             }
             else
@@ -79,10 +79,11 @@ public class RoomManager : MonoBehaviour
         }
 
         //check if boss room is cleared
-        if(bossRoom.transform.Find("Spawns").childCount == 0)
+        if(bossRoom.transform.Find("Spawn").childCount == 0)
         {
+
             //player won, load main menu
-            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
+            SceneManager.LoadScene(1);
         }
     }
 }
