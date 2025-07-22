@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{c1e1b6c5-f4dc-4aac-a158-c827873178ec}">
 		<property name="assetPath">
-			<value>Environment/debris-wood-crash_M1Hjf2VO_NWM.mp3</value>
+			<value>Environment/Destructables/debris-wood-crash_M1Hjf2VO_NWM.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
