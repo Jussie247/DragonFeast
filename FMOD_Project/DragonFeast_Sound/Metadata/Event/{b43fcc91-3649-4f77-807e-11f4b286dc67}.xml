@@ -5,7 +5,7 @@
 			<value>ArcherAttack</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{dec5833e-2408-4e16-bb46-fdfe91c901d1}</destination>
@@ -113,6 +113,7 @@
 	<object class="MixerBusEffectChain" id="{659cd533-1879-46e6-84a6-a5868a7872b9}">
 		<relationship name="effects">
 			<destination>{3d1ffd1b-8169-4daa-9de3-09f1c2fb3a3e}</destination>
+			<destination>{9bb05f9e-ec3a-4951-958d-88fc58f8778f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d3f74c74-d706-4e89-b5ac-21cc1e311809}" />
@@ -124,5 +125,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{6667878b-661c-4712-85cf-f8993eb49193}" />
 	<object class="MixerBusFader" id="{3d1ffd1b-8169-4daa-9de3-09f1c2fb3a3e}" />
+	<object class="SpatialiserEffect" id="{9bb05f9e-ec3a-4951-958d-88fc58f8778f}" />
 	<object class="MixerBusFader" id="{56d9da18-ed5c-467d-a78e-ccf50b50d358}" />
 </objects>

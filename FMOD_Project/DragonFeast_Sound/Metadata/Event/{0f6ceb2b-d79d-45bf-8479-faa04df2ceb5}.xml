@@ -5,7 +5,7 @@
 			<value>SpotPlayer</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{1882ec5a-aef1-41e6-8c6b-ecf0bb388ce2}</destination>
@@ -117,6 +117,7 @@
 	<object class="MixerBusEffectChain" id="{ac08f405-872c-411a-9aec-7412aa11cbed}">
 		<relationship name="effects">
 			<destination>{77e47bba-95e7-42db-a658-916f55cc1053}</destination>
+			<destination>{2f16c2fa-6c7d-41d7-9be5-6821f36ea6bb}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{125242a1-6d0d-4241-8cf6-b88b79da4c64}" />
@@ -153,5 +154,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{cf2f07cf-99e2-470a-b850-6edcf5fd74bf}" />
 	<object class="MixerBusFader" id="{77e47bba-95e7-42db-a658-916f55cc1053}" />
+	<object class="SpatialiserEffect" id="{2f16c2fa-6c7d-41d7-9be5-6821f36ea6bb}" />
 	<object class="MixerBusFader" id="{53c438b5-e928-4164-9c22-71851ace567c}" />
 </objects>

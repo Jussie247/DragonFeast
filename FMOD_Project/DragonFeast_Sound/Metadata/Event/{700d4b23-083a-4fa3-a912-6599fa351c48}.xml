@@ -5,7 +5,7 @@
 			<value>ArcherHit</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{dec5833e-2408-4e16-bb46-fdfe91c901d1}</destination>
@@ -160,6 +160,7 @@
 	<object class="MixerBusEffectChain" id="{f91db9ef-414a-45e0-8dd4-f5742602ce36}">
 		<relationship name="effects">
 			<destination>{e4ecebc2-dfef-48a7-888d-02cd9cda70f6}</destination>
+			<destination>{0e64ed71-9404-4e6a-a4de-82cd411e927d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ce2cd227-1fba-4136-9c85-d013c88d8560}" />
@@ -185,6 +186,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{3b9f928f-dd3f-4e9a-a3ba-9f9500e1b0f3}" />
 	<object class="MixerBusFader" id="{e4ecebc2-dfef-48a7-888d-02cd9cda70f6}" />
+	<object class="SpatialiserEffect" id="{0e64ed71-9404-4e6a-a4de-82cd411e927d}" />
 	<object class="MixerBusFader" id="{5102c1e8-1319-4d22-b20d-8f1fdcf6a05b}" />
 	<object class="AutomationPoint" id="{36fa785d-4e9b-4834-8ba1-2148a1847b72}">
 		<property name="position">

@@ -5,7 +5,7 @@
 			<value>KnightAttack</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{dec5833e-2408-4e16-bb46-fdfe91c901d1}</destination>
@@ -116,6 +116,7 @@
 	<object class="MixerBusEffectChain" id="{d59acd57-349c-43e9-b049-6c6b55ab75d4}">
 		<relationship name="effects">
 			<destination>{0a26e52f-a2ec-4595-8966-d75234a70c54}</destination>
+			<destination>{d4e36e69-03b0-4c2b-917f-778e50ab0c39}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f31eb472-7c34-4de9-8c8b-cc15f465e2bb}" />
@@ -127,5 +128,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{45e0e464-30e8-4e77-b824-666d9132173c}" />
 	<object class="MixerBusFader" id="{0a26e52f-a2ec-4595-8966-d75234a70c54}" />
+	<object class="SpatialiserEffect" id="{d4e36e69-03b0-4c2b-917f-778e50ab0c39}" />
 	<object class="MixerBusFader" id="{d6e9d52c-df69-40b3-92b4-06ae3d343207}" />
 </objects>
