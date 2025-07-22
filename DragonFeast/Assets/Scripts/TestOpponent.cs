@@ -48,7 +48,7 @@ public class TestOpponent : MonoBehaviour
     {
         player = GameObject.Find("RB_Based_Controller").transform;
         radicle = GameObject.Find("attackPos");
-        arrow = GameObject.Find("arrow");
+        //arrow = GameObject.Find("arrow");
         agent = GetComponent<NavMeshAgent>();
 
         if (enemyType == EnemyType.Knight)

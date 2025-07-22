@@ -88,7 +88,7 @@ MonoBehaviour:
   isBounce: 0
   hitWall: 0
   radicle: {fileID: 0}
-  arrow: {fileID: 0}
+  arrow: {fileID: 3915148000429351268, guid: 45381be4abaadf3429759737b88345f6, type: 3}
   punchForce: 1000
   arrowSpeed: 1000
   bounces: 1
