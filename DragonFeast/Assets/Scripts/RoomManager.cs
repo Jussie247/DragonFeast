@@ -83,7 +83,7 @@ public class RoomManager : MonoBehaviour
         {
 
             //player won, load main menu
-            SceneManager.LoadScene(1);
+            
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class dragonEggHandler : MonoBehaviour
 {
@@ -11,13 +12,19 @@ public class dragonEggHandler : MonoBehaviour
         player = GameObject.Find("RB_Based_Controller").transform;
     }
 
+    void Awake()
+    {
+        player = GameObject.Find("RB_Based_Controller").transform;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Physics.CheckSphere(transform.position, collectDistance, playerMask))
         {
             player.GetComponent<playCollectSound>().playCollect();
-            Destroy(transform.gameObject); 
+            SceneManager.LoadScene(1);
+            Destroy(transform.gameObject);
         }
     }
 }
