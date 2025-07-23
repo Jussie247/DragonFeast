@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 1606539033}
-  RoomsPerLevel: 5
+  RoomsPerLevel: 1
   NavMesh: {fileID: 708720756}
   difficulty: 0
   bossType: 1

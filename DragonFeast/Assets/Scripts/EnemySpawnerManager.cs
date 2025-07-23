@@ -7,7 +7,9 @@ public class EnemySpawnerManager : MonoBehaviour
 
     [SerializeField] EnemyType enemyType;
 
-    [SerializeField] GameObject knightPrefab, archerPrefab, lancerPrefab;
+    [SerializeField] GameObject knightPrefab, archerPrefab, lancerPrefab, ballistaBoss;
+
+    [SerializeField] bool isBoss = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,45 +25,52 @@ public class EnemySpawnerManager : MonoBehaviour
 
     public void spawnEnemy()
     {
-        difficulty = GameObject.Find("LevelGenerator").GetComponent<LevelGenerationHandeler>().difficulty;
-        //set the spawn count based of the level difficulty
-        if (difficulty == Difficulty.Easy)
+        if (isBoss)
         {
-            spawnCount = 1;
+            GameObject boss = Instantiate(ballistaBoss, transform.position, transform.rotation);
         }
-        else if (difficulty == Difficulty.Normal)
+        else
         {
-            spawnCount = 2;
-        }
-        else if (difficulty == Difficulty.Hard)
-        {
-            spawnCount = 3;
-        }
+            difficulty = GameObject.Find("LevelGenerator").GetComponent<LevelGenerationHandeler>().difficulty;
+            //set the spawn count based of the level difficulty
+            if (difficulty == Difficulty.Easy)
+            {
+                spawnCount = 1;
+            }
+            else if (difficulty == Difficulty.Normal)
+            {
+                spawnCount = 2;
+            }
+            else if (difficulty == Difficulty.Hard)
+            {
+                spawnCount = 3;
+            }
 
-        GameObject enemy = new GameObject();
-        //instance the correct amount of the desired enemy
-        if (enemyType == EnemyType.Knight)
-        {
-            for (int i = 0; i < spawnCount; i++)
+            GameObject enemy = new GameObject();
+            //instance the correct amount of the desired enemy
+            if (enemyType == EnemyType.Knight)
             {
-                enemy = Instantiate(knightPrefab, transform);
-                enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
+                for (int i = 0; i < spawnCount; i++)
+                {
+                    enemy = Instantiate(knightPrefab, transform);
+                    enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
+                }
             }
-        }
-        if (enemyType == EnemyType.Archer)
-        {
-            for (int i = 0; i < spawnCount; i++)
+            if (enemyType == EnemyType.Archer)
             {
-                enemy = Instantiate(archerPrefab, transform);
-                enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
+                for (int i = 0; i < spawnCount; i++)
+                {
+                    enemy = Instantiate(archerPrefab, transform);
+                    enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
+                }
             }
-        }
-        if (enemyType == EnemyType.Lancer)
-        {
-            for (int i = 0; i < spawnCount; i++)
+            if (enemyType == EnemyType.Lancer)
             {
-                enemy = Instantiate(lancerPrefab, transform);
-                enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
+                for (int i = 0; i < spawnCount; i++)
+                {
+                    enemy = Instantiate(lancerPrefab, transform);
+                    enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
+                }
             }
         }
     }
