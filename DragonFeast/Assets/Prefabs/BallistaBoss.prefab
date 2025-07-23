@@ -74,9 +74,10 @@ GameObject:
   - component: {fileID: 8586104768302612437}
   - component: {fileID: 4523453037350363495}
   - component: {fileID: 2084125160380139237}
+  - component: {fileID: 5575574933221966160}
   m_Layer: 13
   m_Name: BallistaBoss
-  m_TagString: Untagged
+  m_TagString: boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023307107864fb24e8a3091e7b89359c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HP: 1
   playerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -172,6 +173,29 @@ MonoBehaviour:
       Data3: -1866391386
       Data4: 1092960638
     Path: event:/Boss SFX/Entrance/Entrance
+--- !u!136 &5575574933221966160
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2379948118456951337}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.94
+  m_Height: 5.33
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.35, z: 0}
 --- !u!1 &2381207245708199991
 GameObject:
   m_ObjectHideFlags: 0

@@ -86,6 +86,9 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 256
+  bossMask:
+    serializedVersion: 2
+    m_Bits: 8192
   isBounce: 0
   hitWall: 0
   radicle: {fileID: 0}

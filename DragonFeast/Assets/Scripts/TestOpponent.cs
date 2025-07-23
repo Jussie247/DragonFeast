@@ -24,7 +24,7 @@ public class TestOpponent : MonoBehaviour
 
     [SerializeField] Transform player;
 
-    [SerializeField] LayerMask groundMask, playerMask, wallMask, enemyMask;
+    [SerializeField] LayerMask groundMask, playerMask, wallMask, enemyMask, bossMask;
 
     [SerializeField] bool isBounce = false, hitWall = false;
     [SerializeField] GameObject radicle, arrow;
@@ -187,6 +187,14 @@ public class TestOpponent : MonoBehaviour
                 Transform enemy = GetClosestObjectTransformByTag("enemy");
                 enemy.GetComponent<TestOpponent>().Hit();
                 enemy.GetComponent<TestOpponent>().bounce();
+                bounces--;
+                HP--;
+            }
+            if((bossMask.value & (1 << collision.gameObject.layer)) != 0)
+            {
+                print("hit a Boss");
+                Transform boss = GetClosestObjectTransformByTag("boss");
+                boss.GetComponent<BallsitaBossHandler>().hit();
                 bounces--;
                 HP--;
             }
