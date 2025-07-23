@@ -6,11 +6,10 @@ public class BallsitaBossHandler : MonoBehaviour
     [SerializeField] private int HP = 10;
     //[SerializeField] private int arrows = 3;
     bool playerInAttackRange = false;
-    float attackRange = 25;
     [SerializeField] LayerMask playerMask;
     [SerializeField] Transform[] instancePositions;
-    [SerializeField] GameObject arrow, egg;
-    [SerializeField] float arrowSpeed, attackCooldown = 0.5f;
+    [SerializeField] GameObject arrow, egg, player;
+    [SerializeField] float arrowSpeed, attackCooldown = 0.5f, attackRange = 60;
     bool attacked = false;
 
     Transform eggSpawn;
@@ -18,36 +17,45 @@ public class BallsitaBossHandler : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        instancePositions = transform.Find("instancePosition").GetComponentsInChildren<Transform>();
+        player = GameObject.Find("RB_Based_Controller");
+    }
+    void Awake()
+    {
+        player = GameObject.Find("RB_Based_Controller");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkIfPlayerInRange();
-        if(HP <= 0)
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
+        if (playerInAttackRange)
+        {
+            playerInRange();
+        }
+
+        if (HP <= 0)
         {
             //die
             die();
         }
     }
 
-    void checkIfPlayerInRange()
+    void playerInRange()
     {
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
-        if (playerInAttackRange)
+        print("player in attack range");
+        transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up);
+        if (!attacked)
         {
-            if (!attacked)
-            {
-                shoot();
-                attacked = true;
-                Invoke(nameof(resetAttack), attackCooldown);
-            }
+            shoot();
+            attacked = true;
+            Invoke(nameof(resetAttack), attackCooldown);
         }
     }
 
     void shoot()
     {
+        print("ballista shooting");
         for (int i = 0; i < instancePositions.Length; i++)
         {
             GameObject awwow = Instantiate(arrow, instancePositions[i].position + instancePositions[i].forward + new Vector3(0, 1, 0), Quaternion.LookRotation(transform.forward));
@@ -71,5 +79,11 @@ public class BallsitaBossHandler : MonoBehaviour
     public void hit()
     {
         HP--;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, attackRange);
     }
 }
