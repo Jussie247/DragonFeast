@@ -4,11 +4,11 @@ using FMODUnity;
 public class EnemySoundManager : MonoBehaviour
 {
     [SerializeField] EventReference ArcherAttack;
-    [SerializeField] EventReference ArcherHit;
+    //[SerializeField] EventReference ArcherHit;
     [SerializeField] EventReference KnightAttack;
 
     [SerializeField] EventReference EnemyDeath;
-    [SerializeField] EventReference FootstepsEnemy;
+    //[SerializeField] EventReference FootstepsEnemy;
     [SerializeField] EventReference SpotPlayer;
 
 

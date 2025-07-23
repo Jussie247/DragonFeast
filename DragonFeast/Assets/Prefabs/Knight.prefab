@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 937039571396907624}
   - component: {fileID: 5717044649145433668}
   - component: {fileID: 1054812537572503611}
+  - component: {fileID: 4546481260932354593}
   m_Layer: 8
   m_Name: Knight
   m_TagString: enemy
@@ -146,3 +147,57 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &4546481260932354593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738976532821280392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353398b6c9d0a924dab729c2d57c3f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArcherAttack:
+    Guid:
+      Data1: -1270887279
+      Data2: 1333212745
+      Data3: -200180096
+      Data4: 1742505650
+    Path: event:/Enemies/Attack/ArcherAttack
+  ArcherHit:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  KnightAttack:
+    Guid:
+      Data1: 1783568699
+      Data2: 1205761150
+      Data3: -671302745
+      Data4: -1593004433
+    Path: event:/Enemies/Attack/Knight_Attack
+  EnemyDeath:
+    Guid:
+      Data1: -1912613822
+      Data2: 1120520427
+      Data3: 737868960
+      Data4: 883417006
+    Path: event:/Enemies/Death/Enemy_Death
+  FootstepsEnemy:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  SpotPlayer:
+    Guid:
+      Data1: 258796331
+      Data2: 1170200477
+      Data3: -1594197628
+      Data4: -1244728755
+    Path: event:/Enemies/SpotPlayer/SpotPlayer

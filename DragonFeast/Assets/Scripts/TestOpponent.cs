@@ -42,7 +42,10 @@ public class TestOpponent : MonoBehaviour
 
     [SerializeField] GameObject knighPrefab, archerPrefab, lancerPrefab;
 
+    bool resetSpotPlayer = false;
+
     Transform animationHandler;
+    EnemySoundManager soundManager;
 
     private void Awake()
     {
@@ -50,6 +53,7 @@ public class TestOpponent : MonoBehaviour
         radicle = GameObject.Find("attackPos");
         //arrow = GameObject.Find("arrow");
         agent = GetComponent<NavMeshAgent>();
+        soundManager = GetComponent<EnemySoundManager>();
 
         if (enemyType == EnemyType.Knight)
         {
@@ -68,11 +72,16 @@ public class TestOpponent : MonoBehaviour
 
     private void idle()
     {
-
+        resetSpotPlayer = true;
     }
 
     private void chase()
     {
+        if (resetSpotPlayer)
+        {
+            soundManager.PlaySpotPlayerSound(transform.gameObject);
+            resetSpotPlayer = false;
+        }
         agent.isStopped = false;
         //print("chasing Player");
         agent.SetDestination(player.position);
@@ -81,16 +90,17 @@ public class TestOpponent : MonoBehaviour
 
     private void attack()
     {
-
+        resetSpotPlayer = true;
         agent.isStopped = true;
         transform.LookAt(player);
 
         if (enemyType == EnemyType.Knight)
         {
+            soundManager.PlayKnightAttackSound(transform.gameObject);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
             if (playerInAttackRange)
             {
-                print("attacking Player");
+                //print("attacking Player");
                 player.GetComponent<rbBasedController>().hit();
                 animationHandler.GetComponent<enemyAnimationHandler>().endAttackAnim();
                 Invoke(nameof(resetAttack), ATKcooldown);
@@ -103,7 +113,8 @@ public class TestOpponent : MonoBehaviour
         }
         else if (enemyType == EnemyType.Archer)
         {
-            print("attacking Player");
+            soundManager.PlayArcherAttackSound(transform.gameObject);
+            //print("attacking Player");
             //player.GetComponent<rbBasedController>().hit();
             shootArrow();
             animationHandler.GetComponent<enemyAnimationHandler>().endAttackAnim();
