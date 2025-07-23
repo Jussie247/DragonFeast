@@ -125,7 +125,7 @@ MonoBehaviour:
       Data2: 1255682537
       Data3: -848452465
       Data4: 990443947
-    Path: event:/Enemies/Footsteps/Footsteps_Enemy
+    Path: event:/Enemies/Footsteps/FootstepsEnemy
 --- !u!135 &1054812537572503611
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -166,34 +166,20 @@ MonoBehaviour:
       Data3: -200180096
       Data4: 1742505650
     Path: event:/Enemies/Attack/ArcherAttack
-  ArcherHit:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
   KnightAttack:
     Guid:
       Data1: 1783568699
       Data2: 1205761150
       Data3: -671302745
       Data4: -1593004433
-    Path: event:/Enemies/Attack/Knight_Attack
+    Path: event:/Enemies/Attack/KnightAttack
   EnemyDeath:
     Guid:
       Data1: -1912613822
       Data2: 1120520427
       Data3: 737868960
       Data4: 883417006
-    Path: event:/Enemies/Death/Enemy_Death
-  FootstepsEnemy:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+    Path: event:/Enemies/Death/EnemyDeath
   SpotPlayer:
     Guid:
       Data1: 258796331
