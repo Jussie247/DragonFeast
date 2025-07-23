@@ -55,6 +55,8 @@ public class BallsitaBossHandler : MonoBehaviour
 
     void shoot()
     {
+        GetComponent<BallistaAnimationManager>().playShootAnimation();
+        GetComponent<BallistaAnimationManager>().stopShootAnimation();
         print("ballista shooting");
         for (int i = 0; i < instancePositions.Length; i++)
         {

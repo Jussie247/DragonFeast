@@ -1,59 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8979884233850395462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Boss SFX/Entrance/Entrance
-  m_EditorClassIdentifier: 
-  Path: event:/Boss SFX/Entrance/Entrance
-  Guid:
-    Data1: 1598499669
-    Data2: 1138517589
-    Data3: -1866391386
-    Data4: 1092960638
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3950
---- !u!114 &-8042441840897325722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Boss SFX/Death/BossDeath
-  m_EditorClassIdentifier: 
-  Path: event:/Boss SFX/Death/BossDeath
-  Guid:
-    Data1: 1941438120
-    Data2: 1161776027
-    Data3: -628088430
-    Data4: -474271069
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
 --- !u!114 &-7757024057283974606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,10 +42,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638888708516381951
+  lastModified: 638888624378370420
   FileSizes:
   - Name: Desktop
-    Value: 6294400
+    Value: 6053472
   Exists: 1
 --- !u!114 &-7316553125293981072
 MonoBehaviour:
@@ -289,7 +235,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 940
+  Length: 1460
 --- !u!114 &-1606402891834330523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +284,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -398,33 +344,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
---- !u!114 &-189877368992678977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Boss SFX/Attack/BossAttack
-  m_EditorClassIdentifier: 
-  Path: event:/Boss SFX/Attack/BossAttack
-  Guid:
-    Data1: 864063430
-    Data2: 1258277764
-    Data3: -1238931525
-    Data4: -807230350
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,18 +386,13 @@ MonoBehaviour:
   - {fileID: -7757024057283974606}
   - {fileID: -2371082873387737835}
   - {fileID: 296960831547265316}
-  - {fileID: 5876157616797567747}
-  - {fileID: 3563112407496275155}
-  - {fileID: -8979884233850395462}
-  - {fileID: -8042441840897325722}
-  - {fileID: -189877368992678977}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7709548440230959844}
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638888708516407036
+  cacheTime: 638888624378380478
   SerializableEventsDict:
   - key: event:/Player/Attack/Attack_Player
     index: 0
@@ -532,16 +446,6 @@ MonoBehaviour:
     index: 24
   - key: event:/Environment/Torch/Torch
     index: 25
-  - key: event:/Enemies/Hit/ArcherHit
-    index: 26
-  - key: event:/Enemies/Hit/KnightHit
-    index: 27
-  - key: event:/Boss SFX/Entrance/Entrance
-    index: 28
-  - key: event:/Boss SFX/Death/BossDeath
-    index: 29
-  - key: event:/Boss SFX/Attack/BossAttack
-    index: 30
 --- !u!114 &296960831547265316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,33 +635,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 720
---- !u!114 &3563112407496275155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Hit/KnightHit
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/Hit/KnightHit
-  Guid:
-    Data1: -1144964119
-    Data2: 1191811321
-    Data3: -1656004207
-    Data4: 950665381
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 300
 --- !u!114 &4242188900517288358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,33 +743,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5500
---- !u!114 &5876157616797567747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Hit/ArcherHit
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/Hit/ArcherHit
-  Guid:
-    Data1: -1798506420
-    Data2: 1271600073
-    Data3: -1326358378
-    Data4: -875240389
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 270
 --- !u!114 &6129937218594351215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,7 +818,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -989,8 +839,8 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638888708516407036
+  lastModified: 638888624378380478
   FileSizes:
   - Name: Desktop
-    Value: 2498
+    Value: 2228
   Exists: 1
