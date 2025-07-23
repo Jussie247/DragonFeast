@@ -48,3 +48,5 @@ MonoBehaviour:
   knightPrefab: {fileID: 738976532821280392, guid: 172365e621f82b5449630e3d0bacbabf, type: 3}
   archerPrefab: {fileID: 738976532821280392, guid: 01946fbdf9ac9084fa12e91be6ed7710, type: 3}
   lancerPrefab: {fileID: 0}
+  ballistaBoss: {fileID: 2379948118456951337, guid: 3fb35b1dd8233e844a7b4b7a50c9b0a5, type: 3}
+  isBoss: 0
