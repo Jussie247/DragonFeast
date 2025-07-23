@@ -1,32 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8968429983438393783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Hit/KnightHit
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/Hit/KnightHit
-  Guid:
-    Data1: -1144964119
-    Data2: 1191811321
-    Data3: -1656004207
-    Data4: 950665381
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 300
 --- !u!114 &-7757024057283974606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +42,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638888660976116158
+  lastModified: 638888624378370420
   FileSizes:
   - Name: Desktop
-    Value: 6063840
+    Value: 6053472
   Exists: 1
 --- !u!114 &-7316553125293981072
 MonoBehaviour:
@@ -155,33 +128,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-6610492830788827774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Hit/ArcherHit
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/Hit/ArcherHit
-  Guid:
-    Data1: -1798506420
-    Data2: 1271600073
-    Data3: -1326358378
-    Data4: -875240389
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 270
 --- !u!114 &-6248316627069305717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +284,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -440,15 +386,13 @@ MonoBehaviour:
   - {fileID: -7757024057283974606}
   - {fileID: -2371082873387737835}
   - {fileID: 296960831547265316}
-  - {fileID: -6610492830788827774}
-  - {fileID: -8968429983438393783}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7709548440230959844}
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638888660976131298
+  cacheTime: 638888624378380478
   SerializableEventsDict:
   - key: event:/Player/Attack/Attack_Player
     index: 0
@@ -878,7 +822,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -899,8 +843,8 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638888660976131298
+  lastModified: 638888624378380478
   FileSizes:
   - Name: Desktop
-    Value: 2324
+    Value: 2228
   Exists: 1
