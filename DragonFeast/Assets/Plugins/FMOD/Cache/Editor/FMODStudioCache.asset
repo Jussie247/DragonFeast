@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638888027741534871
+  lastModified: 638887048136423263
   FileSizes:
   - Name: Desktop
-    Value: 3304192
+    Value: 3223776
   Exists: 1
 --- !u!114 &-7316553125293981072
 MonoBehaviour:
@@ -235,7 +235,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1380
+  Length: 0
 --- !u!114 &-960297406374126118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638888027741549987
+  cacheTime: 638887048136433261
   SerializableEventsDict:
   - key: event:/Enemies/Footsteps/Footsteps_Enemy
     index: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3500
+  Length: 0
 --- !u!114 &3019039789912657326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 879
+  Length: 889
 --- !u!114 &7632452734052637521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +782,7 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638888027741549987
+  lastModified: 638887048136433261
   FileSizes:
   - Name: Desktop
     Value: 2178
