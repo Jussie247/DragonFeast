@@ -189,3 +189,17 @@ MonoBehaviour:
       Data3: -1594197628
       Data4: -1244728755
     Path: event:/Enemies/SpotPlayer/SpotPlayer
+  KnightHit:
+    Guid:
+      Data1: -1144964119
+      Data2: 1191811321
+      Data3: -1656004207
+      Data4: 950665381
+    Path: event:/Enemies/Hit/KnightHit
+  ArcherHit:
+    Guid:
+      Data1: -1798506420
+      Data2: 1271600073
+      Data3: -1326358378
+      Data4: -875240389
+    Path: event:/Enemies/Hit/ArcherHit

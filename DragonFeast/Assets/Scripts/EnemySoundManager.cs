@@ -11,6 +11,9 @@ public class EnemySoundManager : MonoBehaviour
     //[SerializeField] EventReference FootstepsEnemy;
     [SerializeField] EventReference SpotPlayer;
 
+    [SerializeField] EventReference KnightHit;
+    [SerializeField] EventReference ArcherHit;
+
 
 
     public void PlayArcherAttackSound(GameObject o)
@@ -41,6 +44,16 @@ public class EnemySoundManager : MonoBehaviour
     public void PlaySpotPlayerSound(GameObject o)
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(SpotPlayer, o);
+    }
+
+    public void PlayKnightHit(GameObject o)
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(KnightHit, o);
+    }
+
+    public void PlayArcherHit(GameObject o)
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(ArcherHit, o);
     }
 
 }

@@ -5,7 +5,7 @@
 			<value>destructables</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{a4a0c529-6653-475d-82c2-f26a8e043081}</destination>
@@ -119,6 +119,7 @@
 	<object class="MixerBusEffectChain" id="{de0334ca-802d-47fa-9d01-50ae38dcc932}">
 		<relationship name="effects">
 			<destination>{ea4197cc-056f-48e8-8912-f1e0dd72ff5e}</destination>
+			<destination>{b3f4a201-9417-4a8e-94c5-abe600e2c2bf}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4693c1b5-e578-4793-a418-236e0a3e7bd8}" />
@@ -138,6 +139,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{c29256d5-b4b8-4199-906b-6cafb0b90784}" />
 	<object class="MixerBusFader" id="{ea4197cc-056f-48e8-8912-f1e0dd72ff5e}" />
+	<object class="SpatialiserEffect" id="{b3f4a201-9417-4a8e-94c5-abe600e2c2bf}" />
 	<object class="AutomationPoint" id="{0a1f4595-d5de-4ee1-a1fd-398f29f4d728}">
 		<property name="position">
 			<value>0.80000000000000004</value>
