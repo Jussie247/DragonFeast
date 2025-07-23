@@ -125,7 +125,7 @@ MonoBehaviour:
   player: {fileID: 0}
   arrowSpeed: 5000
   attackCooldown: 2
-  attackRange: 60
+  attackRange: 150
 --- !u!114 &4523453037350363495
 MonoBehaviour:
   m_ObjectHideFlags: 0
