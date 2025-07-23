@@ -31,7 +31,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bosshumanattack
+    m_ConditionEvent: attack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5201117607882198999}
@@ -81,7 +81,7 @@ AnimatorController:
   m_Name: humanBoss
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: bosshumanattack
+  - m_Name: attack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
