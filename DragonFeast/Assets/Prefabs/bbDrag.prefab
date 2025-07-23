@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5560500307847952647}
   - component: {fileID: 3144094640853274221}
   - component: {fileID: 7717273795446980036}
+  - component: {fileID: -4451367522383378620}
   m_Layer: 0
   m_Name: bbDrag
   m_TagString: Untagged
@@ -123,3 +124,43 @@ MonoBehaviour:
   kamikazeStartupTime: 0
   sightRange: 25
   attackRange: 4
+--- !u!114 &-4451367522383378620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975113724233399845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb8e4552d8be364d9ba89adbcd2f5b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackSound:
+    Guid:
+      Data1: 2047732366
+      Data2: 1337885336
+      Data3: 612689554
+      Data4: -238417579
+    Path: event:/BabyDraagon/BabyDragonSFX/Attack
+  HealSound:
+    Guid:
+      Data1: -1997778617
+      Data2: 1153971050
+      Data3: 1001083311
+      Data4: 734777199
+    Path: event:/BabyDraagon/BabyDragonSFX/Heal
+  ExplosionSound:
+    Guid:
+      Data1: 1553013361
+      Data2: 1159560418
+      Data3: -706594152
+      Data4: 687324079
+    Path: event:/BabyDraagon/BabyDragonSFX/Explosion
+  FlyingSound:
+    Guid:
+      Data1: 373385813
+      Data2: 1172896223
+      Data3: -210216575
+      Data4: -1661981600
+    Path: event:/BabyDraagon/BabyDragonMove/BabyDragonMove
