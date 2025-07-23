@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 4091192316633918213}
   - component: {fileID: 5127614830194598972}
   - component: {fileID: 8085171557267412574}
+  - component: {fileID: -4103230930991950739}
   m_Layer: 9
   m_Name: Cage
   m_TagString: cage
@@ -102,6 +103,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df62bfebdf762414193f8c3a0dc5aba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4103230930991950739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022422018318200185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d7467f23644df429ccb70ac4aae472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bbDragonFreeSound:
+    Guid:
+      Data1: 1275499601
+      Data2: 1075427862
+      Data3: 1706106500
+      Data4: -1066353128
+    Path: event:/Reward Stingers/Dragon_Freed/Dragon_Freed
 --- !u!1001 &2185388598271018506
 PrefabInstance:
   m_ObjectHideFlags: 0
