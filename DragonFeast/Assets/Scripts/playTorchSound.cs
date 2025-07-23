@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class playDestructionSound : MonoBehaviour
+public class playTorchSound : MonoBehaviour
 {
-    [SerializeField] FMODUnity.EventReference destructables;
+    [SerializeField] FMODUnity.EventReference TorchSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,9 +16,8 @@ public class playDestructionSound : MonoBehaviour
 
     }
 
-    public void playDestructables(GameObject o)
+    public void PlayTorchSound(GameObject o)
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached(destructables, o);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(TorchSound, o);
     }
 }
-
