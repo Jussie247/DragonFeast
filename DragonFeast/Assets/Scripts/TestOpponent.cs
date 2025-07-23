@@ -43,6 +43,7 @@ public class TestOpponent : MonoBehaviour
     [SerializeField] GameObject knighPrefab, archerPrefab, lancerPrefab;
 
     bool resetSpotPlayer = false;
+    bool hasBounceHit = false;
 
     Transform animationHandler;
     EnemySoundManager soundManager;
@@ -168,6 +169,11 @@ public class TestOpponent : MonoBehaviour
         }
     }
 
+    void resetBounceHit()
+    {
+        hasBounceHit = false;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         //make bounces configurable without imideatly deleting the game obj
@@ -181,7 +187,7 @@ public class TestOpponent : MonoBehaviour
                 bounces--;
                 HP--;
             }
-            if ((enemyMask.value & (1 << collision.gameObject.layer)) != 0)
+            if ((enemyMask.value & (1 << collision.gameObject.layer)) != 0 && !hasBounceHit)
             {
                 print("hit another enemy");
                 Transform enemy = GetClosestObjectTransformByTag("enemy");
@@ -189,14 +195,18 @@ public class TestOpponent : MonoBehaviour
                 enemy.GetComponent<TestOpponent>().bounce();
                 bounces--;
                 HP--;
+                hasBounceHit = true;
+                Invoke(nameof(resetBounceHit), 0.2f);
             }
-            if((bossMask.value & (1 << collision.gameObject.layer)) != 0)
+            if((bossMask.value & (1 << collision.gameObject.layer)) != 0 && !hasBounceHit)
             {
                 print("hit a Boss");
                 Transform boss = GetClosestObjectTransformByTag("boss");
                 boss.GetComponent<BallsitaBossHandler>().hit();
                 bounces--;
                 HP--;
+                hasBounceHit = true;
+                Invoke(nameof(resetBounceHit), 0.2f);
             }
         }
         else if (isBounce && bounces <= 0)
@@ -234,6 +244,8 @@ public class TestOpponent : MonoBehaviour
         isBounce = true;
         playerInAttackRange = false;
         playerInSightRange = false;
+        hasBounceHit = true;
+        Invoke(nameof(resetBounceHit),0.2f);
     }
     public void eat()
     {
