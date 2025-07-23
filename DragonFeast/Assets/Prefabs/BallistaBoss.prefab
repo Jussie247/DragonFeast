@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 3762500556450690102}
   - component: {fileID: 8586104768302612437}
   - component: {fileID: 4523453037350363495}
+  - component: {fileID: 2084125160380139237}
   m_Layer: 13
   m_Name: BallistaBoss
   m_TagString: Untagged
@@ -136,6 +137,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecea27a8d4f600c41b202b48ba8ebf63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2084125160380139237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2379948118456951337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd1416234768b1049b4f46d46d09c99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossAttackSound:
+    Guid:
+      Data1: 864063430
+      Data2: 1258277764
+      Data3: -1238931525
+      Data4: -807230350
+    Path: event:/Boss SFX/Attack/BossAttack
+  BossDeathSound:
+    Guid:
+      Data1: 1941438120
+      Data2: 1161776027
+      Data3: -628088430
+      Data4: -474271069
+    Path: event:/Boss SFX/Death/BossDeath
+  BossEntranceSound:
+    Guid:
+      Data1: 1598499669
+      Data2: 1138517589
+      Data3: -1866391386
+      Data4: 1092960638
+    Path: event:/Boss SFX/Entrance/Entrance
 --- !u!1 &2381207245708199991
 GameObject:
   m_ObjectHideFlags: 0
