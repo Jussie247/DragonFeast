@@ -1155,7 +1155,7 @@ MonoBehaviour:
   - {fileID: 6028782967198338376, guid: a27059aa3eb5e334b8a0b532f9b1ae5a, type: 3}
   - {fileID: 5188382284395021887, guid: 1bd626df41c78c14e98f5e86e46fb0d4, type: 3}
   BossRooms:
-  - {fileID: 5929027077765044612, guid: 3a0d19a7345420145be749f57ae911e9, type: 3}
+  - {fileID: 1456177110887041769, guid: 3227c0e4aa19d7243be6813bfdf5f46e, type: 3}
 --- !u!4 &757643928
 Transform:
   m_ObjectHideFlags: 0
