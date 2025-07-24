@@ -783,8 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fb25f15dcc47143be76671b5b6d5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallshader: {fileID: -876546973899608171, guid: 9394da6b3c336674db3fc0697ac744a2, type: 3}
-  Mortar: {fileID: 0}
+  Wallmaterial: {fileID: 0}
   Camera: {fileID: 1823688466}
   Mask:
     serializedVersion: 2
@@ -1123,6 +1122,7 @@ GameObject:
   - component: {fileID: 757643928}
   - component: {fileID: 757643927}
   - component: {fileID: 757643929}
+  - component: {fileID: 757643930}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -1184,6 +1184,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBoss: 0
+--- !u!114 &757643930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757643926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37dd8b70940bda04daaee9d951e4ff59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DoorSound:
+    Guid:
+      Data1: 239906824
+      Data2: 1245541537
+      Data3: -2064811903
+      Data4: 1894051362
+    Path: event:/Environment/Doors/DoorOpen
 --- !u!1 &830695957
 GameObject:
   m_ObjectHideFlags: 0

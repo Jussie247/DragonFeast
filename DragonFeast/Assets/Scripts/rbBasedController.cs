@@ -14,11 +14,11 @@ public class rbBasedController : MonoBehaviour
     private Rigidbody rb;
 
     [SerializeField] Transform groundCheck, attackPos;
-    [SerializeField] LayerMask GroundMask, enemy, cage;
+    [SerializeField] LayerMask GroundMask, enemy, cage, destructable;
     [SerializeField] float groundDistance;
     [SerializeField] float groundDrag;
 
-    [SerializeField] GameObject canvas, radicle;
+    [SerializeField] GameObject canvas, radicle, destVFX, woodPile;
     [SerializeField] float attackRange = 5;
     [SerializeField] float punchForce;
 
@@ -105,6 +105,7 @@ public class rbBasedController : MonoBehaviour
             {
                 hideRadicle();
                 print("attack enemy");
+                //check if enemy has been attacked
                 if (Physics.CheckSphere(attackPos.transform.position, attackRange, enemy))
                 {
                     print("hit enemy");
@@ -112,13 +113,25 @@ public class rbBasedController : MonoBehaviour
                     enemy.GetComponent<TestOpponent>().Hit();
                     enemy.GetComponent<TestOpponent>().bounce();
                 }
+                //check if cage has been attacked
                 else if (Physics.CheckSphere(attackPos.transform.position, attackRange, cage))
                 {
                     print("hit cage");
                     Transform cage = GetClosestObjectTransformByTag("cage");
                     cage.GetComponent<cageHandler>().hitCage();
                 }
-                attacked = true;
+                //check if destructable has been attacked
+                else if (Physics.CheckSphere(attackPos.transform.position, attackRange, destructable))
+                {
+                    print("hit destructable");
+                    Transform destObject = GetClosestObjectTransformByTag("destructable");
+                    Instantiate(destVFX, destObject.position, new Quaternion(0, 0, 0, 0));
+                    GameObject woodPileInstance = Instantiate(woodPile,  new Vector3(destObject.position.x, 0f, destObject.position.z), destObject.rotation);
+                    //play destruction sound
+                    transform.GetComponent<playDestructionSound>().playDestructables(woodPileInstance);
+                    Destroy(destObject.gameObject);
+                }
+                    attacked = true;
                 Invoke(nameof(resetAttack), ATKcooldown);
             }
         }

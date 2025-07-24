@@ -106,6 +106,7 @@ MonoBehaviour:
   knighPrefab: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}
   archerPrefab: {fileID: 2723814166539590773, guid: a9178b77f8da34544b3bea6d19393000, type: 3}
   lancerPrefab: {fileID: 0}
+  trail: {fileID: 2998787484235331267, guid: 1abb3cfb6a6f4ba42bceb13ae250ad3b, type: 3}
 --- !u!114 &5717044649145433668
 MonoBehaviour:
   m_ObjectHideFlags: 0

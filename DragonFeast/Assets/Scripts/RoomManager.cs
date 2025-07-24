@@ -61,6 +61,7 @@ public class RoomManager : MonoBehaviour
                     //all spawns cleared, open door
                     //door.gameObject.GetComponent<doorManager>().openDoor();
                     //print("openDoor");
+
                     Destroy(door.gameObject);
                     //door.GetComponent<doorManager>().openDoor();
                 }
@@ -69,6 +70,8 @@ public class RoomManager : MonoBehaviour
             {
                 //room is already cleared
                 clearedRoomsCount++;
+                //play door sound effect
+                transform.GetComponent<playDoorOpenSound>().playDoorSound(door.gameObject);
             }
         }
 

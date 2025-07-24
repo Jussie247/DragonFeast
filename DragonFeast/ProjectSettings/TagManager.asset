@@ -12,6 +12,7 @@ TagManager:
   - room
   - bossRoom
   - boss
+  - destructable
   layers:
   - Default
   - TransparentFX

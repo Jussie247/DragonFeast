@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 [SerializeField]
 public enum EnemyType
@@ -41,6 +42,8 @@ public class TestOpponent : MonoBehaviour
     [SerializeField] bool playerInSightRange, playerInAttackRange;
 
     [SerializeField] GameObject knighPrefab, archerPrefab, lancerPrefab;
+
+    [SerializeField] GameObject trail;
 
     bool resetSpotPlayer = false;
     bool hasBounceHit = false;
@@ -240,11 +243,16 @@ public class TestOpponent : MonoBehaviour
         Vector3 pointer = radicle.transform.position - player.transform.position;
         Vector3 force = pointer * punchForce;
         GetComponent<Rigidbody>().AddForce(force);
+
         //stop script from trying to acces AI
         isBounce = true;
         playerInAttackRange = false;
         playerInSightRange = false;
         hasBounceHit = true;
+
+        //Instance VFX
+        Instantiate(trail, transform);
+
         Invoke(nameof(resetBounceHit),0.2f);
     }
     public void eat()
@@ -281,7 +289,7 @@ public class TestOpponent : MonoBehaviour
     void shootArrow()
     {
         //play arrowshooting animation
-        GameObject awwow = Instantiate(arrow, transform.position + transform.forward + new Vector3(0, 1, 0), Quaternion.LookRotation(transform.forward));
+        GameObject awwow = Instantiate(arrow, transform.position + transform.forward + new Vector3(0, 0, 0), Quaternion.LookRotation(transform.forward));
         awwow.AddComponent<Rigidbody>();
         awwow.GetComponent<Rigidbody>().AddForce(transform.forward * arrowSpeed);
     }

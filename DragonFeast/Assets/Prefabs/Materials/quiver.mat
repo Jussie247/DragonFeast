@@ -10,7 +10,7 @@ Material:
   m_Name: quiver
   m_Shader: {fileID: -6465566751694194690, guid: 72344b82b3fed9342ae3db677375623c, type: 3}
   m_Parent: {fileID: -876546973899608171, guid: 72344b82b3fed9342ae3db677375623c, type: 3}
-  m_ModifiedSerializedProperties: 24
+  m_ModifiedSerializedProperties: 8
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   m_InvalidKeywords:
