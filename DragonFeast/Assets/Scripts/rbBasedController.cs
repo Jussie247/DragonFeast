@@ -18,7 +18,7 @@ public class rbBasedController : MonoBehaviour
     [SerializeField] float groundDistance;
     [SerializeField] float groundDrag;
 
-    [SerializeField] GameObject canvas, radicle, destVFX, woodPile;
+    [SerializeField] GameObject canvas, radicle, destVFX, woodPile, hitVFX;
     [SerializeField] float attackRange = 5;
     [SerializeField] float punchForce;
 
@@ -113,6 +113,9 @@ public class rbBasedController : MonoBehaviour
                 if (Physics.CheckSphere(attackPos.transform.position, attackRange, enemy))
                 {
                     print("hit enemy");
+                    //show hit vfx
+                    Instantiate(hitVFX, radicle.transform.position, radicle.transform.rotation);
+
                     Transform enemy = GetClosestObjectTransformByTag("enemy");
                     enemy.GetComponent<TestOpponent>().Hit();
                     enemy.GetComponent<TestOpponent>().bounce();
@@ -121,6 +124,10 @@ public class rbBasedController : MonoBehaviour
                 else if (Physics.CheckSphere(attackPos.transform.position, attackRange, cage))
                 {
                     print("hit cage");
+
+                    //show hit vfx
+                    Instantiate(hitVFX, radicle.transform.position, radicle.transform.rotation);
+
                     Transform cage = GetClosestObjectTransformByTag("cage");
                     cage.GetComponent<cageHandler>().hitCage();
                 }
@@ -128,6 +135,10 @@ public class rbBasedController : MonoBehaviour
                 else if (Physics.CheckSphere(attackPos.transform.position, attackRange, destructable))
                 {
                     print("hit destructable");
+
+                    //show hit vfx
+                    Instantiate(hitVFX, radicle.transform.position, radicle.transform.rotation);
+
                     Transform destObject = GetClosestObjectTransformByTag("destructable");
                     Instantiate(destVFX, destObject.position, new Quaternion(0, 0, 0, 0));
                     GameObject woodPileInstance = Instantiate(woodPile,  new Vector3(destObject.position.x, 0f, destObject.position.z), destObject.rotation);

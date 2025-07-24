@@ -164,6 +164,7 @@ MonoBehaviour:
   radicle: {fileID: 4601516155172360565}
   destVFX: {fileID: 8119809364697430716, guid: 1f68ed0ae674dbf458dd8f81ad6c68c9, type: 3}
   woodPile: {fileID: 2852623685190793782, guid: e29d858f83faf954f8e6d0443528b5a3, type: 3}
+  hitVFX: {fileID: 2581710372443513062, guid: 9c798fcef605de6408be2ff72da48660, type: 3}
   attackRange: 3
   punchForce: 10000
   shield: 3
