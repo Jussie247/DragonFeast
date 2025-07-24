@@ -103,6 +103,8 @@ public class rbBasedController : MonoBehaviour
             animator.SetBool("startAttack", false);
             if (!attacked)
             {
+                transform.GetComponent<PlayerSoundHandler>().playAttackSound();
+
                 hideRadicle();
                 print("attack enemy");
                 //check if enemy has been attacked
@@ -136,13 +138,14 @@ public class rbBasedController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Jump") && IsGrounded() && !UiHandlerScript.paused)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
+        //if (Input.GetButtonDown("Jump") && IsGrounded() && !UiHandlerScript.paused)
+        //{
+        //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        //}
         //eat
         if (Input.GetKeyDown(KeyCode.F) && !UiHandlerScript.paused)
         {
+            transform.GetComponent<PlayerSoundHandler>().playEatSound();
             animator.SetBool("eating", true);
             if (!ate)
             {
@@ -207,8 +210,8 @@ public class rbBasedController : MonoBehaviour
         {
             shieldInstance.SetActive(false);
         }
-            //update hungies
-            canvas.GetComponent<UiHandlerScript>().updateHungerBar(hungies * 0.01f);
+        //update hungies
+        canvas.GetComponent<UiHandlerScript>().updateHungerBar(hungies * 0.01f);
         hungies = hungies - hungerLoss * Time.deltaTime;
     }
     //reset attacks
@@ -229,6 +232,7 @@ public class rbBasedController : MonoBehaviour
     //handle hits
     public void hit()
     {
+        
         print("player got hit");
         if (shield > 0)
         {
@@ -242,6 +246,8 @@ public class rbBasedController : MonoBehaviour
         else
         {
             //die
+            //play death sound
+            transform.GetComponent<PlayerSoundHandler>().playDeathSound();
             updateHP();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
