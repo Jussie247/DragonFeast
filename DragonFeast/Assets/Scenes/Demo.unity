@@ -1197,7 +1197,7 @@ MonoBehaviour:
       Data2: 1255682537
       Data3: -848452465
       Data4: 990443947
-    Path: event:/Enemies/Footsteps/Footsteps_Enemy
+    Path: event:/Enemies/Footsteps/FootstepsEnemy
 --- !u!1 &229047398
 GameObject:
   m_ObjectHideFlags: 0
@@ -5578,7 +5578,7 @@ MonoBehaviour:
       Data2: 1255682537
       Data3: -848452465
       Data4: 990443947
-    Path: event:/Enemies/Footsteps/Footsteps_Enemy
+    Path: event:/Enemies/Footsteps/FootstepsEnemy
 --- !u!1 &1862241090
 GameObject:
   m_ObjectHideFlags: 0
