@@ -8,6 +8,12 @@
         },
         {
             "m_Id": "0be52ba173fe48a4b5c3e330cd09f4f5"
+        },
+        {
+            "m_Id": "89c790601ece4322a64e9453b21ad7a7"
+        },
+        {
+            "m_Id": "7273807cb65640d7b7e58b854b6e16de"
         }
     ],
     "m_Keywords": [],
@@ -1563,6 +1569,12 @@
         },
         {
             "m_Id": "0be52ba173fe48a4b5c3e330cd09f4f5"
+        },
+        {
+            "m_Id": "89c790601ece4322a64e9453b21ad7a7"
+        },
+        {
+            "m_Id": "7273807cb65640d7b7e58b854b6e16de"
         }
     ]
 }
@@ -1983,6 +1995,34 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "7273807cb65640d7b7e58b854b6e16de",
+    "m_Guid": {
+        "m_GuidSerialized": "1c4c16df-727b-437f-af63-158bd511f02a"
+    },
+    "m_Name": "Smoothstep",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Smoothstep",
+    "m_DefaultReferenceName": "_Smoothstep",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.5,
+    "m_FloatType": 1,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "7321917140a7449d92c3abdeadfea664",
@@ -2245,6 +2285,34 @@
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "89c790601ece4322a64e9453b21ad7a7",
+    "m_Guid": {
+        "m_GuidSerialized": "cc8852d2-232b-43ef-a786-63164c5d7101"
+    },
+    "m_Name": "Opacity",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Opacity",
+    "m_DefaultReferenceName": "_Opacity",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.4000000059604645,
+    "m_FloatType": 1,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
     }
 }
 
