@@ -27,6 +27,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 170
+--- !u!114 &-7873664157913202116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss SFX/Attack/BossAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Boss SFX/Attack/BossAttack
+  Guid:
+    Data1: 864063430
+    Data2: 1258277764
+    Data3: -1238931525
+    Data4: -807230350
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &-7841770659239544441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Hit/KnightHit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Hit/KnightHit
+  Guid:
+    Data1: -1144964119
+    Data2: 1191811321
+    Data3: -1656004207
+    Data4: 950665381
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 300
 --- !u!114 &-7709548440230959844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +96,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638888624378370420
+  lastModified: 638889529931654243
   FileSizes:
   - Name: Desktop
-    Value: 6053472
+    Value: 6294432
   Exists: 1
 --- !u!114 &-7296703509414783951
 MonoBehaviour:
@@ -176,7 +230,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -425,6 +479,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1274617563414736057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Hit/ArcherHit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Hit/ArcherHit
+  Guid:
+    Data1: -1798506420
+    Data2: 1271600073
+    Data3: -1326358378
+    Data4: -875240389
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 270
 --- !u!114 &-960297406374126118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +559,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1460
+  Length: 940
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,13 +602,18 @@ MonoBehaviour:
   - {fileID: 8750026023302345235}
   - {fileID: -2324877372604543038}
   - {fileID: -7907470182480927838}
+  - {fileID: -1274617563414736057}
+  - {fileID: 5394625551937466449}
+  - {fileID: 7686721039599548783}
+  - {fileID: -7873664157913202116}
+  - {fileID: -7841770659239544441}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7709548440230959844}
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638888624378380478
+  cacheTime: 638889529931674262
   SerializableEventsDict:
   - key: event:/Player/Attack/Attack_Player
     index: 0
@@ -581,6 +667,16 @@ MonoBehaviour:
     index: 24
   - key: event:/UI/Hover
     index: 25
+  - key: event:/Enemies/Hit/ArcherHit
+    index: 26
+  - key: event:/Boss SFX/Entrance/Entrance
+    index: 27
+  - key: event:/Boss SFX/Death/BossDeath
+    index: 28
+  - key: event:/Boss SFX/Attack/BossAttack
+    index: 29
+  - key: event:/Enemies/Hit/KnightHit
+    index: 30
 --- !u!114 &336420646109560750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,6 +839,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 730
+--- !u!114 &5394625551937466449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss SFX/Entrance/Entrance
+  m_EditorClassIdentifier: 
+  Path: event:/Boss SFX/Entrance/Entrance
+  Guid:
+    Data1: 1598499669
+    Data2: 1138517589
+    Data3: -1866391386
+    Data4: 1092960638
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3950
 --- !u!114 &7365115443696212149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,11 +935,38 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638888624378380478
+  lastModified: 638889529931674262
   FileSizes:
   - Name: Desktop
-    Value: 2228
+    Value: 2498
   Exists: 1
+--- !u!114 &7686721039599548783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss SFX/Death/BossDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Boss SFX/Death/BossDeath
+  Guid:
+    Data1: 1941438120
+    Data2: 1161776027
+    Data3: -628088430
+    Data4: -474271069
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &8750026023302345235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,7 +988,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
