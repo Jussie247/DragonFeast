@@ -22,7 +22,7 @@ public class dragonEggHandler : MonoBehaviour
     {
         if (Physics.CheckSphere(transform.position, collectDistance, playerMask))
         {
-            player.GetComponent<playCollectSound>().playCollect();
+            player.GetComponent<PlayerSoundHandler>().playCollectSound();
             SceneManager.LoadScene(1);
             Destroy(transform.gameObject);
         }
