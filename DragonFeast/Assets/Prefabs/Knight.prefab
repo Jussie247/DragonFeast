@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5717044649145433668}
   - component: {fileID: 1054812537572503611}
   - component: {fileID: 4546481260932354593}
+  - component: {fileID: -3769729962351987391}
   m_Layer: 8
   m_Name: Knight
   m_TagString: enemy
@@ -93,7 +94,7 @@ MonoBehaviour:
   hitWall: 0
   radicle: {fileID: 0}
   arrow: {fileID: 3915148000429351268, guid: 45381be4abaadf3429759737b88345f6, type: 3}
-  punchForce: 5000
+  punchForce: 50000
   arrowSpeed: 1000
   bounces: 1
   attacked: 0
@@ -106,6 +107,9 @@ MonoBehaviour:
   knighPrefab: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}
   archerPrefab: {fileID: 2723814166539590773, guid: a9178b77f8da34544b3bea6d19393000, type: 3}
   lancerPrefab: {fileID: 0}
+  knightRagdoll: {fileID: 4741278781292242108, guid: 1e65dd431bddc8445997657da772b521, type: 3}
+  archerRagdoll: {fileID: 5286628794966669930, guid: 6a38f0d6b96f83741b1b570acf0d5a24, type: 3}
+  lancerRagdoll: {fileID: 0}
   trail: {fileID: 2998787484235331267, guid: 1abb3cfb6a6f4ba42bceb13ae250ad3b, type: 3}
 --- !u!114 &5717044649145433668
 MonoBehaviour:
@@ -205,3 +209,30 @@ MonoBehaviour:
       Data3: -1326358378
       Data4: -875240389
     Path: event:/Enemies/Hit/ArcherHit
+--- !u!54 &-3769729962351987391
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738976532821280392}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

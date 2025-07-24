@@ -41,9 +41,11 @@ public class TestOpponent : MonoBehaviour
     [SerializeField] float sightRange, attackRange;
     [SerializeField] bool playerInSightRange, playerInAttackRange;
 
-    [SerializeField] GameObject knighPrefab, archerPrefab, lancerPrefab;
+    [SerializeField] GameObject knighPrefab, archerPrefab, lancerPrefab, knightRagdoll, archerRagdoll, lancerRagdoll;
 
     [SerializeField] GameObject trail;
+
+    GameObject opInstance;
 
     bool resetSpotPlayer = false;
     bool hasBounceHit = false;
@@ -61,15 +63,15 @@ public class TestOpponent : MonoBehaviour
 
         if (enemyType == EnemyType.Knight)
         {
-            Instantiate(knighPrefab, transform.position, transform.rotation, transform);
+            opInstance = Instantiate(knighPrefab, transform.position, transform.rotation, transform);
         }
         else if (enemyType == EnemyType.Archer)
         {
-            Instantiate(archerPrefab, transform.position, transform.rotation, transform);
+            opInstance = Instantiate(archerPrefab, transform.position, transform.rotation, transform);
         }
         else if (enemyType == EnemyType.Lancer)
         {
-            Instantiate(lancerPrefab, transform.position, transform.rotation, transform);
+            opInstance = Instantiate(lancerPrefab, transform.position, transform.rotation, transform);
         }
         animationHandler = transform.GetChild(0);
     }
@@ -234,11 +236,54 @@ public class TestOpponent : MonoBehaviour
         //set to a different layer so it does not "self collide"
         transform.gameObject.tag = "bounce";
 
+        transform.gameObject.AddComponent<Rigidbody>();
+
+        //activate the ragdoll
+
+        Destroy(opInstance);
+        switch (enemyType)
+        {
+            case EnemyType.Knight:
+                opInstance = Instantiate(knightRagdoll, transform);
+
+                Rigidbody[] rbs = opInstance.transform.GetComponentsInChildren<Rigidbody>();
+                for (int i = 0; i < rbs.Length; i++)
+                {
+                    rbs[i].mass = 1f;
+                }
+
+                opInstance.transform.Find("metarig/spine/spine.001/spine.002").GetComponent<FixedJoint>().connectedBody = GetComponent<Rigidbody>();
+
+                break;
+            case EnemyType.Archer:
+                opInstance = Instantiate(archerRagdoll, transform);
+
+                rbs = opInstance.transform.GetComponentsInChildren<Rigidbody>();
+                for (int i = 0; i < rbs.Length; i++)
+                {
+                    rbs[i].mass = 1f;
+                }
+
+                opInstance.transform.Find("metarig/spine/spine.001/spine.002/spine.003/spine.004").GetComponent<FixedJoint>().connectedBody = GetComponent<Rigidbody>();
+                break;
+            case EnemyType.Lancer:
+                opInstance = Instantiate(lancerRagdoll, transform);
+
+                rbs = opInstance.transform.GetComponentsInChildren<Rigidbody>();
+                for (int i = 0; i < rbs.Length; i++)
+                {
+                    rbs[i].mass = 1f;
+                }
+
+                opInstance.transform.Find("metarig/spine/spine.001/spine.004").GetComponent<FixedJoint>().connectedBody = GetComponent<Rigidbody>();
+                break;
+        }
+
         print("bounce Mode active");
         //remove AI
         Destroy(agent);
         //add physics
-        transform.gameObject.AddComponent<Rigidbody>();
+        
         //launch the enemy
         Vector3 pointer = radicle.transform.forward;
         Vector3 force = pointer * punchForce;

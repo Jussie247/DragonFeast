@@ -117,6 +117,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8081611880471559644, guid: 5b3f48e1d46bb30459483ffd3e0c9f75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7899191346009870930}
+    - targetCorrespondingSourceObject: {fileID: 8081611880471559644, guid: 5b3f48e1d46bb30459483ffd3e0c9f75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6987146828607290623}
     - targetCorrespondingSourceObject: {fileID: 7242993359035194598, guid: 5b3f48e1d46bb30459483ffd3e0c9f75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8487791858190482896}
@@ -518,6 +521,22 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!138 &6987146828607290623
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4407521073199653937}
+  serializedVersion: 1
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!1 &4536652689019951001 stripped
