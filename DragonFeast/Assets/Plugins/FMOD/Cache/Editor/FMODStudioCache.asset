@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638888624378370420
+  lastModified: 638877453427106590
   FileSizes:
   - Name: Desktop
-    Value: 6053472
+    Value: 2653440
   Exists: 1
 --- !u!114 &-7296703509414783951
 MonoBehaviour:
@@ -46,8 +46,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2115
---- !u!114 &-7283749881606578972
+  Length: 0
+--- !u!114 &-7277901191226817325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,14 +57,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment/Destructables/destructables
+  m_Name: event:/Enemies/Death/Lancer_Death
   m_EditorClassIdentifier: 
-  Path: event:/Environment/Destructables/destructables
+  Path: event:/Enemies/Death/Lancer_Death
   Guid:
-    Data1: 2085763517
-    Data2: 1290575509
-    Data3: -2045258363
-    Data4: -1894596824
+    Data1: 1226641986
+    Data2: 1130221745
+    Data3: 2065276863
+    Data4: 1953705706
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
@@ -73,7 +73,34 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1380
+  Length: 0
+--- !u!114 &-7197047227646380327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Death/Knight_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Death/Knight_Death
+  Guid:
+    Data1: -1912613822
+    Data2: 1120520427
+    Data3: 737868960
+    Data4: 883417006
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1071
 --- !u!114 &-6908558291931708013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,33 +128,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-6694993862520618853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Attack/ArcherAttack
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/Attack/ArcherAttack
-  Guid:
-    Data1: -1270887279
-    Data2: 1333212745
-    Data3: -200180096
-    Data4: 1742505650
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 300
 --- !u!114 &-6248316627069305717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,33 +155,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 528
---- !u!114 &-5578645549390624928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BabyDraagon/BabyDragonSFX/Heal
-  m_EditorClassIdentifier: 
-  Path: event:/BabyDraagon/BabyDragonSFX/Heal
-  Guid:
-    Data1: -1997778617
-    Data2: 1153971050
-    Data3: 1001083311
-    Data4: 734777199
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
 --- !u!114 &-5386147343873469420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,60 +182,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-4036825985337082625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BabyDraagon/BabyDragonSFX/Attack
-  m_EditorClassIdentifier: 
-  Path: event:/BabyDraagon/BabyDragonSFX/Attack
-  Guid:
-    Data1: 2047732366
-    Data2: 1337885336
-    Data3: 612689554
-    Data4: -238417579
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 400
---- !u!114 &-1618632763247223509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Hover
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Hover
-  Guid:
-    Data1: 1398411748
-    Data2: 1285640823
-    Data3: 1913477026
-    Data4: 121284244
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 170
 --- !u!114 &-1606402891834330523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,8 +235,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2115
---- !u!114 &-85285200142593451
+  Length: 0
+--- !u!114 &-817746958389924602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,23 +246,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Attack/KnightAttack
+  m_Name: event:/Reward Stingers/Level_Cleared/Level_Cleared
   m_EditorClassIdentifier: 
-  Path: event:/Enemies/Attack/KnightAttack
+  Path: event:/Reward Stingers/Level_Cleared/Level_Cleared
   Guid:
-    Data1: 1783568699
-    Data2: 1205761150
-    Data3: -671302745
-    Data4: -1593004433
+    Data1: -1463784867
+    Data2: 1233107882
+    Data3: -1833951068
+    Data4: -64696973
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 566
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,29 +289,19 @@ MonoBehaviour:
   - {fileID: -5386147343873469420}
   - {fileID: -960297406374126118}
   - {fileID: 7365115443696212149}
-  - {fileID: 6337548858941190443}
-  - {fileID: 6944750476735887841}
-  - {fileID: 4436107064929254739}
-  - {fileID: 4841702818310361250}
-  - {fileID: -85285200142593451}
-  - {fileID: 4500216059092911134}
-  - {fileID: -5578645549390624928}
-  - {fileID: 4721111662164651964}
-  - {fileID: 2586300752817702993}
-  - {fileID: 5286383592362734210}
-  - {fileID: -4036825985337082625}
-  - {fileID: -6694993862520618853}
-  - {fileID: 2868425869143427251}
-  - {fileID: -7283749881606578972}
-  - {fileID: 1836637274964919631}
-  - {fileID: -1618632763247223509}
+  - {fileID: 5914685047676141287}
+  - {fileID: 3449168807295436149}
+  - {fileID: 4715686852609984700}
+  - {fileID: -7277901191226817325}
+  - {fileID: -7197047227646380327}
+  - {fileID: -817746958389924602}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7709548440230959844}
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638888624378380478
+  cacheTime: 638877453427116586
   SerializableEventsDict:
   - key: event:/Player/Attack/Attack_Player
     index: 0
@@ -414,38 +323,18 @@ MonoBehaviour:
     index: 8
   - key: event:/Player/Footsteps/Footsteps_Player
     index: 9
-  - key: event:/Environment/Doors/DoorOpen
+  - key: event:/Enemies/Death/Archer_Death
     index: 10
-  - key: event:/Enemies/Footsteps/FootstepsEnemy
+  - key: event:/Enemies/Footsteps/Footsteps_Enemy
     index: 11
-  - key: event:/Enemies/Attack/ArcherHit
+  - key: event:/Enemies/Attack/Knight_Attack
     index: 12
-  - key: event:/Enemies/SpotPlayer/SpotPlayer
+  - key: event:/Enemies/Death/Lancer_Death
     index: 13
-  - key: event:/Enemies/Attack/KnightAttack
+  - key: event:/Enemies/Death/Knight_Death
     index: 14
-  - key: event:/Enemies/Death/EnemyDeath
+  - key: event:/Reward Stingers/Level_Cleared/Level_Cleared
     index: 15
-  - key: event:/BabyDraagon/BabyDragonSFX/Heal
-    index: 16
-  - key: event:/BabyDraagon/BabyDragonMove/BabyDragonMove
-    index: 17
-  - key: event:/Environment/Torch/Torch
-    index: 18
-  - key: event:/BabyDraagon/BabyDragonSFX/Explosion
-    index: 19
-  - key: event:/BabyDraagon/BabyDragonSFX/Attack
-    index: 20
-  - key: event:/Enemies/Attack/ArcherAttack
-    index: 21
-  - key: event:/UI/Click
-    index: 22
-  - key: event:/Environment/Destructables/destructables
-    index: 23
-  - key: event:/Player/Attack/Feast
-    index: 24
-  - key: event:/UI/Hover
-    index: 25
 --- !u!114 &336420646109560750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,8 +415,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3500
---- !u!114 &1836637274964919631
+  Length: 0
+--- !u!114 &3449168807295436149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -537,252 +426,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Attack/Feast
+  m_Name: event:/Enemies/Footsteps/Footsteps_Enemy
   m_EditorClassIdentifier: 
-  Path: event:/Player/Attack/Feast
-  Guid:
-    Data1: -1992465965
-    Data2: 1301706244
-    Data3: 1412311714
-    Data4: -1229882853
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 335
---- !u!114 &2586300752817702993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment/Torch/Torch
-  m_EditorClassIdentifier: 
-  Path: event:/Environment/Torch/Torch
-  Guid:
-    Data1: -1272432288
-    Data2: 1324447532
-    Data3: 1033469865
-    Data4: 1448053765
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 177500
---- !u!114 &2868425869143427251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Click
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Click
-  Guid:
-    Data1: 1957019830
-    Data2: 1305742473
-    Data3: 1882505645
-    Data4: -1234805140
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 202
---- !u!114 &4436107064929254739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Attack/ArcherHit
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/Attack/ArcherHit
-  Guid:
-    Data1: 1879919395
-    Data2: 1336084538
-    Data3: -1721429335
-    Data4: 1209808378
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 730
---- !u!114 &4500216059092911134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Death/EnemyDeath
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/Death/EnemyDeath
-  Guid:
-    Data1: -1912613822
-    Data2: 1120520427
-    Data3: 737868960
-    Data4: 883417006
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1460
---- !u!114 &4721111662164651964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BabyDraagon/BabyDragonMove/BabyDragonMove
-  m_EditorClassIdentifier: 
-  Path: event:/BabyDraagon/BabyDragonMove/BabyDragonMove
-  Guid:
-    Data1: 373385813
-    Data2: 1172896223
-    Data3: -210216575
-    Data4: -1661981600
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5500
---- !u!114 &4841702818310361250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/SpotPlayer/SpotPlayer
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/SpotPlayer/SpotPlayer
-  Guid:
-    Data1: 258796331
-    Data2: 1170200477
-    Data3: -1594197628
-    Data4: -1244728755
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 720
---- !u!114 &5286383592362734210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BabyDraagon/BabyDragonSFX/Explosion
-  m_EditorClassIdentifier: 
-  Path: event:/BabyDraagon/BabyDragonSFX/Explosion
-  Guid:
-    Data1: 1553013361
-    Data2: 1159560418
-    Data3: -706594152
-    Data4: 687324079
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2520
---- !u!114 &6337548858941190443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment/Doors/DoorOpen
-  m_EditorClassIdentifier: 
-  Path: event:/Environment/Doors/DoorOpen
-  Guid:
-    Data1: 239906824
-    Data2: 1245541537
-    Data3: -2064811903
-    Data4: 1894051362
-  Banks:
-  - {fileID: -7709548440230959844}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 879
---- !u!114 &6944750476735887841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemies/Footsteps/FootstepsEnemy
-  m_EditorClassIdentifier: 
-  Path: event:/Enemies/Footsteps/FootstepsEnemy
+  Path: event:/Enemies/Footsteps/Footsteps_Enemy
   Guid:
     Data1: 1058897932
     Data2: 1255682537
@@ -791,12 +437,66 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 700
+--- !u!114 &4715686852609984700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Attack/Knight_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Attack/Knight_Attack
+  Guid:
+    Data1: 1783568699
+    Data2: 1205761150
+    Data3: -671302745
+    Data4: -1593004433
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 270
+  Length: 666
+--- !u!114 &5914685047676141287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Death/Archer_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Death/Archer_Death
+  Guid:
+    Data1: -498686461
+    Data2: 1132356485
+    Data3: 72095141
+    Data4: 17752166
+  Banks:
+  - {fileID: -7709548440230959844}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7365115443696212149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,7 +523,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 428
+  Length: 0
 --- !u!114 &7632452734052637521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,8 +539,8 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638888624378380478
+  lastModified: 638877453427116586
   FileSizes:
   - Name: Desktop
-    Value: 2228
+    Value: 1698
   Exists: 1
