@@ -12,7 +12,7 @@ public class RoomManager : MonoBehaviour
     int spawnCount = 0;
     int clearedSpawnsCount = 0;
     GameObject[] Rooms;
-    GameObject bossRoom;
+    //GameObject bossRoom;
 
     void Awake()
     {
@@ -23,7 +23,7 @@ public class RoomManager : MonoBehaviour
     {
         //get all rooms
         Rooms = GameObject.FindGameObjectsWithTag("room");
-        bossRoom = GameObject.FindGameObjectWithTag("bossRoom");
+        //bossRoom = GameObject.FindGameObjectWithTag("bossRoom");
     }
 
     void Update()
@@ -86,11 +86,11 @@ public class RoomManager : MonoBehaviour
         }
 
         //check if boss room is cleared
-        if(bossRoom.transform.Find("Spawn").childCount == 0)
-        {
+        //if(bossRoom.transform.Find("Spawn").childCount == 0)
+        //{
 
-            //player won, load main menu
+        //    //player won, load main menu
             
-        }
+        //}
     }
 }

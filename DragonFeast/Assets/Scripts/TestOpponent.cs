@@ -240,7 +240,7 @@ public class TestOpponent : MonoBehaviour
         //add physics
         transform.gameObject.AddComponent<Rigidbody>();
         //launch the enemy
-        Vector3 pointer = radicle.transform.position - player.transform.position;
+        Vector3 pointer = radicle.transform.forward;
         Vector3 force = pointer * punchForce;
         GetComponent<Rigidbody>().AddForce(force);
 

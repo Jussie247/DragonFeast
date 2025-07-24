@@ -65,6 +65,8 @@ public class rbBasedController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //make the player stick to the ground
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         
         //Look for Keyinputs for walkanimation
         if (Input.GetAxis("Horizontal")!=0 || Input.GetAxis("Vertical")!=0)

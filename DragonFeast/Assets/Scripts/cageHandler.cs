@@ -28,7 +28,7 @@ public class cageHandler : MonoBehaviour
         isAir = true;
         transform.gameObject.AddComponent<Rigidbody>();
         //launch the cage
-        Vector3 pointer = radicle.transform.position - player.transform.position;
+        Vector3 pointer = radicle.transform.forward;
         Vector3 force = pointer * throwForce;
         GetComponent<Rigidbody>().AddForce(force);
     }

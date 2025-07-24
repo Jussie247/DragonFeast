@@ -766,28 +766,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &269049045 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4225205341800332472, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
-  m_PrefabInstance: {fileID: 6275873785091404239}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &269049053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269049045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07fb25f15dcc47143be76671b5b6d5aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Wallmaterial: {fileID: 0}
-  Camera: {fileID: 1823688466}
-  Mask:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!1 &337236540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,6 +3254,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
+      propertyPath: punchForce
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: attackRange
       value: 4
       objectReference: {fileID: 0}
@@ -3285,7 +3267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6454963590321664155, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6454963590321664155, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3335,13 +3317,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2533130719514005338, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4225205341800332472, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 269049053}
     - targetCorrespondingSourceObject: {fileID: 4601516155172360565, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1777099544}

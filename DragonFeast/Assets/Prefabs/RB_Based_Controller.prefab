@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 453876438217795641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.002000019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1182117822803537456}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 6397324354930104368}
   - component: {fileID: 8985589504419181218}
   - component: {fileID: 2460212048341339258}
-  - component: {fileID: 2533130719514005338}
   - component: {fileID: -8764868097902183615}
   - component: {fileID: -6125804869396899183}
   m_Layer: 7
@@ -94,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 4225205341800332472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 3, z: 0.29}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -224,25 +223,6 @@ MonoBehaviour:
       Data3: 506282370
       Data4: 1679767210
     Path: event:/Player/Footsteps/Footsteps_Player
---- !u!114 &2533130719514005338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4225205341800332472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f27c89ef13b5a314db783ee3459c6fc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollectEggAud:
-    Guid:
-      Data1: 1560483777
-      Data2: 1100838864
-      Data3: 395255201
-      Data4: 1195603444
-    Path: event:/Reward Stingers/Egg_Collect/Egg_Collect
 --- !u!114 &-8764868097902183615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,7 +476,7 @@ Transform:
   m_GameObject: {fileID: 8351598366033058645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -572,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e382ae1ade53a0f4f9864e62c64a2f26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e382ae1ade53a0f4f9864e62c64a2f26, type: 3}
       propertyPath: m_LocalPosition.z
