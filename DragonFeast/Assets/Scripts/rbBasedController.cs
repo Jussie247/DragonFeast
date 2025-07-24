@@ -245,7 +245,8 @@ public class rbBasedController : MonoBehaviour
     //handle hits
     public void hit()
     {
-        
+        animator.SetTrigger("gothit");
+
         print("player got hit");
         if (shield > 0)
         {
@@ -254,7 +255,7 @@ public class rbBasedController : MonoBehaviour
         else if (HP > 0)
         {
             HP--;
-            updateHP();
+            updateHP();          
         }
         else
         {
@@ -265,6 +266,7 @@ public class rbBasedController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
+
     //heal player
     public void heal(int _ammount)
     {
