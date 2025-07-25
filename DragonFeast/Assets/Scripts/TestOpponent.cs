@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.VFX;
+
 
 [SerializeField]
 public enum EnemyType
@@ -27,7 +22,8 @@ public class TestOpponent : MonoBehaviour
 
     [SerializeField] LayerMask groundMask, playerMask, wallMask, enemyMask, bossMask;
 
-    [SerializeField] bool isBounce = false, hitWall = false;
+    [SerializeField] public bool isBounce = false;
+    [SerializeField] bool hitWall = false;
     [SerializeField] GameObject radicle, arrow;
     [SerializeField] float punchForce = 1000, arrowSpeed = 1000;
     [SerializeField] int bounces = 1;
@@ -38,7 +34,7 @@ public class TestOpponent : MonoBehaviour
     [SerializeField] float startup = 0.625f, ATKcooldown = 200;
 
     //States
-    [SerializeField] float sightRange, attackRange;
+    [SerializeField] float sightRange, attackRange = 3f;
     [SerializeField] bool playerInSightRange, playerInAttackRange;
 
     [SerializeField] GameObject knighPrefab, archerPrefab, lancerPrefab, knightRagdoll, archerRagdoll, lancerRagdoll;
@@ -103,7 +99,7 @@ public class TestOpponent : MonoBehaviour
         if (enemyType == EnemyType.Knight)
         {
             soundManager.PlayKnightAttackSound(transform.gameObject);
-            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
+            playerInAttackRange = Physics.CheckSphere(transform.position + new Vector3(0,1,0), attackRange, playerMask);
             if (playerInAttackRange)
             {
                 //print("attacking Player");
@@ -160,7 +156,7 @@ public class TestOpponent : MonoBehaviour
         {
             //Check for sight and attack range
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
-            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
+            playerInAttackRange = Physics.CheckSphere(transform.position + new Vector3(0, 1, 0), attackRange, playerMask);
 
             if (playerInSightRange && playerInAttackRange) startupAttack();
             if (playerInSightRange && !playerInAttackRange && enemyType == EnemyType.Knight) chase();

@@ -38,6 +38,7 @@ public class BallsitaBossHandler : MonoBehaviour
         {
             //die
             die();
+            GetComponent<BossSoundManager>().PlayBossDeathSound(transform.gameObject);
         }
     }
 
@@ -55,6 +56,8 @@ public class BallsitaBossHandler : MonoBehaviour
 
     void shoot()
     {
+        GetComponent<BossSoundManager>().PlayBossAttackSound(transform.gameObject);
+
         GetComponent<BallistaAnimationManager>().playShootAnimation();
         GetComponent<BallistaAnimationManager>().stopShootAnimation();
         print("ballista shooting");
