@@ -5,7 +5,7 @@
 			<value>Attack</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{39e4ff8c-6731-4c99-bc07-08b7997f6e39}</destination>
@@ -116,6 +116,7 @@
 	<object class="MixerBusEffectChain" id="{ab76c1a5-b305-44bf-885e-30c4657fd1cb}">
 		<relationship name="effects">
 			<destination>{9d96bdab-9291-4bb6-a022-6fc97fc56b02}</destination>
+			<destination>{ff6a3fe6-d588-4abd-9838-bf590191389c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4133a12c-6ae0-47ad-8e6b-e8dd4d98ede0}" />
@@ -135,6 +136,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{4e7c8b66-c167-4241-8b18-899873848306}" />
 	<object class="MixerBusFader" id="{9d96bdab-9291-4bb6-a022-6fc97fc56b02}" />
+	<object class="SpatialiserEffect" id="{ff6a3fe6-d588-4abd-9838-bf590191389c}">
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{96911274-fde2-4e7c-a797-ce6b6fcdef15}">
 		<property name="position">
 			<value>0.17000000000000001</value>

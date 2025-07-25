@@ -97,6 +97,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{306b3285-28b4-40d6-bd24-6b5b8b4ce119}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="name">
 			<value>Knight-Death</value>
 		</property>
@@ -125,6 +128,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{60ad0654-8aab-49c9-9c39-a4041322dcb6}" />
 	<object class="MixerBusFader" id="{c3fd1395-f980-44e8-b15b-5305524fc142}" />
-	<object class="SpatialiserEffect" id="{fb4da3c2-13a1-46cf-a80c-9d71792b5187}" />
+	<object class="SpatialiserEffect" id="{fb4da3c2-13a1-46cf-a80c-9d71792b5187}">
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{bad7a0d6-fd1b-47d2-aa40-ef76f1fc7069}" />
 </objects>

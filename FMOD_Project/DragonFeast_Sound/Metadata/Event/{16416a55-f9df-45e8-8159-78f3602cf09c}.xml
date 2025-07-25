@@ -5,7 +5,7 @@
 			<value>BabyDragonMove</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9ea44c80-a3a6-47ab-aa8f-4f70a222bf0a}</destination>
@@ -103,6 +103,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{5b3b75a6-454d-4d97-bbf9-11f4d6f1e1cf}">
+		<property name="volume">
+			<value>4</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -133,6 +136,7 @@
 	<object class="MixerBusEffectChain" id="{f20a3c96-d178-4fd0-918a-a369c3f46059}">
 		<relationship name="effects">
 			<destination>{e010a171-ab63-43f5-a37e-6cb2252896b3}</destination>
+			<destination>{13e097e5-ad35-4f0b-ac5b-9c7d32b03c9f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c263cbcb-1f1b-4ccf-abbc-4dae772a2da4}" />
@@ -152,6 +156,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{fc6b7f82-badc-4ff2-a932-611ed198bd6f}" />
 	<object class="MixerBusFader" id="{e010a171-ab63-43f5-a37e-6cb2252896b3}" />
+	<object class="SpatialiserEffect" id="{13e097e5-ad35-4f0b-ac5b-9c7d32b03c9f}">
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{c150b8f1-98eb-4bc8-a12f-ba87dcd76d3e}">
 		<property name="position">
 			<value>4.5</value>
