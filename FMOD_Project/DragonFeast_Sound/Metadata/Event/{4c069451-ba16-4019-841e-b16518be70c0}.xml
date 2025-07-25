@@ -90,13 +90,19 @@
 	<object class="MixerBusPanner" id="{8b6ae372-db98-4b8c-a663-365a5d236ce1}" />
 	<object class="SingleSound" id="{e09d69f2-440a-477e-828f-e573f7867766}">
 		<property name="length">
-			<value>2.1159183673469388</value>
+			<value>1.6000000000000001</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.050000000000000003</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{8b4729e4-5cdf-4145-b239-96bb12ba67ce}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f18733fb-fe9c-4945-a1da-9e305856be84}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

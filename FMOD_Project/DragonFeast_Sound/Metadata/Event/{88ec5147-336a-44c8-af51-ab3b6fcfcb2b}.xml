@@ -5,7 +5,7 @@
 			<value>Heal</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{39e4ff8c-6731-4c99-bc07-08b7997f6e39}</destination>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{07d6940d-5bd1-45d9-8e4b-eb2c13bca7f2}">
+		<property name="volume">
+			<value>5.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -116,6 +119,7 @@
 	<object class="MixerBusEffectChain" id="{fce47f1f-7b60-4524-87ee-c2ed13482c00}">
 		<relationship name="effects">
 			<destination>{e09b2212-5e42-44e5-a953-2a88170fdf59}</destination>
+			<destination>{54db6512-9a0a-4d81-87ab-6b507d066df6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5755fe82-2c3f-4907-b2f8-6836883feaeb}" />
@@ -143,6 +147,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{8c4de118-328b-4fe7-955c-7d93f251fb46}" />
 	<object class="MixerBusFader" id="{e09b2212-5e42-44e5-a953-2a88170fdf59}" />
+	<object class="SpatialiserEffect" id="{54db6512-9a0a-4d81-87ab-6b507d066df6}">
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{23159580-e327-4c3f-89e9-ec67c2004ccf}">
 		<property name="position">
 			<value>0</value>
