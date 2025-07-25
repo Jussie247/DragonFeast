@@ -47,6 +47,10 @@ public class babyDragonHandler : MonoBehaviour
 
     private void Awake()
     {
+
+        //Sounds
+        GetComponent<BabyDragonSoundManager>().playFlyingSound(transform.gameObject);
+
         levelGenerator = GameObject.Find("LevelGenerator");
         player = GameObject.Find("RB_Based_Controller").transform;
         agent = GetComponent<NavMeshAgent>();
@@ -78,6 +82,7 @@ public class babyDragonHandler : MonoBehaviour
     //dragon patrols when he is not near an enemy to target to in the boss room
     public void patrol()
     {
+
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -149,10 +154,12 @@ public class babyDragonHandler : MonoBehaviour
         {
             if (dragonType == DragonType.Heal)
             {
+                GetComponent<BabyDragonSoundManager>().playHealSound(transform.gameObject);
                 healCompanions();
             }
             else if (dragonType == DragonType.Attack)
             {
+                GetComponent<BabyDragonSoundManager>().playAttackSound(transform.gameObject);
                 enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, enemyMask);
                 if (enemyInAttackRange)
                 {
@@ -161,6 +168,7 @@ public class babyDragonHandler : MonoBehaviour
             }
             else if (dragonType == DragonType.Kamikaze)
             {
+                GetComponent<BabyDragonSoundManager>().playExplosionSound(transform.gameObject);
                 enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, enemyMask);
                 if (enemyInAttackRange)
                 {

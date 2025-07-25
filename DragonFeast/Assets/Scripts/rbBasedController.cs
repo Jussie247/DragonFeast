@@ -117,8 +117,12 @@ public class rbBasedController : MonoBehaviour
                     Instantiate(hitVFX, radicle.transform.position, radicle.transform.rotation);
 
                     Transform enemy = GetClosestObjectTransformByTag("enemy");
-                    enemy.GetComponent<TestOpponent>().Hit();
-                    enemy.GetComponent<TestOpponent>().bounce();
+                    //check if enemy is not in bounce mode
+                    if (!enemy.GetComponent<TestOpponent>().isBounce)
+                    {
+                        enemy.GetComponent<TestOpponent>().Hit();
+                        enemy.GetComponent<TestOpponent>().bounce();
+                    }
                 }
                 //check if cage has been attacked
                 else if (Physics.CheckSphere(attackPos.transform.position, attackRange, cage))
