@@ -20,14 +20,10 @@ public class CircleBehindplayer : MonoBehaviour
         if (Physics.Raycast(ray, 3000, Mask))
         {
             Wallmaterial.SetFloat(SizeID, 1);
-            //wallshader.SetFloat(SizeID, 1);
-            //MortarMaterial.SetFloat(SizeID, 1);
         }
         else
         {
             Wallmaterial.SetFloat(SizeID, 0);
-            //wallshader.SetFloat(SizeID, 0);
-            //MortarMaterial.SetFloat(SizeID, 0);
         }
         var view = Camera.WorldToViewportPoint(transform.position);
         //wallshader.SetVector(PosID, view);
