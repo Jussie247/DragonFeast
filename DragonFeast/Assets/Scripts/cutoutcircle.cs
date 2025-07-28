@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
-public class cutoutcircle : MonoBehaviour
+public class CutoutCircle : MonoBehaviour
 {
     [SerializeField]
     private Transform targetObject;
@@ -10,51 +10,59 @@ public class cutoutcircle : MonoBehaviour
     private LayerMask wallMask;
 
     private Camera mainCamera;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [SerializeField]
+    private GameObject LevelGenerator;
+
     void Start()
     {
         mainCamera = GetComponent<Camera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 cutoutPos = mainCamera.WorldToViewportPoint(targetObject.position);
         cutoutPos.y /= (Screen.width / Screen.height);
 
-        Vector3 offset = targetObject.position - transform.position;
-        RaycastHit[] hitObjects = Physics.RaycastAll(transform.position, offset, offset.magnitude, wallMask);
+        Vector3 direction = targetObject.position - transform.position;
+        float distance = direction.magnitude;
 
-        var dir = transform.position - targetObject.position;
-        var ray = new Ray(targetObject.position, dir.normalized);
-        
-        if (Physics.Raycast(ray, dir.magnitude, wallMask))
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, distance, wallMask);
+
+        // Reset all materials on LevelGenerator
+        Renderer[] allRenderers = LevelGenerator.GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in allRenderers)
         {
-            for(int i = 0; i < hitObjects.Length; i++)
+            foreach (Material mat in r.materials)
             {
-                Material[] materials = hitObjects[i].transform.GetComponent<Renderer>().materials;
-
-                for (int j = 0; j < materials.Length; j++)
+                if (mat.HasProperty("_Cutout_Position") &&
+                    mat.HasProperty("_CutoutSize") &&
+                    mat.HasProperty("_FalloffSize"))
                 {
-                    materials[j].SetVector("_Cutout_Position", cutoutPos);
-                    materials[j].SetFloat("_CutoutSize", 0.2f);
-                    materials[j].SetFloat("_FalloffSize", 0.1f);
+                    mat.SetFloat("_CutoutSize", 0f);
+                    mat.SetFloat("_FalloffSize", 0f);
                 }
             }
         }
-        else
-        {
-            for (int i = 0; i < hitObjects.Length; i++)
-            {
-                Material[] materials = hitObjects[i].transform.GetComponent<Renderer>().materials;
 
-                for (int j = 0; j < materials.Length; j++)
+        // Apply cutout to hit walls
+        foreach (RaycastHit hit in hits)
+        {
+            Renderer r = hit.collider.GetComponent<Renderer>();
+            if (r != null)
+            {
+                foreach (Material mat in r.materials)
                 {
-                    materials[j].SetVector("_Cutout_Position", cutoutPos);
-                    materials[j].SetFloat("_CutoutSize", 0.0f);
-                    materials[j].SetFloat("_FalloffSize", 0.0f);
+                    if (mat.HasProperty("_Cutout_Position") &&
+                        mat.HasProperty("_CutoutSize") &&
+                        mat.HasProperty("_FalloffSize"))
+                    {
+                        mat.SetVector("_Cutout_Position", cutoutPos);
+                        mat.SetFloat("_CutoutSize", 0.2f);
+                        mat.SetFloat("_FalloffSize", 0.1f);
+                    }
                 }
             }
-        }   
+        }
     }
 }

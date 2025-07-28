@@ -2720,6 +2720,7 @@ MonoBehaviour:
   wallMask:
     serializedVersion: 2
     m_Bits: 1024
+  LevelGenerator: {fileID: 757643926}
 --- !u!1001 &1852003054
 PrefabInstance:
   m_ObjectHideFlags: 0
