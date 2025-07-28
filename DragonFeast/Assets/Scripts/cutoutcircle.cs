@@ -22,7 +22,6 @@ public class CutoutCircle : MonoBehaviour
     void Update()
     {
         Vector2 cutoutPos = mainCamera.WorldToViewportPoint(targetObject.position);
-        cutoutPos.y /= (Screen.width / Screen.height);
 
         Vector3 direction = targetObject.position - transform.position;
         float distance = direction.magnitude;
