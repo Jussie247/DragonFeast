@@ -154,10 +154,11 @@ public class rbBasedController : MonoBehaviour
         //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         //}
         //eat
-        if (Input.GetKeyDown(KeyCode.F) && !UiHandlerScript.paused)
+        if (Input.GetMouseButtonDown(1) && !UiHandlerScript.paused)
         {
             transform.GetComponent<PlayerSoundHandler>().playEatSound();
-            animator.SetBool("eating", true);
+            animator.SetTrigger("eating");
+            animator.SetTrigger("eating");
             if (!ate)
             {
                 print("eat enemy");
@@ -178,12 +179,6 @@ public class rbBasedController : MonoBehaviour
                 ate = true;
                 Invoke(nameof(resetEat), eatCooldown);
             }
-        }
-
-        // eating released to stop the animation/bad?/
-        if (Input.GetKeyUp(KeyCode.F) && !UiHandlerScript.paused)
-        {
-            animator.SetBool("eating", false);
         }
 
         // pause menu
