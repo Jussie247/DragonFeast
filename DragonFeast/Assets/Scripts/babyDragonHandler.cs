@@ -1,10 +1,6 @@
-using UnityEditor.TestTools.CodeCoverage;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using System.Linq;
 using Unity.VisualScripting;
-using FMOD;
 
 public enum DragonType
 {

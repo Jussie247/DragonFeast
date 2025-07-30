@@ -1,10 +1,4 @@
-using System.Threading;
-using System.Threading.Tasks;
-using FMOD;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class rbBasedController : MonoBehaviour

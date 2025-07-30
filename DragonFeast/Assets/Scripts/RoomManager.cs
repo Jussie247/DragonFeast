@@ -1,8 +1,5 @@
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
+
 
 public class RoomManager : MonoBehaviour
 {
