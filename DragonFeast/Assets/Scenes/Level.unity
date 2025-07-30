@@ -2631,13 +2631,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2301347, y: 0, z: 0, w: 0.97315884}
-  m_LocalPosition: {x: 0, y: 6.14, z: -9.74}
+  m_LocalRotation: {x: 0.2702435, y: -0, z: -0, w: 0.96279204}
+  m_LocalPosition: {x: 0, y: 9.86, z: -10.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1077184024}
-  m_LocalEulerAnglesHint: {x: 26.61, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.358, y: 0, z: 0}
 --- !u!114 &1823688468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2657,7 +2657,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   volumeAnchorOverride: {fileID: 0}
-  antialiasing: 2
+  antialiasing: 0
   SMAAQuality: 2
   dithering: 1
   stopNaNs: 0
@@ -3268,7 +3268,7 @@ PrefabInstance:
       objectReference: {fileID: 13400000, guid: c30afe962d06bc9408ec919a2a023967, type: 2}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: HP
-      value: 2
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: canvas
