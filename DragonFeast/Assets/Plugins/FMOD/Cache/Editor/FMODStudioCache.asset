@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638894204842722533
+  lastModified: 638890336307722011
   FileSizes:
   - Name: Desktop
-    Value: 8322816
+    Value: 6294432
   Exists: 1
 --- !u!114 &-7613835254239284634
 MonoBehaviour:
@@ -73,7 +73,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1600
+  Length: 2115
 --- !u!114 &-7276980937035421068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,13 +229,13 @@ MonoBehaviour:
     Data4: 1457292946
   Banks:
   - {fileID: -7709548440230959844}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 179931
+  Length: 0
 --- !u!114 &-3848999716147131723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2065
+  Length: 2115
 --- !u!114 &-103716416801377257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7632452734052637521}
   cacheVersion: 131848
-  cacheTime: 638894204842737624
+  cacheTime: 638890336307737054
   SerializableEventsDict:
   - key: event:/Player/Attack/Attack_Player
     index: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 34
+  Length: 170
 --- !u!114 &336420646109560750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -622,7 +622,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 153065
+  Length: 168724
 --- !u!114 &1577314679841993578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +671,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -730,7 +730,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 27
+  Length: 202
 --- !u!114 &3140167768483277547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,7 +833,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -887,7 +887,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7709548440230959844}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -935,7 +935,7 @@ MonoBehaviour:
   Path: ../FMOD_Project/DragonFeast_Sound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638894204842737624
+  lastModified: 638890336307737054
   FileSizes:
   - Name: Desktop
     Value: 2498
