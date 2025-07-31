@@ -57,7 +57,7 @@ public class CutoutCircle : MonoBehaviour
                         mat.HasProperty("_FalloffSize"))
                     {
                         mat.SetVector("_Cutout_Position", cutoutPos);
-                        mat.SetFloat("_CutoutSize", 0.2f);
+                        mat.SetFloat("_CutoutSize", 0.3f);
                         mat.SetFloat("_FalloffSize", 0.1f);
                     }
                 }
