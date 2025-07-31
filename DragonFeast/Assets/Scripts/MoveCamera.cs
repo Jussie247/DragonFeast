@@ -41,6 +41,6 @@ public class MoveCamera : MonoBehaviour
         angle = Mathf.Clamp(angle, -rotationClamp, rotationClamp);
         
         transform.rotation = Quaternion.Euler(0, angle * 2 * math.PI, 0);
-        print(angle * 2 * math.PI);
+        //print(angle * 2 * math.PI);
     }
 }

@@ -95,7 +95,7 @@ MonoBehaviour:
   radicle: {fileID: 0}
   arrow: {fileID: 3915148000429351268, guid: 45381be4abaadf3429759737b88345f6, type: 3}
   punchForce: 50000
-  arrowSpeed: 1000
+  arrowSpeed: 2000
   bounces: 1
   attacked: 0
   startup: 0.625
