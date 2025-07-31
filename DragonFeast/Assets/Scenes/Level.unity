@@ -3611,7 +3611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: moveSpeed
-      value: 600
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: punchForce
