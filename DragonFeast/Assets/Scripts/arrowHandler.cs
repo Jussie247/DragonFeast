@@ -18,22 +18,23 @@ public class arrowHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        //stick to what it hit
-        transform.parent = collision.gameObject.transform;
-        GetComponent<playHitSound>().playHit();
-        Destroy(GetComponent<Rigidbody>());
-        Invoke(nameof(destroyArrow), lifetime);
-
         if ((playerMask.value & (1 << collision.gameObject.layer)) != 0)
         {
             print("hit the player");
             player.GetComponent<rbBasedController>().hit();
         }
+
+        print("arrow collided");
+        //stick to what it hit
+        transform.parent = collision.gameObject.transform;
+        GetComponent<playHitSound>().playHit();
+        Destroy(GetComponent<Rigidbody>());
+        Invoke(nameof(destroyArrow), lifetime);
     }
 
     public void destroyArrow()
