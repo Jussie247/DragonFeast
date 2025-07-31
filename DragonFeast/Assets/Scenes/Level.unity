@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 1606539033}
-  RoomsPerLevel: 4
+  RoomsPerLevel: 1
   NavMesh: {fileID: 708720756}
   difficulty: 0
   bossType: 1
@@ -3561,6 +3561,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 657584915741304774, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2460212048341339258, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: playbackSpeed
       value: 0.427
@@ -3598,6 +3602,10 @@ PrefabInstance:
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
+      propertyPath: ate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1138086514}
@@ -3607,11 +3615,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: hungies
-      value: 60
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: moveSpeed
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
+      propertyPath: hungerLoss
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: punchForce
@@ -3664,6 +3676,10 @@ PrefabInstance:
     - target: {fileID: 6454963590321664155, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525348565782431793, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8884118620304104810, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: m_LocalScale.x

@@ -153,6 +153,7 @@ public class rbBasedController : MonoBehaviour
         //{
         //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         //}
+
         //eat
         if (Input.GetMouseButtonDown(1) && !UiHandlerScript.paused)
         {
@@ -181,8 +182,21 @@ public class rbBasedController : MonoBehaviour
             }
         }
 
-        // pause menu
-        if (Input.GetKeyDown(KeyCode.Escape))
+        //Shield added
+        if (Input.GetMouseButtonDown(2) && !UiHandlerScript.paused)
+        {
+            if (hungies >= 60)
+            {
+                hungies -= 50;
+                shield += 1;
+            }
+            else
+            {
+                return;
+            }
+        }
+            // pause menu
+            if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!UiHandlerScript.paused)
             {
