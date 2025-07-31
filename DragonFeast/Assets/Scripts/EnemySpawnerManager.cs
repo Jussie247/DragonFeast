@@ -72,6 +72,20 @@ public class EnemySpawnerManager : MonoBehaviour
                     enemy.transform.position = transform.position + new Vector3(0, i * 2, 0);
                 }
             }
+
+            //check if the Spawns are in the first Room -> keep enemies active
+
+            if (transform.parent == GameObject.Find("LevelGenerator").transform.GetChild(0))
+            {
+
+            }
+            else
+            {
+                //deactivate Enemy
+                enemy.SetActive(false);
+            }
+
+            
         }
     }
 }

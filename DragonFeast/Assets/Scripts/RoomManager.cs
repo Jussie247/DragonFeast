@@ -65,6 +65,16 @@ public class RoomManager : MonoBehaviour
                         transform.GetComponent<playDoorOpenSound>().playDoorSound(door.gameObject);
                         Destroy(door.gameObject);
                     }
+
+                    //get the Spawns from the next room and activate the enemies
+                    transforms = Rooms[i + 1].GetComponentsInChildren<Transform>();
+                    foreach (Transform t in transforms)
+                    {
+                        if (t.name.Contains("Spawn"))
+                        {
+                            t.GetChild(0).gameObject.SetActive(true);
+                        }
+                    }
                     //door.GetComponent<doorManager>().openDoor();
                 }
             }
