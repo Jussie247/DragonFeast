@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class RoomManager : MonoBehaviour
 {
-    
+
     public bool isBoss = false;
     int clearedRoomsCount = 0;
     int spawnCount = 0;
@@ -43,7 +44,7 @@ public class RoomManager : MonoBehaviour
                 foreach (Transform t in transforms)
                 {
                     if (t.name.Contains("Spawn"))
-                        {
+                    {
                         spawnCount++;
                         if (t.childCount == 0)
                         {
@@ -53,7 +54,7 @@ public class RoomManager : MonoBehaviour
                     }
                 }
                 //check if all spawns have been cleared
-                if(spawnCount == clearedSpawnsCount)
+                if (spawnCount == clearedSpawnsCount)
                 {
                     //all spawns cleared, open door
                     //door.gameObject.GetComponent<doorManager>().openDoor();
@@ -66,13 +67,16 @@ public class RoomManager : MonoBehaviour
                         Destroy(door.gameObject);
                     }
 
-                    //get the Spawns from the next room and activate the enemies
-                    transforms = Rooms[i + 1].GetComponentsInChildren<Transform>();
-                    foreach (Transform t in transforms)
+                    if (i + 1 <= Rooms.Length) //next room is in Array Bounds
                     {
-                        if (t.name.Contains("Spawn"))
+                        //get the Spawns from the next room and activate the enemies
+                        transforms = Rooms[i + 1].GetComponentsInChildren<Transform>();
+                        foreach (Transform t in transforms)
                         {
-                            t.GetChild(0).gameObject.SetActive(true);
+                            if (t.name.Contains("Spawn"))
+                            {
+                                t.GetChild(0).gameObject.SetActive(true);
+                            }
                         }
                     }
                     //door.GetComponent<doorManager>().openDoor();
@@ -82,14 +86,31 @@ public class RoomManager : MonoBehaviour
             {
                 //room is already cleared
                 clearedRoomsCount++;
-                
+
             }
         }
 
         //check if all rooms are cleared
-        if(clearedRoomsCount == Rooms.Length)
+        if (clearedRoomsCount == Rooms.Length && !isBoss)
         {
+            print("is Boss");
+
             isBoss = true;
+
+            GameObject bossRoom = transform.GetChild(transform.childCount - 1).gameObject;
+
+            //GameObject bossRoom = GameObject.FindGameObjectWithTag("bossRoom");
+            Transform[] transforms = bossRoom.GetComponentsInChildren<Transform>();
+            foreach (Transform t in transforms)
+            {
+                if (t.name.Contains("Spawn"))
+                {
+                    if (t.childCount > 0)
+                    {
+                        t.GetChild(0).gameObject.SetActive(true);
+                    }
+                }
+            }
         }
 
         //check if boss room is cleared
@@ -97,7 +118,7 @@ public class RoomManager : MonoBehaviour
         //{
 
         //    //player won, load main menu
-            
+
         //}
     }
 }

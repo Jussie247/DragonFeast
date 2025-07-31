@@ -61,9 +61,9 @@ public class rbBasedController : MonoBehaviour
     {
         //make the player stick to the ground
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        
+
         //Look for Keyinputs for walkanimation
-        if (Input.GetAxis("Horizontal")!=0 || Input.GetAxis("Vertical")!=0)
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             animator.SetBool("walking", true);
             animator.speed = rb.linearVelocity.magnitude * animationSpeedFactor;
@@ -139,12 +139,12 @@ public class rbBasedController : MonoBehaviour
 
                     Transform destObject = GetClosestObjectTransformByTag("destructable");
                     Instantiate(destVFX, destObject.position, new Quaternion(0, 0, 0, 0));
-                    GameObject woodPileInstance = Instantiate(woodPile,  new Vector3(destObject.position.x, 0f, destObject.position.z), destObject.rotation);
+                    GameObject woodPileInstance = Instantiate(woodPile, new Vector3(destObject.position.x, 0f, destObject.position.z), destObject.rotation);
                     //play destruction sound
                     transform.GetComponent<playDestructionSound>().playDestructables(woodPileInstance);
                     Destroy(destObject.gameObject);
                 }
-                    attacked = true;
+                attacked = true;
                 Invoke(nameof(resetAttack), ATKcooldown);
             }
         }
@@ -183,32 +183,26 @@ public class rbBasedController : MonoBehaviour
         }
 
         //Shield added
-        if (Input.GetMouseButtonDown(2) && !UiHandlerScript.paused)
+        if (Input.GetKeyDown(KeyCode.Space) && !UiHandlerScript.paused && hungies >= 60)
         {
-            if (hungies >= 60)
-            {
-                hungies -= 50;
-                shield += 1;
-            }
-            else
-            {
-                return;
-            }
+            hungies -= 50;
+            shield += 1;
         }
-            // pause menu
-            if (Input.GetKeyDown(KeyCode.Escape))
+
+        // pause menu
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!UiHandlerScript.paused)
             {
                 canvas.GetComponent<UiHandlerScript>().pause();
                 //Cursor.visible = true;
-                
+
             }
             else
             {
                 canvas.GetComponent<UiHandlerScript>().resume();
                 //Cursor.visible = false;
-                
+
             }
         }
         //check if player died
@@ -222,7 +216,7 @@ public class rbBasedController : MonoBehaviour
         {
             hit();
         }
-        if(shield > 0)
+        if (shield > 0)
         {
             shieldInstance.SetActive(true);
         }
@@ -262,7 +256,7 @@ public class rbBasedController : MonoBehaviour
         else if (HP > 0)
         {
             HP--;
-            updateHP();          
+            updateHP();
         }
         else
         {

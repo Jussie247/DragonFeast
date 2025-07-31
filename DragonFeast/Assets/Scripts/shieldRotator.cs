@@ -14,7 +14,7 @@ public class shieldRotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.position;
+        transform.position = player.position + new Vector3(0,1.5f,0);
         transform.Rotate(new Vector3(0, 0, direction * rotationSpeed * Time.deltaTime));
     }
 }

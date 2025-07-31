@@ -183,14 +183,14 @@ public class TestOpponent : MonoBehaviour
             // Check for Collision with a specified layer
             if ((wallMask.value & (1 << collision.gameObject.layer)) != 0)
             {
-                print("hit a wall");
+                //print("hit a wall");
                 hitWall = true;
                 bounces--;
                 HP--;
             }
             if ((enemyMask.value & (1 << collision.gameObject.layer)) != 0 && !hasBounceHit)
             {
-                print("hit another enemy");
+                //print("hit another enemy");
                 Transform enemy = GetClosestObjectTransformByTag("enemy");
                 enemy.GetComponent<TestOpponent>().Hit();
                 enemy.GetComponent<TestOpponent>().bounce();
@@ -201,7 +201,7 @@ public class TestOpponent : MonoBehaviour
             }
             if((bossMask.value & (1 << collision.gameObject.layer)) != 0 && !hasBounceHit)
             {
-                print("hit a Boss");
+                //print("hit a Boss");
                 Transform boss = GetClosestObjectTransformByTag("boss");
                 boss.GetComponent<BallsitaBossHandler>().hit();
                 bounces--;
@@ -275,7 +275,7 @@ public class TestOpponent : MonoBehaviour
                 break;
         }
 
-        print("bounce Mode active");
+        //print("bounce Mode active");
         //remove AI
         Destroy(agent);
         //add physics

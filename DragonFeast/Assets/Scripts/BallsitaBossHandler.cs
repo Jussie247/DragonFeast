@@ -44,7 +44,7 @@ public class BallsitaBossHandler : MonoBehaviour
 
     void playerInRange()
     {
-        print("player in attack range");
+        //print("player in attack range");
         transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, new Vector3(0,1,0));
         if (!attacked)
         {
@@ -60,7 +60,7 @@ public class BallsitaBossHandler : MonoBehaviour
 
         GetComponent<BallistaAnimationManager>().playShootAnimation();
         GetComponent<BallistaAnimationManager>().stopShootAnimation();
-        print("ballista shooting");
+        //print("ballista shooting");
         for (int i = 0; i < instancePositions.Length; i++)
         {
             GameObject awwow = Instantiate(arrow, instancePositions[i].position + instancePositions[i].forward + new Vector3(0, 1, 0), Quaternion.LookRotation(transform.forward));
