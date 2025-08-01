@@ -1450,8 +1450,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Walk \u2013> WASD\nAttack \u2013> Left Mosue\nEat \u2013> Right Mouse\nShile
-    \u2013> Middle Mouse"
+  m_text: "Walk \u2013> WASD\nAttack \u2013> Left Mosue\nEat \u2013> Right Mouse\nShield
+    \u2013> Space"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61066a2b571089945b3cb615da55c154, type: 2}
   m_sharedMaterial: {fileID: 8769666965571614815, guid: 61066a2b571089945b3cb615da55c154, type: 2}
