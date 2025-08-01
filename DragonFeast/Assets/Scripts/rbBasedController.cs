@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class rbBasedController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
-    [SerializeField] float jumpForce = 5f;
+    //[SerializeField] float jumpForce = 5f;
     private Rigidbody rb;
 
     [SerializeField] Transform groundCheck, attackPos;
@@ -187,7 +187,7 @@ public class rbBasedController : MonoBehaviour
         {
             hungies -= 50;
             shield += 1;
-            canvas.GetComponent<UiHandlerScript>().updateShield(shield);
+            canvas.GetComponent<UiHandlerScript>().updateShield(shield | 0);
         }
 
         // pause menu
@@ -253,7 +253,7 @@ public class rbBasedController : MonoBehaviour
         if (shield > 0)
         {
             shield--;
-            canvas.GetComponent<UiHandlerScript>().updateShield(shield);
+            canvas.GetComponent<UiHandlerScript>().updateShield(shield | 0);
         }
         else if (HP > 0)
         {

@@ -9,7 +9,7 @@ public class UiHandlerScript : MonoBehaviour
     [SerializeField] GameObject HP;
     [SerializeField] GameObject hungerSlider;
     [SerializeField] GameObject sensitivitySlider;
-    [SerializeField] GameObject shieldCounter;
+    [SerializeField] TextMeshProUGUI shieldCounter;
 
     public static float sensitivity = 0.5f;
     public static bool paused;
@@ -81,6 +81,6 @@ public class UiHandlerScript : MonoBehaviour
 
     public void updateShield(int _value)
     {
-        shieldCounter.GetComponent<TextMeshPro>().text = _value.ToString();
+        shieldCounter.text = _value.ToString();
     }
 }
