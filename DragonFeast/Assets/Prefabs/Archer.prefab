@@ -100,8 +100,8 @@ MonoBehaviour:
   attacked: 0
   startup: 0.625
   ATKcooldown: 0.1
-  sightRange: 25
-  attackRange: 25
+  sightRange: 100
+  attackRange: 100
   playerInSightRange: 0
   playerInAttackRange: 0
   knighPrefab: {fileID: 5218502774948482725, guid: 348acdf8d164b324daf340d70d912510, type: 3}

@@ -100,7 +100,7 @@ MonoBehaviour:
   attacked: 0
   startup: 0.625
   ATKcooldown: 1
-  sightRange: 25
+  sightRange: 80
   attackRange: 3
   playerInSightRange: 0
   playerInAttackRange: 0

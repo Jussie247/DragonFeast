@@ -143,7 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1000
-  jumpForce: 10
   groundCheck: {fileID: 7000637125683043491}
   attackPos: {fileID: 6239491290459913063}
   GroundMask:
@@ -176,7 +175,7 @@ MonoBehaviour:
   attacked: 0
   ate: 0
   ATKcooldown: 0.2
-  eatCooldown: 0.2
+  eatCooldown: 0.5
   animationSpeedFactor: 0.083
 --- !u!95 &8985589504419181218
 Animator:
