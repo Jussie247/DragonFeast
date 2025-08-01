@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class UiHandlerScript : MonoBehaviour
     [SerializeField] GameObject HP;
     [SerializeField] GameObject hungerSlider;
     [SerializeField] GameObject sensitivitySlider;
+    [SerializeField] GameObject shieldCounter;
 
     public static float sensitivity = 0.5f;
     public static bool paused;
@@ -75,5 +77,10 @@ public class UiHandlerScript : MonoBehaviour
     public void updateSensitivity()
     {
         sensitivity = sensitivitySlider.GetComponent<Slider>().value;
+    }
+
+    public void updateShield(int _value)
+    {
+        shieldCounter.GetComponent<TextMeshPro>().text = _value.ToString();
     }
 }

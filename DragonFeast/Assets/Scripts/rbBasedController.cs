@@ -187,6 +187,7 @@ public class rbBasedController : MonoBehaviour
         {
             hungies -= 50;
             shield += 1;
+            canvas.GetComponent<UiHandlerScript>().updateShield(shield);
         }
 
         // pause menu
@@ -252,6 +253,7 @@ public class rbBasedController : MonoBehaviour
         if (shield > 0)
         {
             shield--;
+            canvas.GetComponent<UiHandlerScript>().updateShield(shield);
         }
         else if (HP > 0)
         {
