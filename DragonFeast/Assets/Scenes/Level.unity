@@ -3889,7 +3889,7 @@ PrefabInstance:
       objectReference: {fileID: 13400000, guid: c30afe962d06bc9408ec919a2a023967, type: 2}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: HP
-      value: 60
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6397324354930104368, guid: 2cc1e6db49504e542be22d8d13149229, type: 3}
       propertyPath: ate
