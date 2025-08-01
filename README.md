@@ -1,5 +1,8 @@
-# DragonFeast
-Dragon Feast was created as one of the 2025 third semester projects of the university study programme Games & Immersive Media at Hochschule Furtwangen University by the students Björn, Chris, Haru and Justus. 
+# Dragon Feast
 
-### short discription
-Dragon Feast is a single-player rogue-like game about a Dragon breaking into a castle to retrieve its eggs while def/-eating all his opponents along its way. Players can expect a fast-paced combat system, an artsy medieval setting and a goofy dragon.
+*Dragon Feast* was developed in 2025 as part of a third-semester project in the **Games & Immersive Media** degree program at **Hochschule Furtwangen University**, created by students **Björn**, **Chris**, **Haru**, and **Justus**.
+
+## Short Description
+
+*Dragon Feast* is a **single-player roguelike** game that follows a quirky dragon on a mission to retrieve its stolen eggs from deep within a castle. On its journey, the dragon must defeat numerous enemies in **fast-paced combat**, all within an **artistic medieval setting**. Players can look forward to a blend of action, humor, and stylized visuals as they burn their way through the castle’s defenders.
+
