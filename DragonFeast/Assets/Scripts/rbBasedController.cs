@@ -266,7 +266,9 @@ public class rbBasedController : MonoBehaviour
             //play death sound
             transform.GetComponent<PlayerSoundHandler>().playDeathSound();
             updateHP();
+            transform.GetComponent<PlayerSoundHandler>().stopMainTheme();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
         }
     }
 

@@ -8,11 +8,15 @@ public class PlayerSoundHandler : MonoBehaviour
 
     [SerializeField] FMODUnity.EventReference MainTheme;
     [SerializeField] FMODUnity.EventReference AttackSound;
+
+    GameObject player;
+    FMOD.Studio.EventInstance mainTheme;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(MainTheme);
+        mainTheme = FMODUnity.RuntimeManager.CreateInstance(MainTheme);
+        mainTheme.start();
     }
 
     // Update is called once per frame
@@ -39,5 +43,10 @@ public class PlayerSoundHandler : MonoBehaviour
     public void playAttackSound()
     {
         FMODUnity.RuntimeManager.PlayOneShot(AttackSound);
+    }
+
+    public void stopMainTheme()
+    {
+        mainTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
